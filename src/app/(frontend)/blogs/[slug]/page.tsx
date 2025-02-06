@@ -12,17 +12,13 @@ import type { Post } from '@/payload-types'
 import { generateMeta } from '@/utilities/generateMeta'
 // import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
-import localFont from 'next/font/local'
-import { Media } from '@/components/Media'
 
-const NimbusSanL = localFont({
-  src: '../../../../../public/fonts/NimbusSanL-Bol.otf',
-})
+import { Media } from '@/components/Media'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
-  const posts = await payload.find({
-    collection: 'posts',
+  const blogs = await payload.find({
+    collection: 'blogs',
     draft: false,
     limit: 1000,
     overrideAccess: false,
@@ -32,7 +28,7 @@ export async function generateStaticParams() {
     },
   })
 
-  const params = posts.docs.map(({ slug }) => {
+  const params = blogs.docs.map(({ slug }) => {
     return { slug }
   })
 
@@ -48,11 +44,11 @@ type Args = {
 export default async function Post({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode()
   const { slug = '' } = await paramsPromise
-  const url = '/posts/' + slug
-  const post = await queryPostBySlug({ slug })
+  const url = '/blogs/' + slug
+  const blog = await queryBlogBySlug({ slug })
 
-  if (!post) return <PayloadRedirects url={url} />
-  console.log('post - ', post)
+  if (!blog) return <PayloadRedirects url={url} />
+  console.log('blog - ', blog)
   return (
     <article className={styles.container}>
       {/* <PageClient /> */}
@@ -60,19 +56,19 @@ export default async function Post({ params: paramsPromise }: Args) {
       {draft && <LivePreviewListener />}
       <div className={styles.topContainer}>
         <div className={styles.titleContainer}>
-          <h1>{post.title}</h1>
+          <h1>{blog.title}</h1>
           <p>5 min read</p>
         </div>
 
-        {post.heroImage && typeof post.heroImage == 'object' && post.heroImage.url && (
+        {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
           <div className={styles.imageContainer}>
-            <Media resource={post.heroImage} />
+            <Media resource={blog.heroImage} />
           </div>
         )}
       </div>
 
       <div className={styles.richTextContainer}>
-        <RichText className={`${styles.richText} `} data={post.content} enableGutter={false} />
+        <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
       </div>
     </article>
   )
@@ -80,18 +76,18 @@ export default async function Post({ params: paramsPromise }: Args) {
 
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
   const { slug = '' } = await paramsPromise
-  const post = await queryPostBySlug({ slug })
+  const blog = await queryBlogBySlug({ slug })
 
-  return generateMeta({ doc: post })
+  return generateMeta({ doc: blog })
 }
 
-const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
+const queryBlogBySlug = cache(async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
   const payload = await getPayload({ config: configPromise })
 
   const result = await payload.find({
-    collection: 'posts',
+    collection: 'blogs',
     draft,
     limit: 1,
     overrideAccess: draft,

@@ -352,7 +352,7 @@ export const seed = async ({
               label: 'Contact',
               reference: {
                 relationTo: 'pages',
-                value: +contactPage.id,
+                value: contactPage.id,
               },
             },
           },
