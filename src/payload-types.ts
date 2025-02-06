@@ -92,7 +92,7 @@ export interface UserAuthOperations {
  * via the `definition` "pages".
  */
 export interface Page {
-  id: number;
+  id: number | string;
   title: string;
   hero: {
     type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
@@ -135,7 +135,7 @@ export interface Page {
           id?: string | null;
         }[]
       | null;
-    media?: (number | null) | Media;
+    media?: (number | null) | Media | string;
   };
   layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
   meta?: {
@@ -143,7 +143,7 @@ export interface Page {
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (number | null) | Media;
+    image?: (number | null) | Media | string;
     description?: string | null;
   };
   publishedAt?: string | null;
@@ -234,6 +234,7 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: any
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -377,7 +378,7 @@ export interface ContentBlock {
  * via the `definition` "MediaBlock".
  */
 export interface MediaBlock {
-  media: number | Media;
+  media: number | Media | string;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -421,7 +422,7 @@ export interface ArchiveBlock {
  * via the `definition` "FormBlock".
  */
 export interface FormBlock {
-  form: number | Form;
+  form: number | Form | string;
   enableIntro?: boolean | null;
   introContent?: {
     root: {
