@@ -1,0 +1,26 @@
+.container {
+}
+
+.imageContainer {
+  border-radius: 27.77px;
+  box-shadow: 14.333px 20.603px 61.183px 0px rgba(255, 255, 255, 0.08);
+  width: 597px;
+  height: 279px;
+  box-sizing: border-box;
+
+  img {
+    height: inherit;
+  }
+}
+
+.title {
+  margin-top: 9px;
+  color: #fff2f1;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  font-size: 36px;
+  letter-spacing: -2.16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

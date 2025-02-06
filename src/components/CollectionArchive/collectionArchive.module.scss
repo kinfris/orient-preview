@@ -1,0 +1,21 @@
+.wrapper {
+  margin-top: 79px;
+}
+
+.postsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 18px;
+}
+
+.post {
+  width: 619px;
+  height: 414px;
+  padding: 11.645px 10.75px;
+  border-radius: 37.624px;
+  border: 0.896px solid rgba(255, 255, 255, 0.19);
+  background: rgba(255, 242, 241, 0.19);
+  box-shadow: 14.333px 20.603px 61.183px 0px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(9.800000190734863px);
+}
