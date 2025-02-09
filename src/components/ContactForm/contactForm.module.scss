@@ -1,0 +1,88 @@
+.title {
+  color: #000;
+  font-family: Helvetica;
+  font-size: 56.035px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -3.362px;
+  text-align: center;
+  margin-bottom: 21px;
+}
+
+.formContainer {
+  margin: 28px auto;
+  padding: 41px 128px 40px 129px;
+  background: #fff;
+  border-radius: 47px;
+  max-width: 748px;
+}
+
+.formGroup {
+  margin-bottom: 22px;
+
+  label {
+    margin-bottom: 2px;
+    color: #000;
+    font-family: Helvetica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.44px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 20px 26px;
+    border-radius: 34.987px;
+    border: 0.744px solid #000;
+    background: #fff;
+    color: #000;
+    font-family: Helvetica;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.68px;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 154px;
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.submitButton {
+  border-radius: 34.987px;
+  background: #000;
+  color: #ffffff;
+  padding: 20px 72px;
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -1.68px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #ffffff;
+    color: #000;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: end;
+}

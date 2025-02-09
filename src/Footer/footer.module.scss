@@ -15,16 +15,16 @@
   z-index: 999;
 }
 
-.leftRow{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.leftRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footerLogo {
   display: flex;
   gap: 16px;
-
+  align-items: center;
 }
 
 .logo {
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2C2A35;
+  background-color: #2c2a35;
   border-radius: 50%;
 }
 

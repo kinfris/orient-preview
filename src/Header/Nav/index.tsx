@@ -19,7 +19,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
       <div className={styles.link}>
         <span>Services</span>
       </div>
-      <Link href="/contact-us" className={styles.link}>
+      <Link href="/contact" className={styles.link}>
         <span>Contact Us</span>
       </Link>
     </nav>
