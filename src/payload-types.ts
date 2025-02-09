@@ -14,6 +14,7 @@ export interface Config {
     pages: Page;
     posts: Post;
     blogs: Blog;
+    home: Home;
     media: Media;
     categories: Category;
     users: User;
@@ -31,6 +32,7 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
+    home: HomeSelect<false> | HomeSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -234,7 +236,7 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
-  sizes?: any;
+  sizes?: any
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -678,6 +680,58 @@ export interface Blog {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home".
+ */
+export interface Home {
+  id: string;
+  title: string;
+  logos: {
+    logoImage?: (string | null) | Media;
+    logoTitle?: string | null;
+    id?: string | null;
+  }[];
+  reviews: {
+    stars: number;
+    description: string;
+    reviewerName: string;
+    reviewerPosition: string;
+    reviewerCompany: string;
+    projectDescription: string;
+    fullCaseLink?: string | null;
+    id?: string | null;
+  }[];
+  cases: {
+    image: string | Media;
+    caseTitle: string;
+    caseDescription: string;
+    caseLink?: string | null;
+    id?: string | null;
+  }[];
+  showTeamSection?: boolean | null;
+  team: {
+    image: string | Media;
+    name: string;
+    position: string;
+    gmail?: string | null;
+    linkedin?: string | null;
+    id?: string | null;
+  }[];
+  prefix?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -859,6 +913,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'blogs';
         value: string | Blog;
+      } | null)
+    | ({
+        relationTo: 'home';
+        value: string | Home;
       } | null)
     | ({
         relationTo: 'media';
@@ -1131,6 +1189,65 @@ export interface BlogsSelect<T extends boolean = true> {
       };
   slug?: T;
   slugLock?: T;
+  prefix?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_select".
+ */
+export interface HomeSelect<T extends boolean = true> {
+  title?: T;
+  logos?:
+    | T
+    | {
+        logoImage?: T;
+        logoTitle?: T;
+        id?: T;
+      };
+  reviews?:
+    | T
+    | {
+        stars?: T;
+        description?: T;
+        reviewerName?: T;
+        reviewerPosition?: T;
+        reviewerCompany?: T;
+        projectDescription?: T;
+        fullCaseLink?: T;
+        id?: T;
+      };
+  cases?:
+    | T
+    | {
+        image?: T;
+        caseTitle?: T;
+        caseDescription?: T;
+        caseLink?: T;
+        id?: T;
+      };
+  showTeamSection?: T;
+  team?:
+    | T
+    | {
+        image?: T;
+        name?: T;
+        position?: T;
+        gmail?: T;
+        linkedin?: T;
+        id?: T;
+      };
   prefix?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1565,6 +1682,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'blogs';
           value: string | Blog;
+        } | null)
+      | ({
+          relationTo: 'home';
+          value: string | Home;
         } | null);
     global?: string | null;
     user?: (string | null) | User;

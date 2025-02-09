@@ -16,6 +16,7 @@ import { getServerSideURL } from './utilities/getURL'
 import { Blogs } from './collections/Blogs'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { Home } from './collections/Home'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -62,7 +63,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Pages, Posts, Blogs, Media, Categories, Users],
+  collections: [Pages, Posts, Blogs, Home, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
@@ -73,6 +74,9 @@ export default buildConfig({
         media: true,
         blogs: {
           prefix: 'blogs-prefix',
+        },
+        home: {
+          prefix: 'home-prefix',
         },
       },
       token: process.env.BLOB_READ_WRITE_TOKEN,
