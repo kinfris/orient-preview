@@ -48,7 +48,7 @@ export default async function Post({ params: paramsPromise }: Args) {
   const blog = await queryBlogBySlug({ slug })
 
   if (!blog) return <PayloadRedirects url={url} />
-  console.log('blog - ', blog)
+
   return (
     <article className={styles.container}>
       {/* <PageClient /> */}
@@ -57,7 +57,7 @@ export default async function Post({ params: paramsPromise }: Args) {
       <div className={styles.topContainer}>
         <div className={styles.titleContainer}>
           <h1>{blog.title}</h1>
-          <p>5 min read</p>
+          <p>{blog.timeToRead}</p>
         </div>
 
         {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
