@@ -8,10 +8,7 @@ import Link from 'next/link'
 import styles from './nav.module.scss'
 import { Popup } from '@/components/Popup/Popup'
 
-export const HeaderNav: React.FC<{ data: HeaderType; servicesData: Partial<Service>[] }> = ({
-  data,
-  servicesData,
-}) => {
+export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ servicesData }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
 
   return (
