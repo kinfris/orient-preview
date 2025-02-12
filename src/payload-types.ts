@@ -14,6 +14,8 @@ export interface Config {
     pages: Page;
     posts: Post;
     blogs: Blog;
+    cases: Case;
+    services: Service;
     home: Home;
     media: Media;
     categories: Category;
@@ -32,6 +34,8 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
+    cases: CasesSelect<false> | CasesSelect<true>;
+    services: ServicesSelect<false> | ServicesSelect<true>;
     home: HomeSelect<false> | HomeSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
@@ -236,7 +240,7 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
-  sizes?: any
+  sizes?: any;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -680,6 +684,116 @@ export interface Blog {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "cases".
+ */
+export interface Case {
+  id: string;
+  title: string;
+  projectName?: string | null;
+  previewImage?: (string | null) | Media;
+  previewDescription?: string | null;
+  heroImage?: (string | null) | Media;
+  tags?:
+    | {
+        tagName?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  clientDescription?: string | null;
+  clientImage?: (string | null) | Media;
+  challengeDescription?: string | null;
+  challengeImage?: (string | null) | Media;
+  solutionDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  solutionImage?: (string | null) | Media;
+  relatedPosts?: (string | Post)[] | null;
+  categories?: (string | Category)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (string | User)[] | null;
+  populatedAuthors?:
+    | {
+        id?: string | null;
+        name?: string | null;
+      }[]
+    | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
+  id: string;
+  title: string;
+  serviceName?: string | null;
+  serviceIcon?: (string | null) | Media;
+  shortDescription?: string | null;
+  fullDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  count?: string | null;
+  countName?: string | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  authors?: (string | User)[] | null;
+  populatedAuthors?:
+    | {
+        id?: string | null;
+        name?: string | null;
+      }[]
+    | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home".
  */
 export interface Home {
@@ -698,13 +812,6 @@ export interface Home {
     reviewerCompany: string;
     projectDescription: string;
     fullCaseLink?: string | null;
-    id?: string | null;
-  }[];
-  cases: {
-    image: string | Media;
-    caseTitle: string;
-    caseDescription: string;
-    caseLink?: string | null;
     id?: string | null;
   }[];
   showTeamSection?: boolean | null;
@@ -913,6 +1020,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'blogs';
         value: string | Blog;
+      } | null)
+    | ({
+        relationTo: 'cases';
+        value: string | Case;
+      } | null)
+    | ({
+        relationTo: 'services';
+        value: string | Service;
       } | null)
     | ({
         relationTo: 'home';
@@ -1205,6 +1320,84 @@ export interface BlogsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "cases_select".
+ */
+export interface CasesSelect<T extends boolean = true> {
+  title?: T;
+  projectName?: T;
+  previewImage?: T;
+  previewDescription?: T;
+  heroImage?: T;
+  tags?:
+    | T
+    | {
+        tagName?: T;
+        id?: T;
+      };
+  clientDescription?: T;
+  clientImage?: T;
+  challengeDescription?: T;
+  challengeImage?: T;
+  solutionDescription?: T;
+  solutionImage?: T;
+  relatedPosts?: T;
+  categories?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  populatedAuthors?:
+    | T
+    | {
+        id?: T;
+        name?: T;
+      };
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services_select".
+ */
+export interface ServicesSelect<T extends boolean = true> {
+  title?: T;
+  serviceName?: T;
+  serviceIcon?: T;
+  shortDescription?: T;
+  fullDescription?: T;
+  count?: T;
+  countName?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  authors?: T;
+  populatedAuthors?:
+    | T
+    | {
+        id?: T;
+        name?: T;
+      };
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
@@ -1226,15 +1419,6 @@ export interface HomeSelect<T extends boolean = true> {
         reviewerCompany?: T;
         projectDescription?: T;
         fullCaseLink?: T;
-        id?: T;
-      };
-  cases?:
-    | T
-    | {
-        image?: T;
-        caseTitle?: T;
-        caseDescription?: T;
-        caseLink?: T;
         id?: T;
       };
   showTeamSection?: T;
@@ -1682,6 +1866,14 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'blogs';
           value: string | Blog;
+        } | null)
+      | ({
+          relationTo: 'cases';
+          value: string | Case;
+        } | null)
+      | ({
+          relationTo: 'services';
+          value: string | Service;
         } | null)
       | ({
           relationTo: 'home';

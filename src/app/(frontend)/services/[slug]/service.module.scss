@@ -1,0 +1,131 @@
+.container {
+  width: 1550px;
+  margin: 112px auto 40px;
+}
+
+.iconContainer {
+  img {
+    width: 70px;
+    height: 45px;
+  }
+
+  .firstRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  h1 {
+    color: #fff2f1;
+    text-shadow: 2px 2px 0px rgba(42, 4, 79, 0.25);
+    font-family: 'Albert Sans';
+    font-size: 84px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -3.36px;
+    text-transform: uppercase;
+  }
+}
+
+.buttonContainer {
+  margin-top: 21px;
+  display: flex;
+  gap: 24px;
+
+  button {
+    padding: 3.468px 34.68px;
+    flex-shrink: 0;
+    border-radius: 37.034px;
+    background: #fff2f1;
+    box-shadow: 3.468px 3.468px 13.872px 0px rgba(0, 0, 0, 0.15);
+    color: #010101;
+    font-family: Helvetica;
+    font-size: 38.148px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -2.289px;
+
+    &:last-child {
+      color: #fff2f1;
+      background: #8312ef;
+    }
+  }
+}
+
+.titleContainer {
+  max-width: 55%;
+}
+
+.topContent {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.shortDescription {
+  color: #fff2f1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  font-family: Helvetica;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -2.16px;
+  max-width: 500px;
+}
+
+.bottomContainer {
+  margin-top: 108px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.richText {
+  border-radius: 41.439px;
+  background: #010101;
+  padding: 49px 34px;
+  color: #fff2f1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  font-family: Helvetica;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -2.16px;
+  max-width: 72%;
+}
+
+.extraContainer {
+  border-radius: 41.439px;
+  background: #010101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 97px 54px;
+
+  &Count {
+    color: #8312ef;
+    font-family: 'Atyp Text TRIAL';
+    font-size: 104.217px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &Name {
+    color: #fff2f1;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    font-family: Helvetica;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -2.16px;
+  }
+}

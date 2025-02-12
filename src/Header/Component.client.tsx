@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './header.module.scss'
 
-import type { Header } from '@/payload-types'
+import type { Header, Service } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
@@ -10,9 +10,10 @@ import { Title } from '@/components/Title/Title'
 
 interface HeaderClientProps {
   data: Header
+  servicesData: Partial<Service>[]
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({ data, servicesData }) => {
   return (
     <header className={styles.container}>
       <Link href="/" className={styles.headerLogo}>
@@ -21,7 +22,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
           <p className={styles.headerTitle}>Orinix</p>
         </Title>
       </Link>
-      <HeaderNav data={data} />
+      <HeaderNav data={data} servicesData={servicesData} />
     </header>
   )
 }

@@ -107,33 +107,6 @@ export const Home: CollectionConfig<'home'> = {
       required: true,
     },
     {
-      name: 'cases',
-      type: 'array',
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
-        },
-        {
-          name: 'caseTitle',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'caseDescription',
-          type: 'textarea',
-          required: true,
-        },
-        {
-          name: 'caseLink',
-          type: 'text',
-        },
-      ],
-      required: true,
-    },
-    {
       name: 'showTeamSection',
       type: 'checkbox',
     },

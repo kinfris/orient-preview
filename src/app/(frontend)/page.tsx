@@ -12,7 +12,12 @@ export default async function Home() {
     overrideAccess: false,
   })
 
-  return <HomeClient homeData={homeData.docs} />
+  const casesData = await payload.find({
+    collection: 'cases',
+    overrideAccess: false,
+  })
+
+  return <HomeClient homeData={homeData.docs} casesData={casesData.docs} />
 }
 
 export { generateMetadata }

@@ -17,6 +17,9 @@ import { Blogs } from './collections/Blogs'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { Home } from './collections/Home'
+import { Cases } from './collections/Cases'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { Services } from './collections/Services'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -59,11 +62,11 @@ export default buildConfig({
     },
   },
   // This config helps us configure global or default features that the other editors can inherit
-  editor: defaultLexical,
+  editor: lexicalEditor({}),
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Pages, Posts, Blogs, Home, Media, Categories, Users],
+  collections: [Pages, Posts, Blogs, Cases, Services, Home, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [

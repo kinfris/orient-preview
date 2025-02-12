@@ -13,21 +13,21 @@ import styles from './home.module.scss'
 
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import Link from 'next/link'
-import { Home } from '@/payload-types'
+import { Case, Home } from '@/payload-types'
 import { Media } from '../Media'
+import { CaseComponent } from '../Case/Case'
 
 type Props = {
   homeData: Home[]
+  casesData: Case[]
 }
 
-export const HomeClient = ({ homeData }: Props) => {
+export const HomeClient = ({ homeData, casesData }: Props) => {
   const data = homeData[0]
 
   if (!data) return <div>Something went wrong...</div>
 
-  console.log('data - ', data)
-
-  const { logos, reviews, cases, team } = data
+  const { logos, reviews, team } = data
 
   return (
     <div className={styles.container}>
@@ -150,16 +150,18 @@ export const HomeClient = ({ homeData }: Props) => {
             modules={[Autoplay]}
             freeMode={false}
             allowTouchMove={false}
+            autoHeight={false}
+            className={styles.caseSlider}
           >
-            {[...cases, ...cases].map((el, i) => {
-              return (
-                <SwiperSlide key={`${el.id}${i}`} className={styles.caseSlide}>
-                  <Media resource={el.image} />
-                  <h4>{el.caseTitle}</h4>
-                  <p>{el.caseDescription}</p>
-                </SwiperSlide>
-              )
-            })}
+            {casesData &&
+              casesData.length > 0 &&
+              [...casesData, ...casesData, ...casesData].map((el, i) => {
+                return (
+                  <SwiperSlide key={`${el.id}${i}`} className={styles.caseSlide}>
+                    <CaseComponent caseData={el} />
+                  </SwiperSlide>
+                )
+              })}
           </Swiper>
         </div>
       </div>
