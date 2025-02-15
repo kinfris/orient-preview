@@ -2,9 +2,9 @@ import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 const getCurrentTime = () => {
-  return new Date().toLocaleString('ru-RU', {
-    timeZone: 'Europe/Moscow', // Укажи нужный тебе часовой пояс
-    hour12: false, // 24-часовой формат
+  return new Date().toLocaleString('en-US', {
+    timeZone: 'Europe/Warsaw',
+    hour12: false,
   })
 }
 

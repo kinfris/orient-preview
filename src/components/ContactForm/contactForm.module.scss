@@ -32,6 +32,13 @@
     letter-spacing: -1.44px;
   }
 
+  .phoneContainer {
+    width: 100%;
+    padding: 20px 26px;
+    border-radius: 34.987px;
+    border: 0.744px solid #000;
+  }
+
   input,
   textarea {
     width: 100%;
@@ -46,6 +53,51 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -1.68px;
+  }
+
+  .phoneInput {
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-family: Helvetica;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.68px;
+    position: relative;
+  }
+
+  .phoneDropdown {
+    color: #000;
+    font-family: Helvetica;
+
+    li:first-child{
+      display: flex;
+    }
+  }
+
+  
+
+  :global(.react-tel-input .flag-dropdown) {
+    height: 40px !important;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  :global(.react-tel-input .form-control) {
+    @extend .phoneInput;
+  }
+
+  :global(.react-tel-input .country-list) {
+    @extend .phoneDropdown;
+  }
+  
+  :global(.react-tel-input .form-control:focus) {
+    outline: none;
+    box-shadow: none;
   }
 
   textarea {

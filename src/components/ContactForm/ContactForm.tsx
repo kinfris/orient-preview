@@ -1,12 +1,14 @@
 'use client'
 
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import styles from './contactForm.module.scss' // Import SCSS module
-import { useState } from 'react'
 
-// Define TypeScript interface for form data
+import { useState } from 'react'
+import PhoneInput from 'react-phone-input-2'
+import styles from './contactForm.module.scss'
+import 'react-phone-input-2/lib/style.css'
+
 interface FormData {
   name: string
   email: string
@@ -16,11 +18,14 @@ interface FormData {
 
 // Define validation schema using Yup
 const schema = yup.object().shape({
-  name: yup.string().required('Full name is required'),
+  name: yup
+    .string()
+    .matches(/^[A-Za-z ]+$/, 'Name can only contain Latin letters and spaces')
+    .required('Full name is required'),
   email: yup.string().email('Invalid email format').required('Email is required'),
   phone: yup
     .string()
-    .matches(/^\+\d{10,15}$/, 'Phone number must start with + and contain 10-15 digits')
+    .matches(/^\+?[0-9\s-]+$/, 'Invalid phone number format')
     .required('Phone number is required'),
   message: yup.string().required('Please enter your request'),
 })
@@ -31,6 +36,7 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
     reset,
   } = useForm<FormData>({
@@ -81,7 +87,29 @@ export default function ContactForm() {
 
         <div className={styles.formGroup}>
           <label>Phone</label>
-          <input {...register('phone')} placeholder="Enter your phone" />
+          <Controller
+            name="phone"
+            control={control}
+            rules={{
+              required: 'Phone number is required',
+              pattern: {
+                value: /^\+?[0-9\s-]+$/,
+                message: 'Invalid phone number format',
+              },
+            }}
+            render={({ field }) => (
+              <PhoneInput
+                {...field}
+                country={'gb'}
+                enableSearch={true}
+                placeholder="Enter your phone"
+                containerClass={styles.phoneContainer}
+                inputClass={styles.phoneInput}
+                buttonClass={styles.phoneButton}
+                dropdownClass={styles.phoneDropdown}
+              />
+            )}
+          />
           {errors.phone && <p className={styles.errorMessage}>{errors.phone.message}</p>}
         </div>
 

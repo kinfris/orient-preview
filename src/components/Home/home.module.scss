@@ -21,12 +21,20 @@
 
 .backgroundContainer {
   position: absolute;
-  bottom: -330px;
-  background: url('/home_bg.png') lightgray 50% / cover no-repeat;
-  filter: blur(200px);
-  width: 99vw;
-  height: 99vh;
+  border-radius: 2812px;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
   z-index: -1;
+
+  .backgroundContainerBlur {
+    position: absolute;
+    bottom: -200px;
+    background: url('/home_bg.png') lightgray 50% / cover no-repeat;
+    width: 99vw;
+    height: 99vh;
+  }
 }
 
 .topContentContainer {
@@ -67,6 +75,11 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -2.289px;
+
+    &:hover {
+      color: #fff2f1;
+      background-color: #010101;
+    }
   }
 }
 
@@ -369,9 +382,9 @@
   }
 }
 
-.caseSlider{
+.caseSlider {
   display: flex;
-  align-items: stretch; 
+  align-items: stretch;
   height: 100%;
 }
 
@@ -416,6 +429,7 @@
     border-radius: 35.221px;
     width: 100%;
     height: 386px;
+    background-color: #A59999;
   }
 }
 

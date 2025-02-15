@@ -197,7 +197,9 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
         </>
       )}
 
-      <div className={styles.backgroundContainer}></div>
+      <div className={styles.backgroundContainer}>
+        <div className={styles.backgroundContainerBlur}></div>
+      </div>
     </div>
   )
 }

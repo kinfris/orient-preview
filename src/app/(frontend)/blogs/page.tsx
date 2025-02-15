@@ -38,6 +38,7 @@ export default async function Page() {
       </div>
 
       <CollectionArchive blogs={blogs.docs} />
+      <div className={styles.backgroundContainer}></div>
     </div>
   )
 }

@@ -1,11 +1,13 @@
 .wrapper {
   margin-top: 79px;
+  margin-bottom: 79px;
 }
 
 .postsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px 18px;
 }
 
