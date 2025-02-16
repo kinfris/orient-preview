@@ -22,7 +22,7 @@ const schema = yup.object().shape({
     .string()
     .matches(/^[A-Za-z ]+$/, 'Name can only contain Latin letters and spaces')
     .required('Full name is required'),
-  email: yup.string().email('Invalid email format').required('Email is required'),
+  email: yup.string().email('Email must contain @').required('Email is required'),
   phone: yup
     .string()
     .matches(/^\+?[0-9\s-]+$/, 'Invalid phone number format')

@@ -7,6 +7,7 @@ import React from 'react'
 import PageClient from './page.client'
 import styles from './blogs.module.scss'
 import { Title } from '@/components/Title/Title'
+import { NavigateBtn } from '@/components/NavigateBtn/NavigateBtn'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -38,6 +39,7 @@ export default async function Page() {
       </div>
 
       <CollectionArchive blogs={blogs.docs} />
+      <NavigateBtn />
       <div className={styles.backgroundContainer}></div>
     </div>
   )

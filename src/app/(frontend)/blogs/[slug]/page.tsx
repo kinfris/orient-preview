@@ -14,6 +14,7 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 
 import { Media } from '@/components/Media'
+import { NavigateBtn } from '@/components/NavigateBtn/NavigateBtn'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -50,27 +51,30 @@ export default async function Post({ params: paramsPromise }: Args) {
   if (!blog) return <PayloadRedirects url={url} />
 
   return (
-    <article className={styles.container}>
-      {/* <PageClient /> */}
-      <PayloadRedirects disableNotFound url={url} />
-      {draft && <LivePreviewListener />}
-      <div className={styles.topContainer}>
-        <div className={styles.titleContainer}>
-          <h1>{blog.title}</h1>
-          <p>{blog.timeToRead}</p>
+    <>
+      <article className={styles.container}>
+        {/* <PageClient /> */}
+        <PayloadRedirects disableNotFound url={url} />
+        {draft && <LivePreviewListener />}
+        <div className={styles.topContainer}>
+          <div className={styles.titleContainer}>
+            <h1>{blog.title}</h1>
+            <p>{blog.timeToRead}</p>
+          </div>
+
+          {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
+            <div className={styles.imageContainer}>
+              <Media resource={blog.heroImage} />
+            </div>
+          )}
         </div>
 
-        {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
-          <div className={styles.imageContainer}>
-            <Media resource={blog.heroImage} />
-          </div>
-        )}
-      </div>
-
-      <div className={styles.richTextContainer}>
-        <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
-      </div>
-    </article>
+        <div className={styles.richTextContainer}>
+          <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
+        </div>
+      </article>
+      <NavigateBtn />
+    </>
   )
 }
 

@@ -102,15 +102,28 @@ html[data-theme='light'] {
   opacity: initial;
 }
 
-
-body{
+body {
   background-color: #000;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-main{
+@font-face {
+  font-family: 'NimbusSanL';
+  src: url('/fonts/NimbusSanL-Reg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NimbusSanL";
+  src: url('/fonts/NimbusSanL-Bol.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+main {
+  font-family: 'NimbusSanL', sans-serif;
   flex: 1;
-  z-index: 10;
 }
