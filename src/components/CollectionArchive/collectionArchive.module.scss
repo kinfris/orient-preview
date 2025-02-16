@@ -4,7 +4,7 @@
 }
 
 .postsContainer {
-  max-width: 1300px;
+  width: fit-content;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -12,12 +12,15 @@
 }
 
 .post {
-  width: 619px;
-  height: 414px;
+  max-width: 619px;
   padding: 11.645px 10.75px;
   border-radius: 37.624px;
   border: 0.896px solid rgba(255, 255, 255, 0.19);
   background: rgba(255, 242, 241, 0.19);
   box-shadow: 14.333px 20.603px 61.183px 0px rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(9.800000190734863px);
+
+  img{
+    width: 100%;
+  }
 }

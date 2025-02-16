@@ -4,8 +4,8 @@
 .imageContainer {
   border-radius: 27.77px;
   box-shadow: 14.333px 20.603px 61.183px 0px rgba(255, 255, 255, 0.08);
-  width: 597px;
-  height: 279px;
+  max-width: 597px;
+  max-height: 279px;
   box-sizing: border-box;
 
   img {

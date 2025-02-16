@@ -7,7 +7,7 @@ export const CaseHeader = () => {
   return (
     <div className={styles.container}>
       <Image src="/cases_bg.png" alt="" width={748} height={726} />
-      <div>
+      <div className={styles.textContent}>
         <Title>
           <h1>Cases</h1>
         </Title>

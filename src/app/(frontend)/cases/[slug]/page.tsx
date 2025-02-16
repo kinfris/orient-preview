@@ -9,7 +9,6 @@ import RichText from '@/components/RichText'
 import styles from './case.module.scss'
 
 import { generateMeta } from '@/utilities/generateMeta'
-// import PageClient from './page.client'
 
 import { Media } from '@/components/Media'
 import { CaseHeader } from '@/components/CaseHeader/CaseHeader'

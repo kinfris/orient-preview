@@ -7,13 +7,19 @@
 }
 
 .casesContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: stretch;
-  justify-content: start;
-  flex-wrap: wrap;
+  justify-items: center;
   gap: 24px 28px;
-  max-width: 1270px;
   margin: 83px auto 93px;
+  width: max-content;
+
+
+  @media (max-width: 1350px) {
+    width: auto;
+    margin: 60px 20px 70px;
+  }
 
   .case {
     max-width: 620px;

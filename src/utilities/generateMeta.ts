@@ -26,9 +26,13 @@ export const generateMeta = async (args: {
 
   const ogImage = getImageURL(doc?.meta?.image as Media)
 
-  const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Payload Website Template'
-    : 'Payload Website Template'
+  console.log('doc?.meta?.title - ', doc)
+
+  const title = doc?.title
+    ? doc?.title
+    : doc?.meta?.title
+      ? doc?.meta?.title
+      : 'Payload Website Template'
 
   return {
     description: doc?.meta?.description,

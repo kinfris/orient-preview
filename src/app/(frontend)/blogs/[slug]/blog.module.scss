@@ -26,6 +26,10 @@
     text-shadow: 3.232px 3.232px 6.464px rgba(0, 0, 0, 0.25);
     font-size: 56px;
     letter-spacing: -3.36px;
+
+    @media (max-width: 1400px) {
+      font-size: 48px;
+    }
   }
 
   p {

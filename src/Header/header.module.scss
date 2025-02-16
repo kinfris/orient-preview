@@ -25,6 +25,14 @@
   z-index: 999;
   position: sticky;
   top: 0;
+
+  @media (max-width: 1500px) {
+    padding: 25px 100px;
+  }
+
+  @media (max-width: 1300px) {
+    padding: 25px 50px;
+  }
 }
 
 .headerLogo {
@@ -33,9 +41,14 @@
   gap: 16px;
 }
 
-.logo{
-    width: 103px;
-    height: 103px;
+.logo {
+  width: 103px;
+  height: 103px;
+
+  @media (max-width: 1300px) {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .headerTitle {
