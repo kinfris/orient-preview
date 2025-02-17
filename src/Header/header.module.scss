@@ -22,9 +22,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 200px;
-  z-index: 999;
-  position: sticky;
-  top: 0;
+  z-index: 120;
 
   @media (max-width: 1500px) {
     padding: 25px 100px;

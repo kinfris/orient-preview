@@ -44,7 +44,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
             help businesses operate faster, smarter, and more efficiently.
           </p>
 
-          <Link href={'/contact_us'}>Get a Quote</Link>
+          <Link href={'/contact'}>Get a Quote</Link>
         </div>
       </div>
       <div className={styles.carouselContainer}>

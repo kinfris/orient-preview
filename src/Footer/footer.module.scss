@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99;
+  z-index: 120;
 }
 
 .leftRow {
@@ -74,5 +74,9 @@
     color: #fff2f1;
     font-size: 20px;
     letter-spacing: -1.2px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    opacity: 0.7;
   }
 }

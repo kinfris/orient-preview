@@ -126,4 +126,6 @@ body {
 main {
   font-family: 'NimbusSanL', sans-serif;
   flex: 1;
+  z-index: 111;
+  color: #FFF2F1;
 }
