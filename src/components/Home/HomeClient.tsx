@@ -32,7 +32,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
   return (
     <div className={styles.container}>
       <div className={styles.topContentContainer}>
-        <Image src="/home_hero.png" width={748} height={726} alt="Home banner" />
+        <Image src="/logo_circles_anim.webp" width={748} height={726} alt="Home banner" />
         <div className={styles.content}>
           <Title>
             <h1>Orinix</h1>
