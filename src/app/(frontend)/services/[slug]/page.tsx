@@ -80,6 +80,7 @@ export default async function Service({ params: paramsPromise }: Args) {
           </div>
         </div>
       </div>
+      <div className={styles.backgroundContainer}></div>
     </div>
   )
 }

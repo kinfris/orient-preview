@@ -1,5 +1,7 @@
 .wrapper {
-  margin-top: 14px;
+  padding-top: 14px;
+  position: relative;
+  height: 100%;
 }
 
 .container {
@@ -15,7 +17,6 @@
   margin: 83px auto 93px;
   width: max-content;
 
-
   @media (max-width: 1350px) {
     width: auto;
     margin: 60px 20px 70px;
@@ -24,4 +25,29 @@
   .case {
     max-width: 620px;
   }
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: -500px;
+  width: 99vw;
+  height: calc(100% + 500px);
+  background: url('/case_background.png') lightgray 50% / cover repeat-y;
+  filter: blur(41.04999923706055px);
+  z-index: -2;
+  overflow: hidden;
+}
+
+.backgroundBackground {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150vw;
+  height: 150vh;
+  border-bottom-left-radius: 2812px;
+  border-bottom-right-radius: 2812px;
+  background: #000;
+  filter: blur(300px);
+  z-index: -1;
 }

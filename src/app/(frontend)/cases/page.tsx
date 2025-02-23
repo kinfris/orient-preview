@@ -38,6 +38,9 @@ export default async function Cases() {
             })}
         </div>
       </div>
+      <div className={styles.backgroundContainer}>
+        <div className={styles.backgroundBackground}></div>
+      </div>
     </div>
   )
 }

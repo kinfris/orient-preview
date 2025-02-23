@@ -1,6 +1,8 @@
 .container {
   padding-top: 42px;
   padding-bottom: 92px;
+  position: relative;
+  height: 100%;
 
   h3 {
     color: #fff2f1;
@@ -142,4 +144,30 @@
     width: 456px;
     max-width: 40%;
   }
+}
+
+
+.backgroundContainer {
+  position: absolute;
+  top: -500px;
+  width: 99vw;
+  height: calc(100% + 500px);
+  background: url('/case_background.png') lightgray 50% / cover repeat-y;
+  filter: blur(41.04999923706055px);
+  z-index: -2;
+  overflow: hidden;
+}
+
+.backgroundBackground {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150vw;
+  height: 150vh;
+  border-bottom-left-radius: 2812px;
+  border-bottom-right-radius: 2812px;
+  background: #000;
+  filter: blur(300px);
+  z-index: -1;
 }

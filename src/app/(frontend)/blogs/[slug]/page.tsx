@@ -72,6 +72,10 @@ export default async function Post({ params: paramsPromise }: Args) {
         <div className={styles.richTextContainer}>
           <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
         </div>
+        <div className={styles.backgroundImage}></div>
+        <div className={styles.backgroundContainer}>
+          <div className={styles.backgroundBackground}></div>
+        </div>
       </article>
       <NavigateBtn />
     </>

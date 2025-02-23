@@ -1,3 +1,8 @@
+.wrapper{
+  position: relative;
+  height: 100%;
+}
+
 .container {
   max-width: 1550px;
   margin: 112px auto 40px;
@@ -133,4 +138,15 @@
     line-height: normal;
     letter-spacing: -2.16px;
   }
+}
+
+
+.backgroundContainer {
+  position: absolute;
+  top: -200px;
+  width: 99vw;
+  height: calc(100% + 200px);
+  background: url('/service_bg.png') lightgray 50% / cover no-repeat;
+  filter: blur(39.70000076293945px);
+  z-index: -2;
 }

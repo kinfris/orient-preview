@@ -128,6 +128,9 @@ export default async function Case({ params: paramsPromise }: Args) {
           )}
         </div>
       </div>
+      <div className={styles.backgroundContainer}>
+        <div className={styles.backgroundBackground}></div>
+      </div>
     </article>
   )
 }

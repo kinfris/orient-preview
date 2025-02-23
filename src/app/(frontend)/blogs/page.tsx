@@ -40,7 +40,10 @@ export default async function Page() {
 
       <CollectionArchive blogs={blogs.docs} />
       <NavigateBtn />
-      <div className={styles.backgroundContainer}></div>
+      <div className={styles.backgroundImage}></div>
+      <div className={styles.backgroundContainer}>
+        <div className={styles.backgroundBackground}></div>
+      </div>
     </div>
   )
 }
