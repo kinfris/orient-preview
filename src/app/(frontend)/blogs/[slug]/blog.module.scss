@@ -87,9 +87,9 @@
 
 .backgroundContainer {
   position: absolute;
-  top: -500px;
+  top: -250px;
   width: 99vw;
-  height: calc(100% + 500px);
+  height: calc(100% + 250px);
   background: url('/case_background.png') lightgray 50% / cover repeat-y;
   filter: blur(41.04999923706055px);
   z-index: -2;
