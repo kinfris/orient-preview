@@ -45,7 +45,7 @@ export const Popup = ({ isOpen, setIsOpen, servicesData }: Props) => {
                     onClick={() => setIsOpen(false)}
                   >
                     {el.serviceIcon && typeof el.serviceIcon == 'object' && el.serviceIcon.url && (
-                      <Media resource={el.serviceIcon} />
+                      <Media resource={el.serviceIcon} loading="eager" />
                     )}
                     <p>{el.serviceName}</p>
                   </Link>
