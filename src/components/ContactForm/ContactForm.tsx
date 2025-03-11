@@ -30,7 +30,11 @@ const schema = yup.object().shape({
   message: yup.string().required('Please enter your request'),
 })
 
-export default function ContactForm() {
+type Props = {
+  showTitle?: boolean
+}
+
+export default function ContactForm({ showTitle = false }: Props) {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
   const {
@@ -71,22 +75,19 @@ export default function ContactForm() {
 
   return (
     <div className={styles.formContainer}>
-      <h1 className={styles.title}>Contact us</h1>
+      {showTitle && <h1 className={styles.title}>Contact us</h1>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.formGroup}>
-          <label>Full Name</label>
           <input {...register('name')} placeholder="Enter your name" />
           {errors.name && <p className={styles.errorMessage}>{errors.name.message}</p>}
         </div>
 
         <div className={styles.formGroup}>
-          <label>Email</label>
           <input {...register('email')} placeholder="Enter your email" />
           {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
         </div>
 
         <div className={styles.formGroup}>
-          <label>Phone</label>
           <Controller
             name="phone"
             control={control}
@@ -114,16 +115,15 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label>Your Request</label>
-          <textarea {...register('message')} placeholder="How we can help you?" />
+          <textarea {...register('message')} placeholder="Your request" />
           {errors.message && <p className={styles.errorMessage}>{errors.message.message}</p>}
         </div>
 
-        <div className={styles.buttonWrapper}>
-          <button type="submit" className={styles.submitButton} disabled={loading}>
-            {loading ? 'Sending...' : 'Submit'}
-          </button>
-        </div>
+        <button type="submit" className={styles.submitButton} disabled={loading}>
+          <span>Submit</span>
+          <img src="/arrow-icon.svg" alt="" />
+        </button>
+
         {message && <p className={styles.successMessage}>{message}</p>}
       </form>
     </div>

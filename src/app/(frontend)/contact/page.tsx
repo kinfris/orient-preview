@@ -8,7 +8,7 @@ export default async function Page() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.background}></div>
-      <ContactForm />
+      <ContactForm showTitle />
     </div>
   )
 }

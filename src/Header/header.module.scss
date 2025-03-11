@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 200px;
+  padding: 25px 109px;
   z-index: 120;
 
   @media (max-width: 1500px) {
@@ -40,19 +40,14 @@
 }
 
 .logo {
-  width: 103px;
-  height: 103px;
-
-  @media (max-width: 1300px) {
-    width: 75px;
-    height: 75px;
-  }
+  width: 69px;
+  height: 69px;
 }
 
 .headerTitle {
   color: #fff2f1;
   font-family: 'Albert Sans';
-  font-size: 57.678px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
