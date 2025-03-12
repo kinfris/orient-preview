@@ -221,10 +221,6 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
             </Swiper>
           </div>
         </div>
-      </div>
-
-      <div className={styles.servicesTeamWrapper}>
-        <div className={styles.servicesTeamBg}></div>
         <div className={styles.servicesContainer}>
           <div className={styles.servicesTop}>
             <h2>WHAT WE DO</h2>
@@ -247,13 +243,14 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
               modules={[Navigation]}
               spaceBetween={50}
               slidesPerView={4}
+              slidesPerGroup={4}
               navigation={{
                 nextEl: `.${styles.servicesSwiperButtonNext}`,
                 prevEl: `.${styles.servicesSwiperButtonPrev}`,
               }}
               className="swiper"
             >
-              {[1, 2, 3, 4, 5, 6].map((service) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((service) => (
                 <SwiperSlide key={service} className={styles.serviceSlide}>
                   <ServiceComponent />
                 </SwiperSlide>
@@ -298,7 +295,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
       <div className={styles.contactWrapper}>
         <div className={styles.contactBg}></div>
         <div className={styles.contactContainer}>
-          <h2>WHAT WE DO</h2>
+          <h2>CONTACT US</h2>
           <ContactForm />
         </div>
       </div>

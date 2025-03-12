@@ -16,6 +16,8 @@
     line-height: normal;
     letter-spacing: -3.36px;
     text-transform: uppercase;
+    position: relative;
+    z-index: 100;
   }
 }
 
@@ -135,7 +137,7 @@
 
 .reviewsContainer {
   width: 85%;
-  margin: 95px auto 240px;
+  margin: 0 auto 240px;
   overflow: hidden;
 }
 
@@ -258,7 +260,6 @@
 
 .star {
   border-radius: 14px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
   width: 28px;
   height: 28px;
   display: flex;
@@ -374,8 +375,7 @@
 
 .teamContainer {
   width: 100%;
-  margin-top: 95px;
-  margin-bottom: 180px;
+  margin-bottom: 240px;
 
   @media (max-width: 1300px) {
     margin-bottom: 90px;
@@ -475,7 +475,7 @@
 
 .casesReviewsBg {
   position: absolute;
-  background: url('/cases_bg.svg') no-repeat left top / cover;
+  background: url('/home_g_bg.svg') no-repeat;
   z-index: -1;
   height: 100%;
   width: 100%;
@@ -500,27 +500,6 @@
   z-index: 2;
 }
 
-.casesReviewsWrapper::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(#03010f 0%, rgba(3, 1, 15, 0) 100%);
-  z-index: 2;
-}
-
-.servicesTeamWrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(#03010f 0%, rgba(3, 1, 15, 0) 100%);
-  z-index: 2;
-}
 
 .contactWrapper,
 .casesReviewsWrapper,
@@ -539,9 +518,8 @@
 
 .servicesContainer {
   width: 85%;
-  margin: 95px auto 60px;
+  margin: 0 auto 240px;
   overflow: hidden;
-  padding-bottom: 277px;
 }
 
 .servicesTop {
@@ -553,7 +531,7 @@
 
 .contactContainer {
   width: 85%;
-  margin: 95px auto 180px;
+  margin: 0 auto 180px;
   overflow: hidden;
 
   h2 {
