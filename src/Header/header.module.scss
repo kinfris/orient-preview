@@ -1,23 +1,5 @@
 .container {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.68) 0%,
-    rgba(0, 0, 0, 0.67) 11.79%,
-    rgba(0, 0, 0, 0.66) 21.38%,
-    rgba(0, 0, 0, 0.63) 29.12%,
-    rgba(0, 0, 0, 0.6) 35.34%,
-    rgba(0, 0, 0, 0.56) 40.37%,
-    rgba(0, 0, 0, 0.51) 44.56%,
-    rgba(0, 0, 0, 0.46) 48.24%,
-    rgba(0, 0, 0, 0.4) 51.76%,
-    rgba(0, 0, 0, 0.34) 55.44%,
-    rgba(0, 0, 0, 0.28) 59.63%,
-    rgba(0, 0, 0, 0.22) 64.66%,
-    rgba(0, 0, 0, 0.16) 70.88%,
-    rgba(0, 0, 0, 0.1) 78.62%,
-    rgba(0, 0, 0, 0.05) 88.21%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(180deg, #03010f 0%, #03010f 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
