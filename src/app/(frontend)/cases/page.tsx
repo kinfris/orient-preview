@@ -4,10 +4,8 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import styles from './cases.module.scss'
-import { CaseComponent } from '@/components/Case/Case'
 import { CaseHeader } from '@/components/CaseHeader/CaseHeader'
-import { Case } from '@/payload-types'
-import Link from 'next/link'
+import CasesList from '@/components/Case/CaseList'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -17,6 +15,7 @@ export default async function Cases() {
 
   const caseData = await payload.find({
     collection: 'cases',
+    limit: 3,
     overrideAccess: false,
   })
 
@@ -24,22 +23,12 @@ export default async function Cases() {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.backgroundContainer}></div>
       <div className={styles.container}>
         <CaseHeader />
         <div className={styles.casesContainer}>
-          {cases &&
-            cases.length > 0 &&
-            cases.map((el: Case) => {
-              return (
-                <Link href={`/cases/${el.slug}`} key={el.id} className={styles.case}>
-                  <CaseComponent caseData={el} />
-                </Link>
-              )
-            })}
+          {cases && cases.length > 0 && <CasesList initialCases={caseData.docs} />}
         </div>
-      </div>
-      <div className={styles.backgroundContainer}>
-        <div className={styles.backgroundBackground}></div>
       </div>
     </div>
   )

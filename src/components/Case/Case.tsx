@@ -1,16 +1,16 @@
 import { Case } from '@/payload-types'
-import { Media } from '../Media'
 import styles from './case.module.scss'
 import Link from 'next/link'
 
 type Props = {
   caseData: Case
+  reverse?: boolean
 }
 
-export const CaseComponent = ({ caseData }: Props) => {
+export const CaseComponent = ({ caseData, reverse }: Props) => {
   // console.log('caseData - ', caseData)
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${reverse && styles.reverseFlex}`}>
       <div className={styles.leftContent}>
         <h4>Case #1</h4>
         <p>
@@ -19,7 +19,7 @@ export const CaseComponent = ({ caseData }: Props) => {
           helped us launch a scalable, user-friendly solution that has transformed the way educators
           and students interact online.
         </p>
-        <Link href={'/contact'}>
+        <Link href={`/cases/${caseData.slug}`}>
           <span>Read More</span>
           <img src="/arrow-icon.svg" alt="" />
         </Link>

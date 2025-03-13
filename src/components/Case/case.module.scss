@@ -1,5 +1,4 @@
 .container {
-  padding: 10px 11px 25px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -53,6 +52,10 @@
       background-color: #b893ff;
     }
   }
+}
+
+.reverseFlex{
+  flex-direction: row-reverse;
 }
 
 .leftContent {

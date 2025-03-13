@@ -2,7 +2,9 @@
   display: flex;
   gap: 24px;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  width: 1220px;
+  margin: 0 auto;
 
   img {
     margin-left: -250px;
@@ -10,34 +12,27 @@
   }
 
   h1 {
-    color: #fff2f1;
+    color: #fff;
     font-family: 'Albert Sans';
     font-size: 97.004px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
-    margin-bottom: 46px;
   }
 
   p {
-    max-width: 500px;
-    color: #fff2f1;
+    color: #fff;
     font-family: Helvetica;
-    font-size: 24.543px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -1.473px;
+    font-weight: 300;
+    line-height: 32px;
   }
 }
 
 .textContent {
-  @media (max-width: 1400px) {
-    max-width: 40%;
-
-    p {
-      width: 90%;
-    }
+  p {
+    width: 60%;
   }
 }
