@@ -123,8 +123,15 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 main {
-  font-family: 'NimbusSanL', sans-serif;
+  font-family: 'NimbusSanL', 'Helvetica', sans-serif;
   flex: 1;
   z-index: 111;
   color: #FFF2F1;

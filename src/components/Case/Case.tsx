@@ -5,12 +5,15 @@ import Link from 'next/link'
 type Props = {
   caseData: Case
   reverse?: boolean
+  vertical?: boolean
 }
 
-export const CaseComponent = ({ caseData, reverse }: Props) => {
+export const CaseComponent = ({ caseData, reverse, vertical }: Props) => {
   // console.log('caseData - ', caseData)
   return (
-    <div className={`${styles.container} ${reverse && styles.reverseFlex}`}>
+    <div
+      className={`${styles.container} ${reverse && styles.reverseFlex} ${vertical && styles.verticalFlex}`}
+    >
       <div className={styles.leftContent}>
         <h4>Case #1</h4>
         <p>

@@ -1,34 +1,99 @@
 .container {
-  padding-top: 42px;
+  padding-top: 60px;
   padding-bottom: 92px;
   position: relative;
   height: 100%;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #676767;
+    z-index: -2;
+  }
 
   h3 {
     color: #fff2f1;
     font-size: 57.482px;
     text-transform: uppercase;
-     max-width: 456px;
+    max-width: 456px;
 
-     @media (max-width: 1500px) {
+    @media (max-width: 1500px) {
       font-size: 42px;
-     }
+    }
+  }
+}
+
+.wrapper {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+.breadcrumbs {
+  margin-left: 49px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  a {
+    color: #c5c4cc;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
   }
 }
 
 .caseContainer {
-  margin: 102px auto 0;
-  border-radius: 41.439px;
-  opacity: 0.9;
-  background: #010101;
-  padding-top: 53px;
-  padding-bottom: 51px;
-  width: 90%;
+  margin-top: 61px;
+  border-radius: 50px;
+  background: rgba(3, 1, 15, 0.4);
+  padding: 48px 49px 60px 49px;
   font-family: Helvetica;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  max-width: 1520px;
+}
+
+.topContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goToContactBtn {
+  border-radius: 50px;
+  background-color: #7959b6;
+  font-family: Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  display: flex;
+  gap: 14px;
+  text-transform: uppercase;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+
+  span {
+    padding: 18px 0 18px 36px;
+    color: #fff;
+  }
+
+  img {
+    padding: 20px;
+    border-radius: 100%;
+    background-color: #7959b6;
+  }
+
+  &:hover {
+    background-color: #b893ff;
+  }
 }
 
 .tagsContainer {
@@ -37,27 +102,28 @@
   gap: 16.5px;
 
   .tag {
-    border-radius: 41.439px;
-    background: #17bebb;
-    padding: 8.5px 31px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.14);
     color: #fff;
-    font-size: 21.639px;
-    letter-spacing: -1.298px;
-
-    &:first-child {
-      color: #000;
-      background-color: #fff2f1;
-    }
+    font-family: Helvetica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
   }
 }
 
 .projectName {
-  margin-left: 54px;
-  margin-top: 17px;
-  color: #fff2f1;
-  font-size: 57.482px;
-  text-transform: uppercase;
-  width: 50%;
+  margin-top: 60px;
+  color: #fff;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: 'Albert Sans';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
 
   @media (max-width: 1500px) {
     font-size: 42px;
@@ -69,105 +135,99 @@
   width: 100%;
 }
 
-.clientContainer {
-  padding: 62px 70.5px 0 62.5px;
+.mainImage {
+  margin-top: 40px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  max-height: 1080px;
+}
 
-  .textContainer {
-    max-width: 61%;
+.firstSection {
+  margin-top: 62px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.fsBlockContainer {
+  h4 {
+    color: #ac69fd;
+    font-family: Helvetica;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
   }
 
   p {
-    font-size: 33.031px;
-
-    @media (max-width: 1500px) {
-      font-size: 28px;
-    }
-  }
-
-  .imageContainer {
-    width: 504px;
-    height: 464px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 61px;
-    }
-  }
-
-  @media (max-width: 1700px) {
-    padding: 52px 50px 0;
-
-    .imageContainer {
-      width: 404px;
-      height: 404px;
-    }
+    margin-top: 16px;
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
   }
 }
 
-.solutionContainer {
-  margin-top: 57px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .textContainer {
-    max-width: 61%;
-  }
-
-  .richTextContainer {
-    p,
-    ul {
-      color: #fff2f1;
-      font-family: Helvetica;
-      font-size: 33.031px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 100%;
-
-      @media (max-width: 1500px) {
-        font-size: 28px;
-      }
-    }
-
-    ul li::marker {
-      color: #fff2f1;
-    }
-  }
-
-  .imageContainer {
-    width: 456px;
-    max-width: 40%;
-  }
-}
-
-
-.backgroundContainer {
-  position: absolute;
-  top: -500px;
-  width: 99vw;
-  height: calc(100% + 500px);
-  background: url('/case_background.png') lightgray 50% / cover repeat-y;
-  filter: blur(41.04999923706055px);
-  z-index: -2;
+.fsImageContainer {
+  width: 100%;
+  max-height: 679px;
+  border-radius: 40px;
   overflow: hidden;
 }
 
-.backgroundBackground {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 150vw;
-  height: 150vh;
-  border-bottom-left-radius: 2812px;
-  border-bottom-right-radius: 2812px;
-  background: #000;
-  filter: blur(300px);
-  z-index: -1;
+.imageGallery {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 20px;
+
+  .ssBigImage {
+    grid-row: span 2;
+  }
+}
+
+.secondSection {
+  margin-top: 40px;
+
+  p {
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+  }
+}
+
+.ssImageContainer {
+  height: auto;
+  object-fit: cover;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.ssImageContainer {
+  width: 617px;
+}
+
+.lastSection {
+  margin-top: 55px;
+
+  p {
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+  }
+}
+
+.lsImageContainer {
+  margin-top: 60px;
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
 }

@@ -5,8 +5,9 @@
   font-size: 64px;
   font-style: normal;
   font-weight: 900;
-  line-height: 78px; /* 121.875% */
+  line-height: 78px;
   text-transform: uppercase;
+  margin-bottom: 34px;
 }
 
 .formContainer {
@@ -54,7 +55,7 @@
     background: #48464c;
   }
 
-  input{
+  .formGroupInput{
     height: 55px;
   }
 

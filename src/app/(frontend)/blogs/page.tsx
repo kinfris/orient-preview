@@ -7,7 +7,7 @@ import React from 'react'
 import PageClient from './page.client'
 import styles from './blogs.module.scss'
 import { Title } from '@/components/Title/Title'
-import { NavigateBtn } from '@/components/NavigateBtn/NavigateBtn'
+import Link from 'next/link'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -17,6 +17,7 @@ export default async function Page() {
 
   const blogs = await payload.find({
     collection: 'blogs',
+    limit: 7,
     overrideAccess: false,
     select: {
       title: true,
@@ -32,17 +33,29 @@ export default async function Page() {
   return (
     <div className={styles.wrapper}>
       <PageClient />
-      <div className={styles.titleContainer}>
-        <div>
-          <Title>Blog</Title>
+      <div className={styles.container}>
+        <div className={styles.titleContainer}>
+          <Title className={styles.title}>Blog</Title>
+          <Link href={'/contact'}>
+            <span>Get A Quote</span>
+            <img src="/arrow-icon.svg" alt="" />
+          </Link>
         </div>
-      </div>
+        <div className={styles.featuredPostContainer}>
+          <h3>Featured Posts</h3>
+          <div className={styles.featuredPost}>
+            <div className={styles.content}>
+              <div className={styles.category}>Category</div>
+              <h4 className={styles.title}>5 Signs It’s Time to Expand Your Tech Team</h4>
+              <p className={styles.publishedDate}>July 28, 2022 · 6 min read</p>
+            </div>
+            <div className={styles.featureImg}>
+              <img src="/feature_post.png" alt="" />
+            </div>
+          </div>
+        </div>
 
-      <CollectionArchive blogs={blogs.docs} />
-      <NavigateBtn />
-      <div className={styles.backgroundImage}></div>
-      <div className={styles.backgroundContainer}>
-        <div className={styles.backgroundBackground}></div>
+        <CollectionArchive initBlogs={blogs.docs} />
       </div>
     </div>
   )

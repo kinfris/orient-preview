@@ -6,6 +6,7 @@ import styles from './card.module.scss'
 import Image from 'next/image'
 
 import type { Post } from '@/payload-types'
+import { Media } from '../Media'
 
 export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title' | 'previewImage'>
 
@@ -28,12 +29,15 @@ export const Card: React.FC<{
     <Link href={href} ref={link.ref} className={styles.container}>
       <article ref={card.ref}>
         <div className={styles.imageContainer}>
-          {previewImage && typeof previewImage == 'object' && previewImage.url && (
-            <Image src={previewImage.url} width={597} height={279} alt={previewImage.alt ?? ''} />
-          )}
+          <img src="/post.png" alt="" />
+          {/* {previewImage && typeof previewImage == 'object' && previewImage.url && (
+            <Media resource={previewImage} />
+          )} */}
         </div>
-
-        {title && <p className={styles.title}>{title}</p>}
+        <div className={styles.contentContainer}>
+          <p className={styles.category}>Category</p>
+          {title && <p className={styles.title}>{title}</p>}
+        </div>
       </article>
     </Link>
   )

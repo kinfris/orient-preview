@@ -19,22 +19,12 @@ export const Footer: GlobalConfig = {
           validate: (value: any) => Boolean(value) || 'This field is required',
         },
         {
-          name: 'Facebook',
+          name: 'Instagram',
           type: 'text',
           validate: (value: any) => Boolean(value) || 'This field is required',
         },
         {
           name: 'Linkedin',
-          type: 'text',
-          validate: (value: any) => Boolean(value) || 'This field is required',
-        },
-        {
-          name: 'X',
-          type: 'text',
-          validate: (value: any) => Boolean(value) || 'This field is required',
-        },
-        {
-          name: 'Telegram',
           type: 'text',
           validate: (value: any) => Boolean(value) || 'This field is required',
         },

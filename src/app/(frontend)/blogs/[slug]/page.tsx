@@ -10,11 +10,9 @@ import styles from './blog.module.scss'
 import type { Post } from '@/payload-types'
 
 import { generateMeta } from '@/utilities/generateMeta'
-// import PageClient from './page.client'
-import { LivePreviewListener } from '@/components/LivePreviewListener'
-
 import { Media } from '@/components/Media'
-import { NavigateBtn } from '@/components/NavigateBtn/NavigateBtn'
+import Link from 'next/link'
+import { RecentPosts } from '@/components/RecentPosts/RecentPosts'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -43,7 +41,6 @@ type Args = {
 }
 
 export default async function Post({ params: paramsPromise }: Args) {
-  const { isEnabled: draft } = await draftMode()
   const { slug = '' } = await paramsPromise
   const url = '/blogs/' + slug
   const blog = await queryBlogBySlug({ slug })
@@ -51,34 +48,54 @@ export default async function Post({ params: paramsPromise }: Args) {
   if (!blog) return <PayloadRedirects url={url} />
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <article className={styles.container}>
-        {/* <PageClient /> */}
         <PayloadRedirects disableNotFound url={url} />
-        {draft && <LivePreviewListener />}
-        <div className={styles.topContainer}>
-          <div className={styles.titleContainer}>
-            <h1>{blog.title}</h1>
-            <p>{blog.timeToRead}</p>
+
+        <div className={styles.breadcrumbs}>
+          <Link href={'/blogs'}>Blog</Link>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path d="M9 19L15 12L9 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <p>{blog.title}</p>
+        </div>
+
+        <div className={styles.contentContainer}>
+          <div className={styles.topContainer}>
+            <div className={styles.titleContainer}>
+              <h1>{blog.title}</h1>
+              <Link href={'/contact'}>
+                <span>Get A Quote</span>
+                <img src="/arrow-icon.svg" alt="" />
+              </Link>
+            </div>
+
+            <div className={styles.infoBloc}>
+              <p>July 28, 2022 · 6 min read</p>
+              <div className={styles.tag}>DEVELOPMENT</div>
+            </div>
+
+            {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
+              <div className={styles.imageContainer}>
+                <Media resource={blog.heroImage} />
+              </div>
+            )}
           </div>
 
-          {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
-            <div className={styles.imageContainer}>
-              <Media resource={blog.heroImage} />
-            </div>
-          )}
+          <div className={styles.richTextContainer}>
+            <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
+          </div>
         </div>
 
-        <div className={styles.richTextContainer}>
-          <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
-        </div>
-        <div className={styles.backgroundImage}></div>
-        <div className={styles.backgroundContainer}>
-          <div className={styles.backgroundBackground}></div>
-        </div>
+        <RecentPosts currentBlogId={blog.id} />
       </article>
-      <NavigateBtn />
-    </>
+    </div>
   )
 }
 

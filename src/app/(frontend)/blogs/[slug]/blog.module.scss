@@ -1,65 +1,121 @@
+.wrapper {
+  background-color: grey;
+  padding-top: 61px;
+  padding-bottom: 240px;
+}
+
 .container {
-  padding-top: 47px;
-  padding-bottom: 47px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex: 1;
   position: relative;
-  height: 100%;
+  width: 1320px;
+  margin: 0 auto;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 49px;
+
+  a {
+    color: #c5c4cc;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+  }
+}
+
+.contentContainer {
+  margin-top: 61px;
+  border-radius: 50px;
+  background: rgba(3, 1, 15, 0.4);
+  padding: 60px 49px;
 }
 
 .topContainer {
-  border-radius: 41.439px;
-  opacity: 0.9;
-  background: #010101;
-  max-width: 1262px;
-  padding: 47px 30px 30px;
-  box-shadow: 13.651px 19.624px 58.274px 0px rgba(255, 255, 255, 0.08);
 }
 
 .titleContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 
   h1 {
-    max-width: 720px;
+    max-width: 810px;
     color: #fff2f1;
-    text-shadow: 3.232px 3.232px 6.464px rgba(0, 0, 0, 0.25);
-    font-size: 56px;
-    letter-spacing: -3.36px;
-
-    @media (max-width: 1400px) {
-      font-size: 48px;
-    }
+    font-family: Helvetica;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 78px;
   }
 
-  p {
-    color: #fff2f1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    font-size: 33.167px;
-    letter-spacing: -1.658px;
-    opacity: 0.7;
+  a {
+    border-radius: 50px;
+    background-color: #7959b6;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    display: flex;
+    gap: 14px;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+
+    span {
+      padding: 18px 0 18px 36px;
+      color: #fff;
+    }
+
+    img {
+      padding: 20px;
+      border-radius: 100%;
+      background-color: #7959b6;
+    }
+
+    &:hover {
+      background-color: #b893ff;
+    }
   }
 }
 
 .imageContainer {
-  border-radius: 38.098px 38.098px 28px 38.098px;
+  border-radius: 30px;
+  margin-top: 40px;
 
   img {
-    width: 1202px;
-    height: 278px;
+    width: 100%;
+    height: 462px;
   }
 }
 
 .richTextContainer {
   margin-top: 24px;
-  border-radius: 41.439px;
-  opacity: 0.9;
-  background-color: #010101;
-  max-width: 1262px;
-  padding: 53px 45px 53px 40px;
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+
+  img {
+    margin: 0 auto;
+    border-radius: 50px;
+  }
 }
 
 .richText {
@@ -72,40 +128,30 @@
   }
 }
 
+.infoBloc {
+  margin-top: 20px;
+  display: flex;
+  gap: 44px;
+  align-items: center;
 
-.backgroundImage {
-  position: fixed;
-  bottom: 0;
-  left: -200px;
-  width: 897px;
-  height: 1178px;
-  background-image: url('/blog_bg.png');
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  z-index: -1;
+  p {
+    color: #a5a0b2;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+  }
 }
 
-.backgroundContainer {
-  position: absolute;
-  top: -250px;
-  width: 99vw;
-  height: calc(100% + 250px);
-  background: url('/case_background.png') lightgray 50% / cover repeat-y;
-  filter: blur(41.04999923706055px);
-  z-index: -2;
-  overflow: hidden;
-}
-
-.backgroundBackground {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 150vw;
-  height: 150vh;
-  border-bottom-left-radius: 2812px;
-  border-bottom-right-radius: 2812px;
-  background: #000;
-  filter: blur(300px);
-  z-index: -1;
+.tag {
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.14);
 }

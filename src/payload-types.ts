@@ -239,8 +239,7 @@ export interface Media {
   width?: number | null;
   height?: number | null;
   focalX?: number | null;
-  focalY?: number | null;
-  sizes?: any;
+  focalY?: number | null; sizes?: any;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1792,10 +1791,8 @@ export interface Footer {
   slogan?: string | null;
   socials?: {
     Google?: string | null;
-    Facebook?: string | null;
+    Instagram?: string | null;
     Linkedin?: string | null;
-    X?: string | null;
-    Telegram?: string | null;
   };
   address?: string | null;
   contacts?: string | null;
@@ -1835,10 +1832,8 @@ export interface FooterSelect<T extends boolean = true> {
     | T
     | {
         Google?: T;
-        Facebook?: T;
+        Instagram?: T;
         Linkedin?: T;
-        X?: T;
-        Telegram?: T;
       };
   address?: T;
   contacts?: T;

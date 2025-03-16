@@ -1,31 +1,63 @@
-import { cn } from '@/utilities/ui'
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import styles from './collectionArchive.module.scss'
 
 import { Card, CardPostData } from '@/components/Card'
 
 export type Props = {
-  blogs: CardPostData[]
+  initBlogs: CardPostData[]
 }
 
-export const CollectionArchive: React.FC<Props> = (props) => {
-  const { blogs } = props
+export const CollectionArchive: React.FC<Props> = ({ initBlogs }) => {
+  const [blogs, setBlogs] = useState(initBlogs)
+  const [loading, setLoading] = useState(false)
+
+  const loadAllBlogs = async () => {
+    setLoading(true)
+
+    try {
+      const res = await fetch(`/api/blogs`)
+      const data = await res.json()
+
+      if (data.docs.length > 0) {
+        setBlogs(data.docs)
+      }
+    } catch (error) {
+      console.error('Ошибка при загрузке данных', error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className={styles.wrapper}>
-      <div>
-        <div className={styles.postsContainer}>
-          {blogs?.map((result, index) => {
-            if (typeof result === 'object' && result !== null) {
+      <div className={styles.topContent}>
+        <h3>Recent Posts</h3>
+        <button onClick={loadAllBlogs}>See All</button>
+      </div>
+
+      <div className={styles.postsContainer}>
+        {loading ? (
+          <div className={styles.spinner}>
+            <div></div>
+          </div>
+        ) : (
+          blogs?.map((result, index) => {
+            if (typeof result === 'object' && result !== null && index !== 0) {
               return (
-                <div className={styles.post} key={index}>
-                  <Card className="h-full" doc={result} relationTo="blogs" showCategories />
-                </div>
+                <Card
+                  key={result.slug}
+                  className="h-full"
+                  doc={result}
+                  relationTo="blogs"
+                  showCategories
+                />
               )
             }
             return null
-          })}
-        </div>
+          })
+        )}
       </div>
     </div>
   )

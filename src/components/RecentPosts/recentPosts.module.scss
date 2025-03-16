@@ -1,12 +1,5 @@
-.wrapper {
-  margin-top: 80px;
-  margin-bottom: 79px;
-}
-
-.topContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container {
+  margin-top: 60px;
 
   h3 {
     color: #fff;
@@ -16,25 +9,13 @@
     font-weight: 700;
     line-height: 40px;
   }
-
-  button {
-    color: #fff;
-    font-family: Helvetica;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    text-transform: capitalize;
-
-  }
 }
 
-.postsContainer {
-  width: fit-content;
-  margin: 40px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 21px 26px;
+.blogsContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 21px;
+    margin-top: 40px;
 }
 
 .spinner {

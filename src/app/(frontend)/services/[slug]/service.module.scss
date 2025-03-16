@@ -1,152 +1,121 @@
-.wrapper{
+.wrapper {
   position: relative;
   height: 100%;
+  padding-top: 61px;
+  padding-bottom: 140px;
+  background-color: gray;
 }
 
 .container {
-  max-width: 1550px;
-  margin: 112px auto 40px;
+  max-width: 1222px;
+  margin: 0 auto;
 }
 
-.iconContainer {
-  img {
-    width: 70px;
-    height: 45px;
-  }
-
-  .firstRow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  h1 {
-    color: #fff2f1;
-    text-shadow: 2px 2px 0px rgba(42, 4, 79, 0.25);
-    font-family: 'Albert Sans';
-    font-size: 84px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    letter-spacing: -3.36px;
-    text-transform: uppercase;
-
-    @media (max-width: 1600px) {
-      font-size: 64px;
-    }
-  }
-}
-
-.buttonContainer {
-  margin-top: 21px;
+.breadcrumbs {
   display: flex;
-  gap: 24px;
+  align-items: center;
 
-  button {
-    padding: 3.468px 34.68px;
-    flex-shrink: 0;
-    border-radius: 37.034px;
-    background: #fff2f1;
-    box-shadow: 3.468px 3.468px 13.872px 0px rgba(0, 0, 0, 0.15);
-    color: #010101;
+  a {
+    color: #c5c4cc;
+    text-align: center;
     font-family: Helvetica;
-    font-size: 38.148px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    letter-spacing: -2.289px;
-
-    &:last-child {
-      color: #fff2f1;
-      background: #8312ef;
-    }
+    line-height: 22px;
   }
-}
 
-.titleContainer {
-  max-width: 55%;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+  }
 }
 
 .topContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-}
-
-.shortDescription {
-  color: #fff2f1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  font-family: Helvetica;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -2.16px;
-  max-width: 500px;
-}
-
-.bottomContainer {
-  margin-top: 108px;
+  margin-top: 61px;
+  border-radius: 50px;
+  background: rgba(3, 1, 15, 0.4);
+  padding: 60px 49px;
   display: flex;
   justify-content: space-between;
+}ы
+
+.topContentImg {
+  width: 361px;
+  height: 379px;
+  border-radius: 30px;
 }
 
-.richText {
-  border-radius: 41.439px;
-  background: #010101;
-  padding: 49px 34px;
-  color: #fff2f1;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
-  font-family: Helvetica;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -2.16px;
-  max-width: 72%;
-}
-
-.extraContainer {
-  border-radius: 41.439px;
-  background: #010101;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0;
-  padding: 97px 54px;
-
-  &Count {
-    color: #8312ef;
-    font-family: 'Atyp Text TRIAL';
-    font-size: 104.217px;
+.descriptionContainer {
+  h1 {
+    color: #fff2f1;
+    font-family: 'Albert Sans';
+    font-size: 64px;
     font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 78px;
   }
 
-  &Name {
-    color: #fff2f1;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  .shortDescription {
+    color: #fff;
     font-family: Helvetica;
-    font-size: 36px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    letter-spacing: -2.16px;
+    line-height: 27px;
   }
-}
 
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 37px 54px;
+    margin-top: 40px;
 
-.backgroundContainer {
-  position: absolute;
-  top: -200px;
-  width: 99vw;
-  height: calc(100% + 200px);
-  background: url('/service_bg.png') lightgray 50% / cover no-repeat;
-  filter: blur(39.70000076293945px);
-  z-index: -2;
+    div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  a {
+    margin-top: 40px;
+    border-radius: 50px;
+    background-color: #7959b6;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    display: flex;
+    gap: 14px;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+
+    span {
+      padding: 18px 0 18px 36px;
+      color: #fff;
+    }
+
+    img {
+      padding: 20px;
+      border-radius: 100%;
+      background-color: #7959b6;
+    }
+
+    &:hover {
+      background-color: #b893ff;
+    }
+  }
 }

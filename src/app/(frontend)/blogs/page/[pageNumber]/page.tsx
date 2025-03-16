@@ -8,7 +8,6 @@ import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
 import { notFound } from 'next/navigation'
-import { getCachedGlobal } from '@/utilities/getGlobals'
 
 export const revalidate = 600
 
@@ -52,7 +51,7 @@ export default async function Page({ params: paramsPromise }: Args) {
         />
       </div>
 
-      <CollectionArchive blogs={posts.docs} />
+      <CollectionArchive initBlogs={posts.docs} />
 
       <div className="container">
         {posts?.page && posts?.totalPages > 1 && (

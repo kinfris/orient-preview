@@ -1,6 +1,5 @@
-.wrapper {
-  margin-top: 80px;
-  margin-bottom: 79px;
+.container {
+  margin-top: 70px;
 }
 
 .topContent {
@@ -17,7 +16,7 @@
     line-height: 40px;
   }
 
-  button {
+  a {
     color: #fff;
     font-family: Helvetica;
     font-size: 20px;
@@ -25,16 +24,7 @@
     font-weight: 400;
     line-height: 24px;
     text-transform: capitalize;
-
   }
-}
-
-.postsContainer {
-  width: fit-content;
-  margin: 40px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 21px 26px;
 }
 
 .spinner {
@@ -59,5 +49,49 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.servicesContainer {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.servicesContainer {
+  margin-top: 107px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px 12px;
+}
+
+.service {
+  padding: 26px 21px 52px 21px;
+  border-radius: 30px;
+  background: #1c1a29;
+
+  img {
+    width: 29px;
+    height: 29px;
+  }
+
+  h4 {
+    margin-top: 20px;
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  p {
+    margin-top: 10px;
+    color: #d3d3d4;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131%;
   }
 }

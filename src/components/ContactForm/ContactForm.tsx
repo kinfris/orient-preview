@@ -78,12 +78,20 @@ export default function ContactForm({ showTitle = false }: Props) {
       {showTitle && <h1 className={styles.title}>Contact us</h1>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.formGroup}>
-          <input {...register('name')} placeholder="Enter your name" />
+          <input
+            {...register('name')}
+            placeholder="Enter your name"
+            className={styles.formGroupInput}
+          />
           {errors.name && <p className={styles.errorMessage}>{errors.name.message}</p>}
         </div>
 
         <div className={styles.formGroup}>
-          <input {...register('email')} placeholder="Enter your email" />
+          <input
+            {...register('email')}
+            placeholder="Enter your email"
+            className={styles.formGroupInput}
+          />
           {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
         </div>
 

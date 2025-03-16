@@ -8,8 +8,9 @@ const albertSans = Albert_Sans({
 
 type Props = {
   children: ReactNode
+  className?: string
 }
 
-export const Title = ({ children }: Props) => {
-  return <div className={albertSans.className}>{children}</div>
+export const Title = ({ children, className }: Props) => {
+  return <div className={`${albertSans.className} ${className}`}>{children}</div>
 }

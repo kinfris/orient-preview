@@ -27,8 +27,26 @@ export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ serv
       >
         <span>Blog</span>
       </Link>
-      <div className={styles.link} onClick={() => setIsPopupOpen(true)}>
-        <span>Services</span>
+
+      <div
+        className={styles.dropdown}
+        onMouseEnter={() => setIsPopupOpen(true)}
+        onMouseLeave={() => setIsPopupOpen(false)}
+      >
+        <Link className={styles.link} href="/services">
+          <span>Services</span>
+        </Link>
+
+        {/* Попап, который тоже реагирует на ховер */}
+        {pathname !== '/services' && isPopupOpen && (
+          <div
+            className={styles.popup}
+            onMouseEnter={() => setIsPopupOpen(true)}
+            onMouseLeave={() => setIsPopupOpen(false)}
+          >
+            <Popup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} servicesData={servicesData} />
+          </div>
+        )}
       </div>
       <Link
         href="/contact"
@@ -36,7 +54,7 @@ export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ serv
       >
         <span>Contact Us</span>
       </Link>
-      <Popup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} servicesData={servicesData} />
+      {/* <Popup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} servicesData={servicesData} /> */}
     </nav>
   )
 }

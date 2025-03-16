@@ -5,7 +5,6 @@ import React from 'react'
 import type { Footer } from '@/payload-types'
 
 import styles from './footer.module.scss'
-import { FooterLogo } from '@/components/Logo/FooterLogo'
 import { Title } from '@/components/Title/Title'
 import { Logo } from '@/components/Logo/Logo'
 
@@ -36,25 +35,30 @@ export async function Footer() {
               </Link>
             </li>
             <li className={styles.logo}>
+              <Link href={socials?.Instagram || '/'}>
+                <SocialLink alt="instagram" path="/Instagram_Icon.svg" />
+              </Link>
+            </li>
+            {/* <li className={styles.logo}>
               <Link href={socials?.Facebook || '/'}>
                 <SocialLink alt="facebook" path="/Facebook_Icon.svg" />
               </Link>
-            </li>
+            </li> */}
             <li className={styles.logo}>
               <Link href={socials?.Linkedin || '/'}>
                 <SocialLink alt="linkedin" path="/LinkedIn_Icon.svg" />
               </Link>
             </li>
-            <li className={styles.logo}>
+            {/* <li className={styles.logo}>
               <Link href={socials?.X || '/'}>
                 <SocialLink alt="X" path="/X_Icon.svg" />
               </Link>
-            </li>
-            <li className={styles.logo}>
+            </li> */}
+            {/* <li className={styles.logo}>
               <Link href={socials?.Google || '/'}>
                 <SocialLink alt="telegram" path="/TG_Icon.svg" />
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className={styles.rightRow}>
@@ -65,6 +69,10 @@ export async function Footer() {
           <div>
             <h3>Contacts</h3>
             <p>{contacts}</p>
+            <div className={styles.aboutLinks}>
+              <Link href={'/privacy-policy'}>Privacy policy</Link>
+              <Link href={'/terms-of-use'}>Terms of use</Link>
+            </div>
           </div>
         </div>
       </div>
