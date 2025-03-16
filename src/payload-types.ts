@@ -240,6 +240,7 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: any;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
