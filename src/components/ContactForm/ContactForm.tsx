@@ -129,7 +129,9 @@ export default function ContactForm({ showTitle = false }: Props) {
 
         <button type="submit" className={styles.submitButton} disabled={loading}>
           <span>Submit</span>
-          <img src="/arrow-icon.svg" alt="" />
+          <div className={styles.imageContainer}>
+            <img src="/arrow-icon.svg" alt="" />
+          </div>
         </button>
 
         {message && <p className={styles.successMessage}>{message}</p>}

@@ -59,36 +59,6 @@
     margin-bottom: 46px;
   }
 
-  a {
-    border-radius: 50px;
-    background-color: #7959b6;
-    font-family: Helvetica;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    display: flex;
-    gap: 14px;
-    text-transform: uppercase;
-    width: fit-content;
-    transition: background-color 0.3s ease;
-
-    span {
-      padding: 18px 0 18px 36px;
-      color: #fff;
-    }
-
-    img {
-      padding: 20px;
-      border-radius: 100%;
-      background-color: #7959b6;
-    }
-
-    &:hover {
-      background-color: #b893ff;
-    }
-  }
-
   @media (max-width: 1400px) {
     width: 40%;
 
@@ -128,7 +98,6 @@
   img {
     width: 143px;
     height: 60px;
-    object-fit: cover;
   }
 
   p {
@@ -224,13 +193,13 @@
   padding: 20px;
   border-radius: 30px;
 
-  display: flex; /* Гибкое выравнивание */
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: auto !important; /* Автоматическая ширина */
-  max-width: 48%; /* Чтобы всегда помещались 2 слайда */
-  white-space: normal; /* Разрешает перенос строк */
-  text-align: center; /* Центрируем контент */
+  width: auto !important;
+  max-width: 49%;
+  white-space: normal;
+  text-align: center;
 }
 
 .reviewSlideBg {

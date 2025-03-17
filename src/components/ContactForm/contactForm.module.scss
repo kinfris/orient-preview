@@ -134,6 +134,8 @@
 }
 
 .submitButton {
+  display: inline-flex;
+  align-items: center;
   border-radius: 50px;
   background-color: #7959b6;
   font-family: Helvetica;
@@ -141,21 +143,36 @@
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  display: flex;
   gap: 14px;
   text-transform: uppercase;
-  width: fit-content;
+  padding-right: 20px;
   transition: background-color 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 
   span {
+    display: block;
     padding: 18px 0 18px 36px;
     color: #fff;
+    margin-right: 64px;
+  }
+  
+  .imageContainer {
+    background-color: #7959b6;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    padding: 24px;
+    border-radius: 50px;
   }
 
-  img {
-    padding: 20px;
-    border-radius: 100%;
-    background-color: #7959b6;
+  .imageContainer img {
+    width: 17px;
+    height: 15px;
   }
 
   &:hover {

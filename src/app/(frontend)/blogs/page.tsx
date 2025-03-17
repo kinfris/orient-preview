@@ -9,6 +9,7 @@ import styles from './blogs.module.scss'
 import { Title } from '@/components/Title/Title'
 import Link from 'next/link'
 import { Media } from '@/components/Media'
+import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -56,10 +57,7 @@ export default async function Page() {
       <div className={styles.container}>
         <div className={styles.titleContainer}>
           <Title className={styles.title}>Blog</Title>
-          <Link href={'/contact'}>
-            <span>Get A Quote</span>
-            <img src="/arrow-icon.svg" alt="" />
-          </Link>
+          <ButtonLink href={'/contact'} title="Get A Quote" />
         </div>
         <div className={styles.featuredPostContainer}>
           <h3>Featured Posts</h3>

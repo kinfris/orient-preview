@@ -1,0 +1,73 @@
+.container {
+  position: fixed;
+  z-index: 999;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #454352;
+  background: #03010f;
+  padding: 16px 32px;
+  min-width: 70%;
+
+  .start {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  p {
+    color: #fff;
+    font-feature-settings:
+      'liga' off,
+      'clig' off;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+
+  a {
+    color: #955bdd;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+  }
+
+  .btnGroup{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  button {
+    border-radius: 20px;
+    padding: 10px 17px;
+    color: #fff;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; 
+  }
+
+  .acceptBtn{
+    background: #7959B6;
+  }
+
+  .closeBtn {
+    margin-left: 36px;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+}

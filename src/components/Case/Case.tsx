@@ -1,6 +1,7 @@
 import { Case } from '@/payload-types'
 import styles from './case.module.scss'
 import Link from 'next/link'
+import { ButtonLink } from '../ButtonLink/ButtonLink'
 
 type Props = {
   caseData: Case
@@ -17,10 +18,7 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
       <div className={styles.leftContent}>
         <h4>Case #{index + 1}</h4>
         <p>{caseData.taskDescription}</p>
-        <Link href={`/cases/${caseData.slug}`}>
-          <span>Read More</span>
-          <img src="/arrow-icon.svg" alt="" />
-        </Link>
+        <ButtonLink href={`/cases/${caseData.slug}`} title="Read More" />
       </div>
       <div className={styles.right}>
         <h4>{caseData.title}</h4>

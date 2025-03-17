@@ -17,6 +17,7 @@ import styles from './mainLayout.module.scss'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+import { Cookies } from '@/components/Cookies/Cookies'
 
 const NimbusSanL = localFont({
   src: '../../../public/fonts/nimbus-sans-l.regular.otf',
@@ -42,6 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
           <Header />
           <main>{children}</main>
+          <Cookies />
           <Footer />
         </Providers>
       </body>

@@ -13,6 +13,7 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { Media } from '@/components/Media'
 import Link from 'next/link'
 import { RecentPosts } from '@/components/RecentPosts/RecentPosts'
+import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -70,10 +71,7 @@ export default async function Post({ params: paramsPromise }: Args) {
           <div className={styles.topContainer}>
             <div className={styles.titleContainer}>
               <h1>{blog.title}</h1>
-              <Link href={'/contact'}>
-                <span>Get A Quote</span>
-                <img src="/arrow-icon.svg" alt="" />
-              </Link>
+              <ButtonLink href={'/contact'} title="Get A Quote" />
             </div>
 
             <div className={styles.infoBloc}>

@@ -15,6 +15,7 @@ import { CaseHeader } from '@/components/CaseHeader/CaseHeader'
 import { Title } from '@/components/Title/Title'
 import Link from 'next/link'
 import OtherCases from '@/components/Case/OtherCases'
+import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -93,10 +94,7 @@ export default async function Case({ params: paramsPromise }: Args) {
                 })}
               </div>
             )}
-            <Link href={'/contact'} className={styles.goToContactBtn}>
-              <span>Get A Quote</span>
-              <img src="/arrow-icon.svg" alt="" />
-            </Link>
+            <ButtonLink href={'/contact'} title="Get A Quote" />
           </div>
 
           <Title>

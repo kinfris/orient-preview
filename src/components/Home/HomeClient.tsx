@@ -16,6 +16,7 @@ import { Media } from '../Media'
 import { CaseComponent } from '../Case/Case'
 import { ServiceComponent } from '../Service/Service'
 import ContactForm from '../ContactForm/ContactForm'
+import { ButtonLink } from '../ButtonLink/ButtonLink'
 
 type Props = {
   homeData: Home[]
@@ -43,10 +44,8 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
               Our tailored software solutions, smart team augmentation, and cutting-edge IT
               consulting help businesses operate faster, smarter, and more efficiently.
             </p>
-            <Link href={'/contact'}>
-              <span>Get A Quote</span>
-              <img src="/arrow-icon.svg" alt="" />
-            </Link>
+
+            <ButtonLink href={'/contact'} title="Get A Quote" />
           </div>
         </div>
         <div className={styles.carouselContainer}>

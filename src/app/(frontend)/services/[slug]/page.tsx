@@ -10,6 +10,7 @@ import { PayloadRedirects } from '@/components/PayloadRedirects'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
 import OtherServices from '@/components/OtherServices/OtherServices'
+import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
 
 type Args = {
   params: Promise<{
@@ -89,10 +90,7 @@ export default async function Service({ params: paramsPromise }: Args) {
                   )
                 })}
             </div>
-            <Link href={'/contact'}>
-              <span>Get A Quote</span>
-              <img src="/arrow-icon.svg" alt="" />
-            </Link>
+            <ButtonLink href={'/contact'} title="Get A Quote" />
           </div>
           <img src="/service.png" alt="" className={styles.topContentImg} />
         </div>
