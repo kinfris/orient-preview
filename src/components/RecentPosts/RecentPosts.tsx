@@ -19,7 +19,6 @@ export const RecentPosts = ({ currentBlogId }: Props) => {
       try {
         const res = await fetch(`/api/blogs?limit=3&where[id][not_equals]=${currentBlogId}`)
         const data = await res.json()
-        console.log('data - 1', data)
 
         if (data.docs.length > 0) {
           setBlogs(data.docs)

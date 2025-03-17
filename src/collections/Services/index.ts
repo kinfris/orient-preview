@@ -75,7 +75,16 @@ export const Services: CollectionConfig<'services'> = {
               type: 'upload',
               relationTo: 'media',
             },
-
+            {
+              name: 'benefits',
+              type: 'array',
+              fields: [
+                {
+                  name: 'benefit',
+                  type: 'text',
+                },
+              ],
+            },
             {
               name: 'shortDescription',
               type: 'textarea',
@@ -83,14 +92,6 @@ export const Services: CollectionConfig<'services'> = {
             {
               name: 'fullDescription',
               type: 'richText',
-            },
-            {
-              name: 'count',
-              type: 'text',
-            },
-            {
-              name: 'countName',
-              type: 'text',
             },
           ],
           label: 'Content',

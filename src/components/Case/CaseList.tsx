@@ -9,12 +9,11 @@ export default function CasesList({ initialCases }: { initialCases: Case[] }) {
   const [cases, setCases] = useState<Case[]>(initialCases)
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(2)
-  const [hasMore, setHasMore] = useState(true) // Флаг, можно ли загружать ещё
+  const [hasMore, setHasMore] = useState(true)
   const observerRef = useRef<HTMLDivElement | null>(null)
 
-  // Функция загрузки данных
   const fetchMoreCases = async () => {
-    if (loading || !hasMore) return // Если уже загружаем или достигли конца, не вызываем запрос
+    if (loading || !hasMore) return
     setLoading(true)
 
     try {
@@ -25,7 +24,7 @@ export default function CasesList({ initialCases }: { initialCases: Case[] }) {
         setCases((prev) => [...prev, ...data.docs])
         setPage((prevPage) => prevPage + 1)
       } else {
-        setHasMore(false) // Если новых постов нет, выключаем подгрузку
+        setHasMore(false)
       }
     } catch (error) {
       console.error('Ошибка при загрузке данных', error)
@@ -41,7 +40,7 @@ export default function CasesList({ initialCases }: { initialCases: Case[] }) {
         if (target?.isIntersecting && !loading && hasMore) {
           setTimeout(() => {
             fetchMoreCases()
-          }, 500) // Задержка перед загрузкой
+          }, 500)
         }
       },
       { threshold: 0.8 },
@@ -59,7 +58,7 @@ export default function CasesList({ initialCases }: { initialCases: Case[] }) {
       <div className={styles.container}>
         {cases.map((el: Case, i) => (
           <div key={el.id} className={styles.case}>
-            <CaseComponent caseData={el} reverse={i % 2 === 0} />
+            <CaseComponent caseData={el} reverse={i % 2 === 0} index={i} />
           </div>
         ))}
         {hasMore && <div ref={observerRef} style={{ height: 100 }}></div>}

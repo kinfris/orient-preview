@@ -19,6 +19,7 @@ export interface Config {
     home: Home;
     media: Media;
     categories: Category;
+    legalSection: LegalSection;
     users: User;
     redirects: Redirect;
     forms: Form;
@@ -39,6 +40,7 @@ export interface Config {
     home: HomeSelect<false> | HomeSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    legalSection: LegalSectionSelect<false> | LegalSectionSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
@@ -632,6 +634,7 @@ export interface Blog {
   previewImage?: (string | null) | Media;
   heroImage?: (string | null) | Media;
   timeToRead?: string | null;
+  category?: string | null;
   hideBlog?: boolean | null;
   content: {
     root: {
@@ -690,7 +693,6 @@ export interface Case {
   id: string;
   title: string;
   projectName?: string | null;
-  previewImage?: (string | null) | Media;
   previewDescription?: string | null;
   heroImage?: (string | null) | Media;
   tags?:
@@ -699,11 +701,15 @@ export interface Case {
         id?: string | null;
       }[]
     | null;
-  clientDescription?: string | null;
-  clientImage?: (string | null) | Media;
-  challengeDescription?: string | null;
-  challengeImage?: (string | null) | Media;
-  solutionDescription?: {
+  taskDescription?: string | null;
+  taskImage?: (string | null) | Media;
+  resultDescription?: string | null;
+  resultImage?: (string | null) | Media;
+  afterTaskResultDescription?: string | null;
+  carouselImage1?: (string | null) | Media;
+  carouselImage2Vertical?: (string | null) | Media;
+  carouselImage3?: (string | null) | Media;
+  endDescription: {
     root: {
       type: string;
       children: {
@@ -717,8 +723,7 @@ export interface Case {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
-  solutionImage?: (string | null) | Media;
+  };
   relatedPosts?: (string | Post)[] | null;
   categories?: (string | Category)[] | null;
   meta?: {
@@ -752,6 +757,12 @@ export interface Service {
   title: string;
   serviceName?: string | null;
   serviceIcon?: (string | null) | Media;
+  benefits?:
+    | {
+        benefit?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   shortDescription?: string | null;
   fullDescription?: {
     root: {
@@ -768,8 +779,6 @@ export interface Service {
     };
     [k: string]: unknown;
   } | null;
-  count?: string | null;
-  countName?: string | null;
   meta?: {
     title?: string | null;
     /**
@@ -836,6 +845,48 @@ export interface Home {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "legalSection".
+ */
+export interface LegalSection {
+  id: string;
+  title: string;
+  termsOfUse: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  privacyPolicy: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1040,6 +1091,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'categories';
         value: string | Category;
+      } | null)
+    | ({
+        relationTo: 'legalSection';
+        value: string | LegalSection;
       } | null)
     | ({
         relationTo: 'users';
@@ -1283,6 +1338,7 @@ export interface BlogsSelect<T extends boolean = true> {
   previewImage?: T;
   heroImage?: T;
   timeToRead?: T;
+  category?: T;
   hideBlog?: T;
   content?: T;
   relatedPosts?: T;
@@ -1325,7 +1381,6 @@ export interface BlogsSelect<T extends boolean = true> {
 export interface CasesSelect<T extends boolean = true> {
   title?: T;
   projectName?: T;
-  previewImage?: T;
   previewDescription?: T;
   heroImage?: T;
   tags?:
@@ -1334,12 +1389,15 @@ export interface CasesSelect<T extends boolean = true> {
         tagName?: T;
         id?: T;
       };
-  clientDescription?: T;
-  clientImage?: T;
-  challengeDescription?: T;
-  challengeImage?: T;
-  solutionDescription?: T;
-  solutionImage?: T;
+  taskDescription?: T;
+  taskImage?: T;
+  resultDescription?: T;
+  resultImage?: T;
+  afterTaskResultDescription?: T;
+  carouselImage1?: T;
+  carouselImage2Vertical?: T;
+  carouselImage3?: T;
+  endDescription?: T;
   relatedPosts?: T;
   categories?: T;
   meta?:
@@ -1371,10 +1429,14 @@ export interface ServicesSelect<T extends boolean = true> {
   title?: T;
   serviceName?: T;
   serviceIcon?: T;
+  benefits?:
+    | T
+    | {
+        benefit?: T;
+        id?: T;
+      };
   shortDescription?: T;
   fullDescription?: T;
-  count?: T;
-  countName?: T;
   meta?:
     | T
     | {
@@ -1482,6 +1544,19 @@ export interface CategoriesSelect<T extends boolean = true> {
         label?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "legalSection_select".
+ */
+export interface LegalSectionSelect<T extends boolean = true> {
+  title?: T;
+  termsOfUse?: T;
+  privacyPolicy?: T;
+  slug?: T;
+  slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
 }

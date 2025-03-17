@@ -94,6 +94,10 @@ export const Blogs: CollectionConfig<'posts'> = {
               type: 'text',
             },
             {
+              name: 'category',
+              type: 'text',
+            },
+            {
               name: 'hideBlog',
               type: 'checkbox',
             },

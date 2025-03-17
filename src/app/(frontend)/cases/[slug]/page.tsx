@@ -53,12 +53,15 @@ export default async function Case({ params: paramsPromise }: Args) {
     tags,
     projectName,
     heroImage,
-    clientDescription,
-    clientImage,
-    challengeDescription,
-    challengeImage,
-    solutionDescription,
-    solutionImage,
+    taskDescription,
+    taskImage,
+    resultDescription,
+    resultImage,
+    afterTaskResultDescription,
+    carouselImage1,
+    carouselImage2Vertical,
+    carouselImage3,
+    endDescription,
   } = caseData
 
   return (
@@ -105,66 +108,48 @@ export default async function Case({ params: paramsPromise }: Args) {
             )}
           </div> */}
           <div className={styles.mainImage}>
-            <img src="/case_image_1.png" alt="" />
+            {heroImage && typeof heroImage == 'object' && heroImage.url && (
+              <Media resource={heroImage} />
+            )}
           </div>
           <div className={styles.firstSection}>
             <div className={styles.fsBlockContainer}>
               <h4>Task</h4>
-              <p>
-                It’s necessary to analyze the existing design of the Getir app, identifying its
-                strengths and weaknesses. Then you should perform a similar analysis of competitors
-                apps. It’s imprortant to update the overall design of the Getir app, making it more
-                modern and attractive. In addition, it’s necessary to improve the user experience
-                (UX) and simplify the navigation of the app.
-              </p>
+              <p>{taskDescription}</p>
             </div>
             <div className={styles.fsBlockContainer}>
               <h4>Result</h4>
-              <p>
-                The visual style of the Getir app has become more modern and minimalistic, with an
-                emphasis on user-friendliness and aethetic appeal. Thanks to the redesign,
-                navigation through the app has become intuitive. Key functions such as restaurant
-                selection, checkout and delivery tracking are now available in a few clicks,
-                significantly reducing task completion time.
-              </p>
+              <p>{resultDescription}</p>
             </div>
             <div className={styles.fsImageContainer}>
+              <Media resource={taskImage ?? ''} />
               <img src="/case_task.png" alt="" />
             </div>
             <div className={styles.fsImageContainer}>
-              <img src="/case_result.png" alt="" />
+              <Media resource={resultImage ?? ''} />
             </div>
           </div>
           <div className={styles.secondSection}>
-            <p>
-              The visual style of the Getir app has become more modern and minimalistic, with an
-              emphasis on user-friendliness and aethetic appeal. Thanks to the redesign, navigation
-              through the app has become intuitive. Key functions such as restaurant selection,
-              checkout and delivery tracking are now available in a few clicks, significantly
-              reducing task completion time.
-            </p>
+            <p>{afterTaskResultDescription}</p>
             <div className={styles.imageGallery}>
               <div className={styles.ssImageContainer}>
-                <img src="/case_gallery_1.png" alt="" />
+                <Media resource={carouselImage1 ?? ''} />
               </div>
               <div className={`${styles.ssImageContainer} ${styles.ssBigImage}`}>
-                <img src="/case_gallery_3.png" alt="" />
+                <Media resource={carouselImage2Vertical ?? ''} />
               </div>
               <div className={styles.ssImageContainer}>
-                <img src="/case_gallery_2.png" alt="" />
+                <Media resource={carouselImage3 ?? ''} />
               </div>
             </div>
           </div>
           <div className={styles.lastSection}>
-            <p>
-              The visual style of the Getir app has become more modern and minimalistic, with an
-              emphasis on user-friendliness and aethetic appeal. Thanks to the redesign, navigation
-              through the app has become intuitive. Key functions such as restaurant selection,
-              checkout and delivery tracking are now available in a few clicks, significantly
-              reducing task completion time.
-            </p>
-            <div className={styles.lsImageContainer}>
-              <img src="/case_big_desc.png" alt="" />
+            <div className={styles.richTextContainer}>
+              <RichText
+                className={`${styles.richText} `}
+                data={endDescription}
+                enableGutter={false}
+              />
             </div>
           </div>
         </div>

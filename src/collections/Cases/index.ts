@@ -84,11 +84,6 @@ export const Cases: CollectionConfig<'cases'> = {
               type: 'text',
             },
             {
-              name: 'previewImage',
-              type: 'upload',
-              relationTo: 'media',
-            },
-            {
               name: 'previewDescription',
               type: 'textarea',
             },
@@ -105,33 +100,59 @@ export const Cases: CollectionConfig<'cases'> = {
             },
 
             {
-              name: 'clientDescription',
+              name: 'taskDescription',
               type: 'textarea',
             },
             {
-              name: 'clientImage',
+              name: 'taskImage',
               type: 'upload',
               relationTo: 'media',
             },
-
             {
-              name: 'challengeDescription',
+              name: 'resultDescription',
               type: 'textarea',
             },
             {
-              name: 'challengeImage',
+              name: 'resultImage',
               type: 'upload',
               relationTo: 'media',
             },
-
             {
-              name: 'solutionDescription',
+              name: 'afterTaskResultDescription',
+              type: 'textarea',
+            },
+            {
+              name: 'carouselImage1',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
+              name: 'carouselImage2Vertical',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
+              name: 'carouselImage3',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
+              name: 'endDescription',
               type: 'richText',
-            },
-            {
-              name: 'solutionImage',
-              type: 'upload',
-              relationTo: 'media',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                    HorizontalRuleFeature(),
+                  ]
+                },
+              }),
+              label: false,
+              required: true,
             },
           ],
           label: 'Content',

@@ -8,6 +8,7 @@ import PageClient from './page.client'
 import styles from './blogs.module.scss'
 import { Title } from '@/components/Title/Title'
 import Link from 'next/link'
+import { Media } from '@/components/Media'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -27,7 +28,26 @@ export default async function Page() {
       heroImage: true,
       content: true,
       previewImage: true,
+      timeToRead: true,
+      publishedAt: true,
+      category: true,
     },
+  })
+
+  const firstPost = blogs.docs[0]
+
+  if (!firstPost) return <div>Load posts</div>
+
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+
+  const dateStr = yesterday.toISOString()
+  const date = new Date(firstPost.publishedAt ?? dateStr)
+
+  const formattedDate = date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   })
 
   return (
@@ -43,16 +63,18 @@ export default async function Page() {
         </div>
         <div className={styles.featuredPostContainer}>
           <h3>Featured Posts</h3>
-          <div className={styles.featuredPost}>
+          <Link href={`/blogs/${firstPost.slug}`} className={styles.featuredPost}>
             <div className={styles.content}>
-              <div className={styles.category}>Category</div>
-              <h4 className={styles.title}>5 Signs It’s Time to Expand Your Tech Team</h4>
-              <p className={styles.publishedDate}>July 28, 2022 · 6 min read</p>
+              <div className={styles.category}>{firstPost.category ?? 'category'}</div>
+              <h4 className={styles.title}>{firstPost.title}</h4>
+              <p className={styles.publishedDate}>
+                {formattedDate} · {firstPost.timeToRead}
+              </p>
             </div>
             <div className={styles.featureImg}>
-              <img src="/feature_post.png" alt="" />
+              <Media resource={firstPost.previewImage ?? ''} />
             </div>
-          </div>
+          </Link>
         </div>
 
         <CollectionArchive initBlogs={blogs.docs} />

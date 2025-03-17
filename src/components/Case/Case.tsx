@@ -6,30 +6,25 @@ type Props = {
   caseData: Case
   reverse?: boolean
   vertical?: boolean
+  index: number
 }
 
-export const CaseComponent = ({ caseData, reverse, vertical }: Props) => {
-  // console.log('caseData - ', caseData)
+export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => {
   return (
     <div
       className={`${styles.container} ${reverse && styles.reverseFlex} ${vertical && styles.verticalFlex}`}
     >
       <div className={styles.leftContent}>
-        <h4>Case #1</h4>
-        <p>
-          EduConnect is a platform connecting educators and students globally, offering tools for
-          virtual classrooms, resource sharing, and collaborative learning. Orinix’s expertise
-          helped us launch a scalable, user-friendly solution that has transformed the way educators
-          and students interact online.
-        </p>
+        <h4>Case #{index + 1}</h4>
+        <p>{caseData.taskDescription}</p>
         <Link href={`/cases/${caseData.slug}`}>
           <span>Read More</span>
           <img src="/arrow-icon.svg" alt="" />
         </Link>
       </div>
       <div className={styles.right}>
-        <h4>Orinix Project Title Here</h4>
-        <p>This field is a small description of our project.</p>
+        <h4>{caseData.title}</h4>
+        <p>{caseData.previewDescription}</p>
         <div className={styles.rightBg}></div>
         <div className={styles.rightBgImage}></div>
       </div>

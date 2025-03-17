@@ -62,13 +62,15 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
             freeMode={false}
             allowTouchMove={false}
           >
-            {[...logos, ...logos].map((el, i) => {
-              return (
-                <SwiperSlide key={`${el.id}${i}`} className={styles.slide}>
-                  {el.logoImage ? <Media resource={el.logoImage} /> : <p>{el.logoTitle}</p>}
-                </SwiperSlide>
-              )
-            })}
+            {[...Array(10)]
+              .flatMap(() => logos)
+              .map((el, i) => {
+                return (
+                  <SwiperSlide key={`${el.id}${i}`} className={styles.slide}>
+                    {el.logoImage ? <Media resource={el.logoImage} /> : <p>{el.logoTitle}</p>}
+                  </SwiperSlide>
+                )
+              })}
           </Swiper>
         </div>
       </div>
@@ -108,7 +110,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
                 casesData.map((el, i) => {
                   return (
                     <SwiperSlide key={`${el.id}${i}`} className={styles.caseSlide}>
-                      <CaseComponent caseData={el} />
+                      <CaseComponent caseData={el} index={i} />
                     </SwiperSlide>
                   )
                 })}

@@ -48,7 +48,8 @@
   padding: 60px 49px;
   display: flex;
   justify-content: space-between;
-}ы
+  gap: 58px;
+}
 
 .topContentImg {
   width: 361px;
@@ -60,7 +61,7 @@
   h1 {
     color: #fff2f1;
     font-family: 'Albert Sans';
-    font-size: 64px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 800;
     line-height: 78px;

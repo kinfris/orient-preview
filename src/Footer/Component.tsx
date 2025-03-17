@@ -66,7 +66,7 @@ export async function Footer() {
             <h3>Address</h3>
             <p dangerouslySetInnerHTML={{ __html: address }} />
           </div>
-          <div>
+          <div className={styles.contactsBlock}>
             <h3>Contacts</h3>
             <p>{contacts}</p>
             <div className={styles.aboutLinks}>

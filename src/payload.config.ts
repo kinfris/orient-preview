@@ -11,7 +11,6 @@ import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { plugins } from './plugins'
-import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { Blogs } from './collections/Blogs'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
@@ -20,6 +19,7 @@ import { Home } from './collections/Home'
 import { Cases } from './collections/Cases'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Services } from './collections/Services'
+import { LegalSection } from './collections/LegalSection'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -66,7 +66,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Pages, Posts, Blogs, Cases, Services, Home, Media, Categories, Users],
+  collections: [Pages, Posts, Blogs, Cases, Services, Home, Media, Categories, LegalSection, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
