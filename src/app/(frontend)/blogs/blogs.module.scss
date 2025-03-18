@@ -37,7 +37,7 @@
 
   .featuredPost {
     margin-top: 43px;
-    border-radius: 30px;
+    border-radius: 38px;
     border: 1px solid #454352;
     background: rgba(0, 0, 0, 0.7);
     display: grid;
@@ -75,6 +75,7 @@
       height: 100%;
       min-width: 60%;
       display: flex;
+      margin-left: 2px;
 
       img {
         width: 100%;
