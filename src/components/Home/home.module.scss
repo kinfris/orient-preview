@@ -214,7 +214,7 @@
 
   p {
     color: #fff2f1;
-    font-family: Helvetica;
+   
     font-size: 29.526px;
     font-style: normal;
     font-weight: 400;
@@ -242,7 +242,6 @@
 
 .reviewDescription {
   color: #d3d3d4;
-  font-family: Helvetica;
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -262,7 +261,6 @@
 
   .name {
     color: #fff2f1;
-    font-family: Helvetica;
     font-size: 55.425px;
     font-style: normal;
     font-weight: 400;
@@ -273,7 +271,6 @@
 
   .company {
     color: #fff2f1;
-    font-family: Helvetica;
     font-size: 29.526px;
     font-style: normal;
     font-weight: 400;
@@ -304,7 +301,7 @@
 
 .projectDescription {
   color: #fff2f1;
-  font-family: Helvetica;
+ 
   font-size: 29.526px;
   font-style: normal;
   font-weight: 400;
@@ -386,7 +383,7 @@
 
   h4 {
     color: #fff2f1;
-    font-family: Helvetica;
+   
     font-size: 51.649px;
     font-style: normal;
     font-weight: 400;
@@ -398,14 +395,20 @@
     }
   }
 
+  .name{
+    margin-right: 115px;
+
+    @media (min-width: 1500px) {
+      margin-right: 155px;
+    }
+  }
+
   p {
     color: #fff2f1;
-    font-family: Helvetica;
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -1.92px;
     opacity: 0.8;
 
     @media (max-width: 1500px) {

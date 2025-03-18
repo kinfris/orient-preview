@@ -24,7 +24,7 @@
     font-feature-settings:
       'liga' off,
       'clig' off;
-    font-family: Helvetica;
+
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -41,7 +41,7 @@
     text-underline-offset: auto;
   }
 
-  .btnGroup{
+  .btnGroup {
     display: flex;
     align-items: center;
     gap: 24px;
@@ -52,15 +52,15 @@
     padding: 10px 17px;
     color: #fff;
     text-align: center;
-    font-family: Helvetica;
+
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 20px; 
+    line-height: 20px;
   }
 
-  .acceptBtn{
-    background: #7959B6;
+  .acceptBtn {
+    background: #7959b6;
   }
 
   .closeBtn {

@@ -271,7 +271,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
                     <div key={el.id} className={styles.person}>
                       <Media resource={el.image} />
                       <div className={styles.personContent}>
-                        <div>
+                        <div className={styles.name}>
                           <h4>{el.name}</h4>
                           <p>{el.position}</p>
                         </div>

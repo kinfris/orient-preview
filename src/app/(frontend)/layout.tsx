@@ -12,16 +12,14 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
-import localFont from 'next/font/local'
 import styles from './mainLayout.module.scss'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { Cookies } from '@/components/Cookies/Cookies'
+import { Inter } from 'next/font/google'
 
-const NimbusSanL = localFont({
-  src: '../../../public/fonts/nimbus-sans-l.regular.otf',
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -33,14 +31,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
-      <body className={`${NimbusSanL.className} ${styles.bodyContainer}`}>
+      <body className={`${inter.className} ${styles.bodyContainer}`}>
         <Providers>
           <AdminBar
             adminBarProps={{
               preview: isEnabled,
             }}
           />
-
           <Header />
           <main>{children}</main>
           <Cookies />
