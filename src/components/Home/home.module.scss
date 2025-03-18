@@ -447,7 +447,8 @@
 
 .casesReviewsBg {
   position: absolute;
-  background: url('/home_g_bg.svg') no-repeat;
+  background: url('/home_g_bg.svg') no-repeat center;
+  background-size: cover;
   z-index: -1;
   height: 100%;
   width: 100%;

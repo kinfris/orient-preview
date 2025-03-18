@@ -1,9 +1,8 @@
 .link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   border-radius: 50px;
   background-color: #7959b6;
- 
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -16,12 +15,14 @@
   overflow: hidden;
   position: relative;
   width: fit-content;
+  height: fit-content;
 
   span {
     display: block;
     padding: 18px 0 18px 36px;
     color: #fff;
     margin-right: 64px;
+    margin-bottom: 1px;
   }
 
   .imageContainer {

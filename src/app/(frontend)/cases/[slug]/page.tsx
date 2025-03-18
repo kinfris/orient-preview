@@ -11,7 +11,6 @@ import styles from './case.module.scss'
 import { generateMeta } from '@/utilities/generateMeta'
 
 import { Media } from '@/components/Media'
-import { CaseHeader } from '@/components/CaseHeader/CaseHeader'
 import { Title } from '@/components/Title/Title'
 import Link from 'next/link'
 import OtherCases from '@/components/Case/OtherCases'
