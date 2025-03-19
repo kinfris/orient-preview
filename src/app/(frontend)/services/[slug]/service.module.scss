@@ -3,7 +3,20 @@
   height: 100%;
   padding-top: 61px;
   padding-bottom: 140px;
-  background-color: gray;
+
+}
+
+.gradientContainer{
+  position: absolute;
+  top: -119px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 119px);
+  background-color: #03010F;
+  background-image: url('/service_gradient.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 .container {

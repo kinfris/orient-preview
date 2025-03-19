@@ -24,6 +24,7 @@ export default async function Cases() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.backgroundContainer}></div>
+      <div className={styles.casesBackgroundContainer}></div>
       <div className={styles.container}>
         <CaseHeader />
         <div className={styles.casesContainer}>

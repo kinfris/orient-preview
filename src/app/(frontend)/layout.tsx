@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
 
-import { cn } from '@/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -18,20 +15,29 @@ import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { Cookies } from '@/components/Cookies/Cookies'
 import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
 const inter = Inter({ subsets: ['latin'] })
+// const helvetica = localFont({ src: './fonts/Helvetica.ttf' })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link
+          href="/fonts/fonts/Helvetica.ttf"
+          rel="preload"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body className={`${inter.className} ${styles.bodyContainer}`}>
+      <body className={` ${styles.bodyContainer}`}>
         <Providers>
           <AdminBar
             adminBarProps={{

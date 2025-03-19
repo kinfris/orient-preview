@@ -1,8 +1,5 @@
 .container {
   background: linear-gradient(180deg, #03010f 0%, #03010f 100%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 25px 109px;
 
   @media (max-width: 1500px) {
@@ -12,6 +9,14 @@
   @media (max-width: 1300px) {
     padding: 25px 50px;
   }
+}
+
+.wrapper {
+  max-width: 1222px;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerLogo {

@@ -15,13 +15,15 @@ interface HeaderClientProps {
 export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
   return (
     <header className={styles.container}>
-      <Link href="/" className={styles.headerLogo}>
-        <Logo loading="eager" priority="high" className={styles.logo} />
-        <Title>
-          <p className={styles.headerTitle}>Orinix</p>
-        </Title>
-      </Link>
-      <HeaderNav servicesData={servicesData} />
+      <div className={styles.wrapper}>
+        <Link href="/" className={styles.headerLogo}>
+          <Logo loading="eager" priority="high" className={styles.logo} />
+          <Title>
+            <p className={styles.headerTitle}>Orinix</p>
+          </Title>
+        </Link>
+        <HeaderNav servicesData={servicesData} />
+      </div>
     </header>
   )
 }

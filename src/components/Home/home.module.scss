@@ -13,7 +13,6 @@
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-    letter-spacing: -3.36px;
     text-transform: uppercase;
     position: relative;
     z-index: 100;
@@ -40,9 +39,13 @@
   background: linear-gradient(180deg, #03010f 0%, rgba(3, 1, 15, 0) 100%);
 }
 
+.topContentWrapper {
+  max-width: 1222px;
+  margin: 0 auto;
+}
+
 .content {
   width: 708px;
-  margin-left: 109px;
   margin-bottom: 328px;
 
   h1 {
@@ -55,7 +58,6 @@
     width: 357px;
     color: #fff2f1;
     font-size: 24.543px;
-    letter-spacing: -1.473px;
     margin-bottom: 46px;
   }
 
@@ -106,7 +108,6 @@
 }
 
 .reviewsContainer {
-  width: 85%;
   margin: 0 auto 240px;
   overflow: hidden;
 }
@@ -172,7 +173,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: -3.326px;
   max-width: 140px;
   display: flex;
   align-items: center;
@@ -196,7 +196,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto !important;
   max-width: 49%;
   white-space: normal;
   text-align: center;
@@ -214,12 +213,10 @@
 
   p {
     color: #fff2f1;
-   
     font-size: 29.526px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -1.772px;
   }
 }
 
@@ -265,7 +262,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -3.326px;
     text-align: left;
   }
 
@@ -275,7 +271,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -1.772px;
     text-align: left;
     margin-left: 6px;
     margin-top: -6px;
@@ -301,19 +296,17 @@
 
 .projectDescription {
   color: #fff2f1;
- 
+
   font-size: 29.526px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: -1.772px;
   opacity: 0.8;
   text-align: left;
   max-width: 748px;
 }
 
 .casesContainer {
-  width: 85%;
   margin: 95px auto 240px;
   overflow: hidden;
 }
@@ -348,7 +341,6 @@
   }
 
   h2 {
-    width: 85%;
     margin: 0 auto 26px;
   }
 }
@@ -383,19 +375,17 @@
 
   h4 {
     color: #fff2f1;
-   
     font-size: 51.649px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -3.099px;
 
     @media (max-width: 1500px) {
       font-size: 40px;
     }
   }
 
-  .name{
+  .name {
     margin-right: 115px;
 
     @media (min-width: 1500px) {
@@ -462,6 +452,11 @@
   width: 100%;
 }
 
+.casesReviewsContainer {
+  max-width: 1222px;
+  margin: 0 auto;
+}
+
 .casesReviewsWrapper::before {
   content: '';
   position: absolute;
@@ -489,7 +484,6 @@
 }
 
 .servicesContainer {
-  width: 85%;
   margin: 0 auto 240px;
   overflow: hidden;
 }
@@ -502,7 +496,7 @@
 }
 
 .contactContainer {
-  width: 85%;
+  max-width: 1222px;
   margin: 0 auto 180px;
   overflow: hidden;
 

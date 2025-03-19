@@ -50,6 +50,7 @@ export default async function Post({ params: paramsPromise }: Args) {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.gradientContainer}></div>
       <article className={styles.container}>
         <PayloadRedirects disableNotFound url={url} />
 

@@ -1,7 +1,20 @@
 .wrapper {
-  background-color: grey;
+  background-color: #03010f;
   padding-top: 61px;
   padding-bottom: 240px;
+  position: relative;
+}
+
+.gradientContainer {
+  position: absolute;
+  top: -119px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 119px);
+  background-color: #03010f;
+  background-image: url('/blog_gradient.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -19,7 +32,7 @@
   a {
     color: #c5c4cc;
     text-align: center;
-   
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -29,7 +42,7 @@
   p {
     color: #fff;
     text-align: center;
-   
+
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -55,7 +68,7 @@
   h1 {
     max-width: 810px;
     color: #fff2f1;
-   
+
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
@@ -76,7 +89,7 @@
 .richTextContainer {
   margin-top: 24px;
   color: #fff;
- 
+
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
@@ -106,7 +119,7 @@
 
   p {
     color: #a5a0b2;
-   
+
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -116,7 +129,7 @@
 
 .tag {
   color: #fff;
- 
+
   font-size: 14px;
   font-style: normal;
   font-weight: 700;

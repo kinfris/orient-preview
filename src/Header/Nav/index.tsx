@@ -17,13 +17,13 @@ export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ serv
     <nav className={styles.navigation}>
       <Link
         href="/cases"
-        className={`${styles.link} ${pathname === '/cases' ? styles.active : null}`}
+        className={`${styles.link} ${pathname.startsWith('/cases') ? styles.active : null}`}
       >
         <span>Cases</span>
       </Link>
       <Link
         href="/blogs"
-        className={`${styles.link} ${pathname === '/blogs' ? styles.active : null}`}
+        className={`${styles.link} ${pathname.startsWith('/blogs') ? styles.active : null}`}
       >
         <span>Blog</span>
       </Link>
@@ -33,7 +33,10 @@ export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ serv
         onMouseEnter={() => setIsPopupOpen(true)}
         onMouseLeave={() => setIsPopupOpen(false)}
       >
-        <Link className={styles.link} href="/services">
+        <Link
+          className={`${styles.link} ${pathname.startsWith('/services') ? styles.active : null}`}
+          href="/services"
+        >
           <span>Services</span>
         </Link>
 

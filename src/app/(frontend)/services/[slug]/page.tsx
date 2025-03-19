@@ -48,6 +48,7 @@ export default async function Service({ params: paramsPromise }: Args) {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.gradientContainer}></div>
       <div className={styles.container}>
         <div className={styles.breadcrumbs}>
           <Link href={'/services'}>Services</Link>

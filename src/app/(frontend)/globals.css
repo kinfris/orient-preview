@@ -109,15 +109,15 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  font-family: Helvetica;
 }
-
 
 main {
   flex: 1;
   z-index: 111;
-  color: #FFF2F1;
+  color: #fff2f1;
 }
 
-*{
-  color: #FFF2F1;
+* {
+  color: #fff2f1;
 }
