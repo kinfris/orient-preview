@@ -42,7 +42,7 @@
   textarea {
     width: 100%;
     color: #cac5cd;
-   
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -53,7 +53,7 @@
     background: #48464c;
   }
 
-  .formGroupInput{
+  .formGroupInput {
     height: 55px;
   }
 
@@ -62,7 +62,7 @@
     border: none;
     background: #48464c;
     color: #cac5cd;
-   
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -72,7 +72,7 @@
 
   .phoneDropdown {
     color: #48464c;
-   
+
     background: #48464c;
 
     li:first-child {
@@ -81,7 +81,7 @@
   }
 
   :global(.react-tel-input .flag-dropdown) {
-    background-color: rgba(34, 33, 39, 0.7);
+    background-color: transparent;
     border-color: #48464c;
     height: 40px !important;
     position: absolute;
@@ -92,6 +92,18 @@
   :global(.react-tel-input .flag-dropdown.open .selected-flag) {
     background-color: rgba(34, 33, 39, 0.7);
     border-color: #48464c;
+  }
+
+  :global(.react-tel-input .selected-flag:hover) {
+    background-color: rgba(34, 33, 39, 0.7);
+  }
+
+  :global(.selected-flag:focus) {
+    background-color: rgba(34, 33, 39, 0.7);
+  }
+
+  :global(.react-tel-input .selected-flag:focus) {
+    background-color: rgba(34, 33, 39, 0.7);
   }
 
   :global(.react-tel-input .country-list .search) {
@@ -136,7 +148,7 @@
   align-items: center;
   border-radius: 50px;
   background-color: #7959b6;
- 
+
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -155,7 +167,7 @@
     color: #fff;
     margin-right: 64px;
   }
-  
+
   .imageContainer {
     background-color: #7959b6;
     align-self: stretch;
@@ -177,5 +189,3 @@
     background-color: #b893ff;
   }
 }
-
-
