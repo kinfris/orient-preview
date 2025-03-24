@@ -1,13 +1,13 @@
 .container {
   background: linear-gradient(180deg, #03010f 0%, #03010f 100%);
-  padding: 25px 109px;
+  padding: 20px 109px;
 
   @media (max-width: 1500px) {
-    padding: 25px 100px;
+    padding: 20px 100px;
   }
 
   @media (max-width: 1300px) {
-    padding: 25px 50px;
+    padding: 20px 50px;
   }
 }
 

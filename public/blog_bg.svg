@@ -13,14 +13,14 @@
 <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_6684_2607"/>
 </filter>
 <linearGradient id="paint0_linear_6684_2607" x1="1581.53" y1="178.144" x2="27.5641" y2="-228.893" gradientUnits="userSpaceOnUse">
-<stop stopColor="#7E05FF"/>
-<stop offset="0.565" stopColor="#2659A6"/>
-<stop offset="1" stopColor="#D0C173"/>
+<stop stop-color="#7E05FF"/>
+<stop offset="0.565" stop-color="#2659A6"/>
+<stop offset="1" stop-color="#D0C173"/>
 </linearGradient>
 <linearGradient id="paint1_linear_6684_2607" x1="1581.53" y1="178.144" x2="27.5641" y2="-228.893" gradientUnits="userSpaceOnUse">
-<stop stopColor="#7E05FF"/>
-<stop offset="0.515" stopColor="#2659A6"/>
-<stop offset="0.92" stopColor="#D0C173"/>
+<stop stop-color="#7E05FF"/>
+<stop offset="0.515" stop-color="#2659A6"/>
+<stop offset="0.92" stop-color="#D0C173"/>
 </linearGradient>
 <clipPath id="clip0_6684_2607">
 <rect width="1440" height="1022" fill="white"/>
