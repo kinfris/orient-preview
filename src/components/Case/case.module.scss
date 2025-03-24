@@ -4,23 +4,21 @@
   justify-content: space-between;
 
   h4 {
+    margin-top: 37px;
     color: #ac69fd;
-   
-    font-size: 32px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 24px;
     margin-bottom: 24px;
   }
 
   p {
     color: #fff2f1;
-   
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
   }
 }
 
@@ -36,11 +34,10 @@
   p {
     margin-bottom: 32px;
     color: #d3d3d4;
-   
-    font-size: 24px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 32px; /* 133.333% */
+    font-weight: 400;
+    line-height: 20px;
   }
 }
 
@@ -55,7 +52,6 @@
 
   h4 {
     color: #fff;
-    font-family: Inter;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
