@@ -21,6 +21,7 @@ export default async function Services() {
   return (
     <div className={styles.container}>
       <div className={styles.bgContainer}></div>
+      <div className={styles.bgGradientContainer}></div>
       <div className={styles.gradientContainer}></div>
       <div className={styles.wrapper}>
         <header className={styles.header}>

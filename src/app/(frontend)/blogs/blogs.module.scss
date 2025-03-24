@@ -1,35 +1,51 @@
 .wrapper {
   padding-top: 75px;
   position: relative;
- display: flex;
+  display: flex;
 }
 
-.bgContainer{
+.bgContainer {
   position: absolute;
   top: -119px;
   left: 0;
   width: 100%;
   height: 70vh;
-  background-color: #03010F;
-  background-image: url('/blog_bg.png');
+  background-color: #03010f;
+  background-image: url('/blog_bg.svg');
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.bgGradientContainer {
+  position: absolute;
+  top: -119px;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  background: linear-gradient(
+    180deg,
+    #03010f 23.34%,
+    rgba(3, 1, 15, 0) 71.39%,
+    rgba(3, 1, 15, 0.9) 94.9%
+  );
+  opacity: 0.5;
   z-index: -1;
 }
 
-.gradientContainer{
+.gradientContainer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
-  background-color: #03010F;
+  background-color: #03010f;
   background-image: url('/blogs_gradient.svg');
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -2;
+  z-index: -3;
 }
 
 .container {
@@ -88,7 +104,7 @@
 
       .publishedDate {
         color: #a5a0b2;
-       
+
         font-size: 18px;
         font-style: normal;
         font-weight: 400;

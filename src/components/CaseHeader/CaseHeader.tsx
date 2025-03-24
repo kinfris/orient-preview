@@ -1,5 +1,4 @@
 import { Title } from '@/components/Title/Title'
-import Image from 'next/image'
 
 import styles from './caseHeader.module.scss'
 

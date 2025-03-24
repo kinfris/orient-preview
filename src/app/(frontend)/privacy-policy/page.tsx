@@ -21,6 +21,7 @@ export default async function Page() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.background}></div>
+      <div className={styles.backgroundGradient}></div>
       <div className={styles.container}>
         <h2>Privacy policy</h2>
 

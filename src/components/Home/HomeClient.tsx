@@ -34,6 +34,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
     <div className={styles.container}>
       <div className={styles.topBgContainer}>
         <div className={styles.topBg}></div>
+        <div className={styles.topBgGradient}></div>
         <div className={styles.topContentContainer}>
           <div className={styles.topContentWrapper}>
             <div className={styles.content}>
@@ -173,10 +174,10 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
                               y2="1.5"
                               gradientUnits="userSpaceOnUse"
                             >
-                              <stop stop-color="#1C1A29" />
-                              <stop offset="0.34" stop-color="#454251" />
-                              <stop offset="0.66" stop-color="#454251" />
-                              <stop offset="1" stop-color="#1C1A29" />
+                              <stop stopColor="#1C1A29" />
+                              <stop offset="0.34" stopColor="#454251" />
+                              <stop offset="0.66" stopColor="#454251" />
+                              <stop offset="1" stopColor="#1C1A29" />
                             </linearGradient>
                           </defs>
                         </svg>
@@ -299,6 +300,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
 
       <div className={styles.contactWrapper}>
         <div className={styles.contactBg}></div>
+        <div className={styles.contactBgGradient}></div>
         <div className={styles.contactContainer}>
           <h2>CONTACT US</h2>
           <ContactForm />

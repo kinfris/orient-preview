@@ -14,11 +14,6 @@ import styles from './mainLayout.module.scss'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { Cookies } from '@/components/Cookies/Cookies'
-import { Inter } from 'next/font/google'
-import localFont from 'next/font/local'
-
-const inter = Inter({ subsets: ['latin'] })
-// const helvetica = localFont({ src: './fonts/Helvetica.ttf' })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
