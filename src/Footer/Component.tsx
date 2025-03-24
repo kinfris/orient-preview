@@ -18,67 +18,69 @@ export async function Footer() {
 
   return (
     <footer className={styles.container}>
-      <div className={styles.topContent}>
-        <div className={styles.leftRow}>
-          <Link className={styles.footerLogo} href="/">
-            <Logo className={styles.logo} />
-            <Title>
-              <p className={styles.footerTitle}>Orinix</p>
-            </Title>
-          </Link>
-          <p className={styles.slogan}>{slogan}</p>
+      <div className={styles.wrapper}>
+        <div className={styles.topContent}>
+          <div className={styles.leftRow}>
+            <Link className={styles.footerLogo} href="/">
+              <Logo className={styles.logo} />
+              <Title>
+                <p className={styles.footerTitle}>Orinix</p>
+              </Title>
+            </Link>
+            <p className={styles.slogan}>{slogan}</p>
 
-          <ul className={styles.socialLinks}>
-            <li className={styles.logo}>
-              <Link href={socials?.Google || '/'}>
-                <SocialLink alt="google" path="/Google_Icon.svg" />
-              </Link>
-            </li>
-            <li className={styles.logo}>
-              <Link href={socials?.Instagram || '/'}>
-                <SocialLink alt="instagram" path="/Instagram_Icon.svg" />
-              </Link>
-            </li>
-            {/* <li className={styles.logo}>
+            <ul className={styles.socialLinks}>
+              <li className={styles.logo}>
+                <Link href={socials?.Google || '/'}>
+                  <SocialLink alt="google" path="/Google_Icon.svg" />
+                </Link>
+              </li>
+              <li className={styles.logo}>
+                <Link href={socials?.Instagram || '/'}>
+                  <SocialLink alt="instagram" path="/Instagram_Icon.svg" />
+                </Link>
+              </li>
+              {/* <li className={styles.logo}>
               <Link href={socials?.Facebook || '/'}>
                 <SocialLink alt="facebook" path="/Facebook_Icon.svg" />
               </Link>
             </li> */}
-            <li className={styles.logo}>
-              <Link href={socials?.Linkedin || '/'}>
-                <SocialLink alt="linkedin" path="/LinkedIn_Icon.svg" />
-              </Link>
-            </li>
-            {/* <li className={styles.logo}>
+              <li className={styles.logo}>
+                <Link href={socials?.Linkedin || '/'}>
+                  <SocialLink alt="linkedin" path="/LinkedIn_Icon.svg" />
+                </Link>
+              </li>
+              {/* <li className={styles.logo}>
               <Link href={socials?.X || '/'}>
                 <SocialLink alt="X" path="/X_Icon.svg" />
               </Link>
             </li> */}
-            {/* <li className={styles.logo}>
+              {/* <li className={styles.logo}>
               <Link href={socials?.Google || '/'}>
                 <SocialLink alt="telegram" path="/TG_Icon.svg" />
               </Link>
             </li> */}
-          </ul>
-        </div>
-        <div className={styles.rightRow}>
-          <div>
-            <h3>Address</h3>
-            <p dangerouslySetInnerHTML={{ __html: address }} />
+            </ul>
           </div>
-          <div className={styles.contactsBlock}>
-            <h3>Contacts</h3>
-            <p>{contacts}</p>
-            <div className={styles.aboutLinks}>
-              <Link href={'/privacy-policy'}>Privacy policy</Link>
-              <Link href={'/terms-of-use'}>Terms of use</Link>
+          <div className={styles.rightRow}>
+            <div>
+              <h3>Address</h3>
+              <p dangerouslySetInnerHTML={{ __html: address }} />
+            </div>
+            <div className={styles.contactsBlock}>
+              <h3>Contacts</h3>
+              <p>{contacts}</p>
+              <div className={styles.aboutLinks}>
+                <Link href={'/privacy-policy'}>Privacy policy</Link>
+                <Link href={'/terms-of-use'}>Terms of use</Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.bottom}>
-        <Clutch />
-        <Upwork />
+        <div className={styles.bottom}>
+          <Clutch />
+          <Upwork />
+        </div>
       </div>
     </footer>
   )
