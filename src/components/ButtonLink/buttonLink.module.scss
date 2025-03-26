@@ -1,13 +1,9 @@
 .link {
-  height: 60px;
+  height: 48px;
   display: flex;
   align-items: center;
   border-radius: 50px;
   background-color: #7959b6;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
   gap: 14px;
   text-transform: uppercase;
   padding-right: 20px;
@@ -17,12 +13,13 @@
   width: fit-content;
 
   span {
-    height: 60px;
     display: inline-block;
     padding: 18px 0 18px 36px;
     color: #fff;
-    margin-right: 64px;
-    margin-top: 1px;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
   }
 
   .imageContainer {
@@ -30,8 +27,8 @@
     position: absolute;
     right: -3px;
     border-radius: 50px;
-    height: 60px;
-    width: 60px;
+    height: 48px;
+    width: 48px;
 
     box-sizing: border-box;
     display: flex;
@@ -42,7 +39,6 @@
   .imageContainer img {
     width: 17px;
     height: 15px;
-    margin-bottom: 1px;
   }
 
   &:hover {
