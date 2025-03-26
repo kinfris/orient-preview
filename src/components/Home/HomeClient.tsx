@@ -79,6 +79,7 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
 
       <div className={styles.casesReviewsWrapper}>
         <div className={styles.casesReviewsBg}></div>
+        <div className={styles.casesReviewsBgGradient}></div>
         <div className={styles.casesReviewsContainer}>
           <div className={styles.casesContainer}>
             <div className={styles.casesTop}>
@@ -226,6 +227,39 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
               </Swiper>
             </div>
           </div>
+
+          {data.showTeamSection && (
+            <>
+              <div className={styles.gradientBorder}></div>
+              <div className={styles.teamContainer}>
+                <h2>Meet our team</h2>
+                <div className={styles.teamList}>
+                  {team.map((el) => {
+                    return (
+                      <div key={el.id} className={styles.person}>
+                        <Media resource={el.image} />
+                        <div className={styles.personContent}>
+                          <div className={styles.name}>
+                            <h4>{el.name}</h4>
+                            <p>{el.position}</p>
+                          </div>
+                          <div className={styles.personLinks}>
+                            <Link href={el.gmail ?? ''}>
+                              <img src="/Google_Icon.svg" alt="" />
+                            </Link>
+                            <Link href={el.linkedin ?? ''}>
+                              <img src="/LinkedIn_Icon.svg" alt="" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </>
+          )}
+
           <div className={styles.servicesContainer}>
             <div className={styles.servicesTop}>
               <h2>WHAT WE DO</h2>
@@ -263,38 +297,6 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
               </Swiper>
             </div>
           </div>
-
-          {data.showTeamSection && (
-            <>
-              <div className={styles.gradientBorder}></div>
-              <div className={styles.teamContainer}>
-                <h2>Meet our team</h2>
-                <div className={styles.teamList}>
-                  {team.map((el) => {
-                    return (
-                      <div key={el.id} className={styles.person}>
-                        <Media resource={el.image} />
-                        <div className={styles.personContent}>
-                          <div className={styles.name}>
-                            <h4>{el.name}</h4>
-                            <p>{el.position}</p>
-                          </div>
-                          <div className={styles.personLinks}>
-                            <Link href={el.gmail ?? ''}>
-                              <img src="/Google_Icon.svg" alt="" />
-                            </Link>
-                            <Link href={el.linkedin ?? ''}>
-                              <img src="/LinkedIn_Icon.svg" alt="" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </>
-          )}
         </div>
       </div>
 
