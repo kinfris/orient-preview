@@ -76,6 +76,11 @@ export const Services: CollectionConfig<'services'> = {
               relationTo: 'media',
             },
             {
+              name: 'heroImage',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
               name: 'benefits',
               type: 'array',
               fields: [

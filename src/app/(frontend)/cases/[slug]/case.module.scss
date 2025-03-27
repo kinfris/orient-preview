@@ -18,7 +18,8 @@
 }
 
 .wrapper {
-  width: 1320px;
+  width: 100%;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
@@ -76,10 +77,10 @@
   margin-top: 60px;
   color: #fff;
   font-family: 'Albert Sans';
-  font-size: 48px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 56px;
+  line-height: 48px;
 
   @media (max-width: 1500px) {
     font-size: 42px;
@@ -107,19 +108,20 @@
 .fsBlockContainer {
   h4 {
     color: #ac69fd;
-    font-size: 32px;
+    font-family: Helvetica;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 24px;
   }
 
   p {
     margin-top: 16px;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 28px;
+    font-weight: 400;
+    line-height: 22px;
   }
 }
 
@@ -151,10 +153,10 @@
 
   p {
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 28px;
+    font-weight: 400;
+    line-height: 22px;
   }
 }
 
@@ -174,10 +176,11 @@
 
   p {
     color: #fff;
-    font-size: 20px;
+    font-family: Helvetica;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 28px;
+    font-weight: 400;
+    line-height: 22px;
   }
 
   img {
@@ -194,7 +197,7 @@
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
-  background-color: #03010F;
+  background-color: #03010f;
   background-image: url('/case_gradient.svg');
   background-position: center;
   background-size: cover;

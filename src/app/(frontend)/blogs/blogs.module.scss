@@ -40,12 +40,26 @@
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
-  background-color: #03010f;
   background-image: url('/blogs_gradient.svg');
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -3;
+  z-index: -4;
+}
+
+.gradientContainerBg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 119px);
+  background: linear-gradient(
+    180deg,
+    #03010f 23.34%,
+    rgba(3, 1, 15, 0) 71.39%,
+    rgba(3, 1, 15, 0.9) 94.9%
+  );
+  z-index: -43;
 }
 
 .container {
@@ -61,22 +75,23 @@
   .title {
     color: #fff;
     font-family: 'Albert Sans';
-    font-size: 97.004px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 900;
-    line-height: normal;
+    line-height: 48px;
     text-transform: uppercase;
   }
 }
 
 .featuredPostContainer {
   h3 {
-    margin-top: 77px;
+    margin-top: 60px;
     color: #fff;
-    font-size: 48px;
+    font-family: Helvetica;
+    font-size: 28px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 36px;
   }
 
   .featuredPost {

@@ -36,28 +36,26 @@ export const CollectionArchive: React.FC<Props> = ({ initBlogs }) => {
         <h3>Recent Posts</h3>
         <button onClick={loadAllBlogs}>See All</button>
       </div>
-
+      {loading && (
+        <div className={styles.spinner}>
+          <div></div>
+        </div>
+      )}
       <div className={styles.postsContainer}>
-        {loading ? (
-          <div className={styles.spinner}>
-            <div></div>
-          </div>
-        ) : (
-          blogs?.map((result, index) => {
-            if (typeof result === 'object' && result !== null && index !== 0) {
-              return (
-                <Card
-                  key={result.slug}
-                  className="h-full"
-                  doc={result}
-                  relationTo="blogs"
-                  showCategories
-                />
-              )
-            }
-            return null
-          })
-        )}
+        {blogs?.map((result, index) => {
+          if (typeof result === 'object' && result !== null && index !== 0) {
+            return (
+              <Card
+                key={(result.slug ?? index).toString() + index}
+                className="h-full"
+                doc={result}
+                relationTo="blogs"
+                showCategories
+              />
+            )
+          }
+          return null
+        })}
       </div>
     </div>
   )

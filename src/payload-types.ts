@@ -757,6 +757,7 @@ export interface Service {
   title: string;
   serviceName?: string | null;
   serviceIcon?: (string | null) | Media;
+  heroImage?: (string | null) | Media;
   benefits?:
     | {
         benefit?: string | null;
@@ -1429,6 +1430,7 @@ export interface ServicesSelect<T extends boolean = true> {
   title?: T;
   serviceName?: T;
   serviceIcon?: T;
+  heroImage?: T;
   benefits?:
     | T
     | {

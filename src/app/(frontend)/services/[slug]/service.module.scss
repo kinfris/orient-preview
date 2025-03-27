@@ -3,16 +3,15 @@
   height: 100%;
   padding-top: 61px;
   padding-bottom: 140px;
-
 }
 
-.gradientContainer{
+.gradientContainer {
   position: absolute;
   top: -119px;
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
-  background-color: #03010F;
+  background-color: #03010f;
   background-image: url('/service_gradient.svg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,7 +30,7 @@
   a {
     color: #c5c4cc;
     text-align: center;
-   
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -46,7 +45,7 @@
   p {
     color: #fff;
     text-align: center;
-   
+
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -65,28 +64,35 @@
 }
 
 .topContentImg {
-  width: 361px;
+  width: 100%;
+  max-width: 361px;
   height: 379px;
   border-radius: 30px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .descriptionContainer {
   h1 {
     color: #fff2f1;
     font-family: 'Albert Sans';
-    font-size: 60px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 800;
-    line-height: 78px;
+    line-height: 48px;
   }
 
   .shortDescription {
+    margin-top: 30px;
     color: #fff;
-   
+    font-family: Helvetica;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 22px;
   }
 
   .benefits {
@@ -94,11 +100,19 @@
     grid-template-columns: repeat(2, auto);
     gap: 37px 54px;
     margin-top: 40px;
+    margin-bottom: 30px;
 
     div {
       display: flex;
       gap: 10px;
       align-items: center;
+    }
+
+    p {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
     }
   }
 }

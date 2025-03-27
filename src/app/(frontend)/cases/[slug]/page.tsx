@@ -76,7 +76,7 @@ export default async function Case({ params: paramsPromise }: Args) {
             viewBox="0 0 24 24"
             fill="none"
           >
-            <path d="M9 19L15 12L9 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           <p>{projectName}</p>
         </div>

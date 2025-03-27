@@ -46,7 +46,7 @@ export default function OtherCases({ currentPostId }: Props) {
         {cases &&
           cases.map((el: Case, i) => (
             <div key={el.id} className={styles.case}>
-              <CaseComponent caseData={el} vertical index={i} />
+              <CaseComponent caseData={el} index={i} reverse={i % 2 == 0} />
             </div>
           ))}
       </div>

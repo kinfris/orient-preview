@@ -56,6 +56,7 @@ export default async function Page() {
       <div className={styles.bgContainer}></div>
       <div className={styles.bgGradientContainer}></div>
       <div className={styles.gradientContainer}></div>
+      <div className={styles.gradientContainerBg}></div>
       <PageClient />
       <div className={styles.container}>
         <div className={styles.titleContainer}>

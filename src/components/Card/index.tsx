@@ -3,8 +3,6 @@ import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
 import React from 'react'
 import styles from './card.module.scss'
-import Image from 'next/image'
-
 import type { Post } from '@/payload-types'
 import { Media } from '../Media'
 
@@ -29,10 +27,9 @@ export const Card: React.FC<{
     <Link href={href} ref={link.ref} className={styles.container}>
       <article ref={card.ref}>
         <div className={styles.imageContainer}>
-          <img src="/post.png" alt="" />
-          {/* {previewImage && typeof previewImage == 'object' && previewImage.url && (
+          {previewImage && typeof previewImage == 'object' && previewImage.url && (
             <Media resource={previewImage} />
-          )} */}
+          )}
         </div>
         <div className={styles.contentContainer}>
           <p className={styles.category}>Category</p>

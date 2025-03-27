@@ -15,11 +15,11 @@
 
 .caseContainer {
   margin-top: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 
-  .case{
+  .case {
     width: 100%;
   }
 }

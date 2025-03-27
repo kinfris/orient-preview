@@ -48,6 +48,16 @@ export default async function Post({ params: paramsPromise }: Args) {
 
   if (!blog) return <PayloadRedirects url={url} />
 
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  const dateStr = yesterday.toISOString()
+  const date = new Date(blog.publishedAt ?? dateStr)
+  const formattedDate = date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.gradientContainer}></div>
@@ -63,7 +73,7 @@ export default async function Post({ params: paramsPromise }: Args) {
             viewBox="0 0 24 24"
             fill="none"
           >
-            <path d="M9 19L15 12L9 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           <p>{blog.title}</p>
         </div>
@@ -76,8 +86,10 @@ export default async function Post({ params: paramsPromise }: Args) {
             </div>
 
             <div className={styles.infoBloc}>
-              <p>July 28, 2022 · 6 min read</p>
-              <div className={styles.tag}>DEVELOPMENT</div>
+              <p>
+                {formattedDate} · {blog.timeToRead}
+              </p>
+              <div className={styles.tag}>{blog.category}</div>
             </div>
 
             {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (

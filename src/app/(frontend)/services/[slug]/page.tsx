@@ -11,6 +11,8 @@ import RichText from '@/components/RichText'
 import Link from 'next/link'
 import OtherServices from '@/components/OtherServices/OtherServices'
 import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
+import Image from 'next/image'
+import { Media } from '@/components/Media'
 
 type Args = {
   params: Promise<{
@@ -44,7 +46,7 @@ export default async function Service({ params: paramsPromise }: Args) {
 
   if (!caseData) return <PayloadRedirects url={'/'} />
 
-  const { serviceName, fullDescription, benefits } = caseData
+  const { serviceName, fullDescription, benefits, heroImage } = caseData
 
   return (
     <div className={styles.wrapper}>
@@ -59,16 +61,16 @@ export default async function Service({ params: paramsPromise }: Args) {
             viewBox="0 0 24 24"
             fill="none"
           >
-            <path d="M9 19L15 12L9 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           <p>{serviceName}</p>
         </div>
         <div className={styles.topContent}>
           <div className={styles.descriptionContainer}>
             <h1>{serviceName}</h1>
-            <p className={styles.shortDescription}>
+            <div className={styles.shortDescription}>
               <RichText data={fullDescription} enableGutter={false} />
-            </p>
+            </div>
             <div className={styles.benefits}>
               {benefits &&
                 benefits.map((el) => {
@@ -93,7 +95,7 @@ export default async function Service({ params: paramsPromise }: Args) {
             </div>
             <ButtonLink href={'/contact'} title="Get A Quote" />
           </div>
-          <img src="/service.png" alt="" className={styles.topContentImg} />
+          <Media resource={heroImage ?? ''} alt="" className={styles.topContentImg} />
         </div>
 
         <OtherServices currentServiceId={caseData.id} />

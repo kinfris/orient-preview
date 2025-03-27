@@ -32,7 +32,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           crossOrigin="anonymous"
         />
       </head>
-      <body className={` ${styles.bodyContainer}`}>
+      <body className={`${styles.bodyContainer}`}>
         <Providers>
           <AdminBar
             adminBarProps={{
