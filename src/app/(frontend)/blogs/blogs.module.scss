@@ -10,6 +10,7 @@
   left: 0;
   width: 100%;
   height: 70vh;
+  max-height: 700px;
   background-color: #03010f;
   background-image: url('/blog_bg.svg');
   background-position: top;
@@ -18,19 +19,27 @@
   z-index: -2;
 }
 
+.bgContainer::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to bottom, rgba(3, 1, 15, 0) 0%, #03010f 100%);
+  pointer-events: none;
+  z-index: -3;
+}
+
 .bgGradientContainer {
   position: absolute;
   top: -119px;
   left: 0;
   width: 100%;
   height: 70vh;
-  background: linear-gradient(
-    180deg,
-    #03010f 23.34%,
-    rgba(3, 1, 15, 0) 71.39%,
-    rgba(3, 1, 15, 0.9) 94.9%
-  );
-  opacity: 0.5;
+  max-height: 700px;
+  background: #03010f;
+  opacity: 0.7;
   z-index: -1;
 }
 
@@ -40,6 +49,7 @@
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
+  background-color: #03010f;
   background-image: url('/blogs_gradient.svg');
   background-position: top;
   background-size: cover;
@@ -53,12 +63,8 @@
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
-  background: linear-gradient(
-    180deg,
-    #03010f 23.34%,
-    rgba(3, 1, 15, 0) 71.39%,
-    rgba(3, 1, 15, 0.9) 94.9%
-  );
+  background: #03010f;
+  opacity: 0.7;
   z-index: -43;
 }
 

@@ -1,41 +1,18 @@
+import { Service } from '@/payload-types'
 import styles from './service.module.scss'
 import Link from 'next/link'
+import { Media } from '../Media'
 
 type Props = {
-  //   serviceData: any
+  service: Service
 }
 
-export const ServiceComponent = ({}: Props) => {
+export const ServiceComponent = ({ service }: Props) => {
   return (
-    <div className={styles.container}>
-      <Icon />
-      <h4>Team Augmentation</h4>
-      <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Duis efficitur dui nec.</p>
-    </div>
-  )
-}
-
-const Icon = () => {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
-      <path
-        d="M8.74817 2.41663H6.45234C3.80609 2.41663 2.4165 3.80621 2.4165 6.44038V8.73621C2.4165 11.3704 3.80609 12.76 6.44025 12.76H8.73609C11.3703 12.76 12.7598 11.3704 12.7598 8.73621V6.44038C12.7719 3.80621 11.3823 2.41663 8.74817 2.41663Z"
-        fill="white"
-      />
-      <path
-        opacity="0.4"
-        d="M22.5598 2.41663H20.264C17.6298 2.41663 16.2402 3.80621 16.2402 6.44038V8.73621C16.2402 11.3704 17.6298 12.76 20.264 12.76H22.5598C25.194 12.76 26.5836 11.3704 26.5836 8.73621V6.44038C26.5836 3.80621 25.194 2.41663 22.5598 2.41663Z"
-        fill="white"
-      />
-      <path
-        d="M22.5598 16.2283H20.264C17.6298 16.2283 16.2402 17.6179 16.2402 20.252V22.5479C16.2402 25.182 17.6298 26.5716 20.264 26.5716H22.5598C25.194 26.5716 26.5836 25.182 26.5836 22.5479V20.252C26.5836 17.6179 25.194 16.2283 22.5598 16.2283Z"
-        fill="white"
-      />
-      <path
-        opacity="0.4"
-        d="M8.74817 16.2283H6.45234C3.80609 16.2283 2.4165 17.6179 2.4165 20.252V22.5479C2.4165 25.1941 3.80609 26.5837 6.44025 26.5837H8.73609C11.3703 26.5837 12.7598 25.1941 12.7598 22.5599V20.2641C12.7719 17.6179 11.3823 16.2283 8.74817 16.2283Z"
-        fill="white"
-      />
-    </svg>
+    <Link href={`/services/${service.slug}`} className={styles.container}>
+      <Media resource={service.serviceIcon ?? ''} />
+      <h4>{service.title}</h4>
+      <p>{service.shortDescription}</p>
+    </Link>
   )
 }

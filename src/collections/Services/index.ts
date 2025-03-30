@@ -93,6 +93,7 @@ export const Services: CollectionConfig<'services'> = {
             {
               name: 'shortDescription',
               type: 'textarea',
+              maxLength: 90,
             },
             {
               name: 'fullDescription',

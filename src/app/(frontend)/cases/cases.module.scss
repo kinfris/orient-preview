@@ -31,6 +31,7 @@
   left: 0;
   width: 100%;
   height: 90vh;
+  max-height: 670px;
   background-image: url('/cases_bg.svg');
   background-position: center;
   background-size: cover;
@@ -44,34 +45,38 @@
   left: 0;
   width: 100%;
   height: 90vh;
-  background: linear-gradient(180deg, rgba(3, 1, 15, 0.8) 38.24%, rgba(3, 1, 15, 0) 94.5%);
-  opacity: 0.5;
+  max-height: 670px;
+  background: #03010f;
+  opacity: 0.7;
   z-index: 126;
 }
 
-.backgroundContainer::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(180deg, rgba(3, 1, 15, 0.8) 38.24%, rgba(3, 1, 15, 0) 94.5%);
-  pointer-events: none;
-}
+// .backgroundContainer::after {
+//   content: '';
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 10%;
+//   background: linear-gradient(to bottom, rgba(3, 1, 15, 0) 0%, #03010f 100%);
+//   pointer-events: none;
+// }
 
 .casesBackgroundContainer {
-  position: fixed; /* Закрепляем фон */
-  top: 0; /* Фон начинается сверху */
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Высота фиксирована */
-  background-image: url('/cases_gradient.svg');
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: calc(100% + 119px);
+  background-color: #03010f;
+  background-image: url('/cases_gradient.svg'), url('/cases_gradient.svg');
+  background-repeat: repeat-x, repeat-x;
+  background-position:
+    top left,
+    bottom left;
+  background-size: contain, contain;
   z-index: 122;
-  pointer-events: none; /* Чтобы не перекрывать кликабельные элементы */
+  pointer-events: none;
 }
 
 .casesBackgroundGradientContainer {
@@ -80,7 +85,8 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(3, 1, 15, 0.8) 38.24%, rgba(3, 1, 15, 0) 94.5%);
+  background: #03010f;
+  opacity: 0.7;
   z-index: 123;
   pointer-events: none;
 }

@@ -11,7 +11,7 @@ import styles from './home.module.scss'
 
 import { Autoplay, Navigation } from 'swiper/modules'
 import Link from 'next/link'
-import { Case, Home } from '@/payload-types'
+import { Case, Home, Service } from '@/payload-types'
 import { Media } from '../Media'
 import { CaseComponent } from '../Case/Case'
 import { ServiceComponent } from '../Service/Service'
@@ -21,9 +21,10 @@ import { ButtonLink } from '../ButtonLink/ButtonLink'
 type Props = {
   homeData: Home[]
   casesData: Case[]
+  servicesData: Service[]
 }
 
-export const HomeClient = ({ homeData, casesData }: Props) => {
+export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
   const data = homeData[0]
 
   if (!data) return <div>Something went wrong...</div>
@@ -289,9 +290,9 @@ export const HomeClient = ({ homeData, casesData }: Props) => {
                 }}
                 className="swiper"
               >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((service) => (
-                  <SwiperSlide key={service} className={styles.serviceSlide}>
-                    <ServiceComponent />
+                {servicesData.map((service) => (
+                  <SwiperSlide key={service.id} className={styles.serviceSlide}>
+                    <ServiceComponent service={service} />
                   </SwiperSlide>
                 ))}
               </Swiper>

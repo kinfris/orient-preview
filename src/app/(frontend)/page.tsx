@@ -17,7 +17,18 @@ export default async function Home() {
     overrideAccess: false,
   })
 
-  return <HomeClient homeData={homeData.docs} casesData={casesData.docs} />
+  const servicesData = await payload.find({
+    collection: 'services',
+    overrideAccess: false,
+  })
+
+  return (
+    <HomeClient
+      homeData={homeData.docs}
+      casesData={casesData.docs}
+      servicesData={servicesData.docs}
+    />
+  )
 }
 
 export { generateMetadata }
