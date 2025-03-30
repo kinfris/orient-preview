@@ -51,30 +51,16 @@
   z-index: 126;
 }
 
-// .backgroundContainer::after {
-//   content: '';
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 10%;
-//   background: linear-gradient(to bottom, rgba(3, 1, 15, 0) 0%, #03010f 100%);
-//   pointer-events: none;
-// }
-
 .casesBackgroundContainer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: calc(100% + 119px);
-  background-color: #03010f;
-  background-image: url('/cases_gradient.svg'), url('/cases_gradient.svg');
-  background-repeat: repeat-x, repeat-x;
-  background-position:
-    top left,
-    bottom left;
-  background-size: contain, contain;
+  background-image: url('/cases_gradient.svg');
+  background-repeat: repeat-y;
+  background-position: top left;
+  background-size: cover;
   z-index: 122;
   pointer-events: none;
 }
