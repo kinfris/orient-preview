@@ -95,7 +95,7 @@ export default async function Service({ params: paramsPromise }: Args) {
             </div>
             <ButtonLink href={'/contact'} title="Get A Quote" />
           </div>
-          <Media resource={heroImage ?? ''} alt="" className={styles.topContentImg} />
+          {heroImage && <Media resource={heroImage} alt="" className={styles.topContentImg} />}
         </div>
 
         <OtherServices currentServiceId={caseData.id} />

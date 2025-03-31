@@ -288,7 +288,6 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
                   nextEl: `.${styles.servicesSwiperButtonNext}`,
                   prevEl: `.${styles.servicesSwiperButtonPrev}`,
                 }}
-                className="swiper"
               >
                 {servicesData.map((service) => (
                   <SwiperSlide key={service.id} className={styles.serviceSlide}>

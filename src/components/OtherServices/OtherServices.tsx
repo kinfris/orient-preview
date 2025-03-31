@@ -50,7 +50,7 @@ export default function OtherServices({ currentServiceId }: Props) {
       <div className={styles.servicesContainer}>
         {services &&
           services.map((el: Service) => {
-            const url = `services/${el.slug}`
+            const url = `${el.slug}`
 
             return (
               <Link key={el.id} href={el.slug ? url : ''} className={styles.service}>

@@ -42,7 +42,7 @@
   width: 100%;
   top: -119px;
   background: #03010f;
-  opacity: 0.7;
+  opacity: 0.5;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -297,7 +297,6 @@
     font-weight: 400;
     line-height: 26px;
     text-align: left;
-    margin-left: 6px;
     margin-top: -6px;
     display: flex;
     gap: 14px;
@@ -470,7 +469,7 @@
 .casesReviewsBgGradient {
   position: absolute;
   background: #03010f;
-  opacity: 0.7;
+  opacity: 0.5;
   z-index: -1;
   height: 100%;
   width: 100%;
@@ -517,7 +516,7 @@
   height: 100%;
   width: 100%;
   background: #03010f;
-  opacity: 0.7;
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -542,3 +541,4 @@
     margin-bottom: 130px;
   }
 }
+
