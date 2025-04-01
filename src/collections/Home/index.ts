@@ -78,6 +78,7 @@ export const Home: CollectionConfig<'home'> = {
           name: 'description',
           type: 'textarea',
           required: true,
+          maxLength: 220,
         },
         {
           name: 'reviewerName',
