@@ -2,6 +2,7 @@ import { Case } from '@/payload-types'
 import styles from './case.module.scss'
 import Link from 'next/link'
 import { ButtonLink } from '../ButtonLink/ButtonLink'
+import { Inter } from 'next/font/google'
 
 type Props = {
   caseData: Case
@@ -9,6 +10,8 @@ type Props = {
   vertical?: boolean
   index: number
 }
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => {
   return (
@@ -20,7 +23,7 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
         <p>{caseData.taskDescription}</p>
         <ButtonLink href={`/cases/${caseData.slug}`} title="Read More" />
       </div>
-      <div className={styles.right}>
+      <div className={`${styles.right} ${inter.variable}`}>
         <h4>{caseData.title}</h4>
         <p>{caseData.previewDescription}</p>
         <div className={styles.rightBg}></div>

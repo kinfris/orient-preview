@@ -11,7 +11,6 @@ import RichText from '@/components/RichText'
 import Link from 'next/link'
 import OtherServices from '@/components/OtherServices/OtherServices'
 import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
-import Image from 'next/image'
 import { Media } from '@/components/Media'
 
 type Args = {
