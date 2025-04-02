@@ -100,7 +100,7 @@ export default async function Post({ params: paramsPromise }: Args) {
           </div>
 
           <div className={styles.richTextContainer}>
-            <RichText className={`${styles.richText} `} data={blog.content} enableGutter={false} />
+            <RichText className={`${styles.richText}`} data={blog.content} enableGutter={false} />
           </div>
         </div>
 

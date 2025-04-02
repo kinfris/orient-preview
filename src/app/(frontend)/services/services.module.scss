@@ -1,5 +1,4 @@
 .container {
-  background: linear-gradient(180deg, rgba(3, 1, 15, 0) 7.82%, #03010f 56.08%);
   position: relative;
   max-height: 100%;
   max-height: fit-content;
@@ -10,7 +9,7 @@
   top: -119px;
   left: 0;
   width: 100%;
-  height: 70vh;
+  height: calc(45% + 106px);
   background-image: url('/services_bg.svg');
   background-position: top;
   background-size: cover;
@@ -18,28 +17,14 @@
   z-index: -2;
 }
 
-.bgGradientContainer {
+.bgContainer::after {
   position: absolute;
-  top: -119px;
-  left: 0;
+  content: '';
+  height: 20%;
   width: 100%;
-  height: 70vh;
-  background: #03010FCC;
-  opacity: 0.7;
-  z-index: -1;
-}
-
-.gradientContainer {
-  position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: calc(100% + 119px);
-  background-image: url('/services_gradient.svg');
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -2;
+  background: linear-gradient(to bottom, rgba(3, 1, 15, 0) 0%, #03010f 100%);
 }
 
 .wrapper {

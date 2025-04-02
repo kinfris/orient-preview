@@ -6,7 +6,6 @@ import type { Footer } from '@/payload-types'
 
 import styles from './footer.module.scss'
 import { Title } from '@/components/Title/Title'
-import { Logo } from '@/components/Logo/Logo'
 import { FooterLogo } from '@/components/Logo/FooterLogo'
 
 export async function Footer() {
@@ -71,7 +70,9 @@ export async function Footer() {
             <div>
               <h3>Contacts</h3>
               <div className={styles.contactsBlockInnerContainer}>
-                <p>{contacts}</p>
+                <Link href={`mailto:${contacts}`} className={styles.contactsText}>
+                  {contacts}
+                </Link>
                 <div className={styles.aboutLinks}>
                   <Link href={'/privacy-policy'}>Privacy policy</Link>
                   <Link href={'/terms-of-use'}>Terms of use</Link>

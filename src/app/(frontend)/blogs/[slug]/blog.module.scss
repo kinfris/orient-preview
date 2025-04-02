@@ -133,7 +133,6 @@
 
 .tag {
   color: #fff;
-
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -141,4 +140,10 @@
   padding: 10px 14px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.14);
+}
+
+.richText {
+  * {
+    color: #fff;
+  }
 }

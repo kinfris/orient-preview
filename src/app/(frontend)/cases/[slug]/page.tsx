@@ -110,45 +110,57 @@ export default async function Case({ params: paramsPromise }: Args) {
             )}
           </div>
           <div className={styles.firstSection}>
-            <div className={styles.fsBlockContainer}>
-              <h4>Task</h4>
-              <p>{taskDescription}</p>
-            </div>
-            <div className={styles.fsBlockContainer}>
-              <h4>Result</h4>
-              <p>{resultDescription}</p>
-            </div>
-            <div className={styles.fsImageContainer}>
-              <Media resource={taskImage ?? ''} />
-              <img src="/case_task.png" alt="" />
-            </div>
-            <div className={styles.fsImageContainer}>
-              <Media resource={resultImage ?? ''} />
-            </div>
+            {taskDescription && (
+              <div className={styles.fsBlockContainer}>
+                <h4>Task</h4>
+                <p>{taskDescription}</p>
+              </div>
+            )}
+            {resultDescription && (
+              <div className={styles.fsBlockContainer}>
+                <h4>Result</h4>
+                <p>{resultDescription}</p>
+              </div>
+            )}
+            {taskImage && (
+              <div className={styles.fsImageContainer}>
+                <Media resource={taskImage} />
+                <img src="/case_task.png" alt="" />
+              </div>
+            )}
+            {resultImage && (
+              <div className={styles.fsImageContainer}>
+                <Media resource={resultImage} />
+              </div>
+            )}
           </div>
           <div className={styles.secondSection}>
             <p>{afterTaskResultDescription}</p>
-            <div className={styles.imageGallery}>
-              <div className={styles.ssImageContainer}>
-                <Media resource={carouselImage1 ?? ''} />
+            {carouselImage1 && carouselImage2Vertical && carouselImage3 && (
+              <div className={styles.imageGallery}>
+                <div className={styles.ssImageContainer}>
+                  <Media resource={carouselImage1} />
+                </div>
+                <div className={`${styles.ssImageContainer} ${styles.ssBigImage}`}>
+                  <Media resource={carouselImage2Vertical} />
+                </div>
+                <div className={styles.ssImageContainer}>
+                  <Media resource={carouselImage3} />
+                </div>
               </div>
-              <div className={`${styles.ssImageContainer} ${styles.ssBigImage}`}>
-                <Media resource={carouselImage2Vertical ?? ''} />
-              </div>
-              <div className={styles.ssImageContainer}>
-                <Media resource={carouselImage3 ?? ''} />
+            )}
+          </div>
+          {endDescription && (
+            <div className={styles.lastSection}>
+              <div className={styles.richTextContainer}>
+                <RichText
+                  className={`${styles.richText} `}
+                  data={endDescription}
+                  enableGutter={false}
+                />
               </div>
             </div>
-          </div>
-          <div className={styles.lastSection}>
-            <div className={styles.richTextContainer}>
-              <RichText
-                className={`${styles.richText} `}
-                data={endDescription}
-                enableGutter={false}
-              />
-            </div>
-          </div>
+          )}
         </div>
         <OtherCases currentPostId={caseData.id} />
       </div>
