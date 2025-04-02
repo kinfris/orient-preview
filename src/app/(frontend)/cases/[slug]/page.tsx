@@ -170,10 +170,10 @@ export default async function Case({ params: paramsPromise }: Args) {
 }
 
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-  const { slug = '' } = await paramsPromise
-  const caseData = await queryCaseBySlug({ slug })
+  // const { slug = '' } = await paramsPromise
+  // const caseData = await queryCaseBySlug({ slug })
 
-  return generateMeta({ doc: caseData })
+  return generateMeta({ doc: { title: 'Orinix' } })
 }
 
 const queryCaseBySlug = cache(async ({ slug }: { slug: string }) => {

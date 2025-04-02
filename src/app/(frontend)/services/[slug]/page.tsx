@@ -104,10 +104,10 @@ export default async function Service({ params: paramsPromise }: Args) {
 }
 
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-  const { slug = '' } = await paramsPromise
-  const serviceData = await queryServiceBySlug({ slug })
+  // const { slug = '' } = await paramsPromise
+  // const serviceData = await queryServiceBySlug({ slug })
 
-  return generateMeta({ doc: serviceData })
+  return generateMeta({ doc: { title: 'Orinix' } })
 }
 
 const queryServiceBySlug = cache(async ({ slug }: { slug: string }) => {

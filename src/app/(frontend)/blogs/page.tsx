@@ -1,5 +1,3 @@
-import type { Metadata } from 'next/types'
-
 import { CollectionArchive } from '@/components/CollectionArchive'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -10,6 +8,7 @@ import { Title } from '@/components/Title/Title'
 import Link from 'next/link'
 import { Media } from '@/components/Media'
 import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
+import { Metadata } from 'next/types'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -87,6 +86,6 @@ export default async function Page() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Blog`,
+    title: `Orinix`,
   }
 }

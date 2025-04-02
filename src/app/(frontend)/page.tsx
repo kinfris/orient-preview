@@ -1,9 +1,9 @@
+import type { Metadata } from 'next/types'
+
 import { HomeClient } from '@/components/Home/HomeClient'
-import { generateMetadata } from './[slug]/page'
 
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
-
 export default async function Home() {
   const payload = await getPayload({ config: configPromise })
 
@@ -31,4 +31,8 @@ export default async function Home() {
   )
 }
 
-export { generateMetadata }
+export function generateMetadata(): Metadata {
+  return {
+    title: `Orinix`,
+  }
+}

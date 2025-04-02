@@ -52,6 +52,6 @@ export default async function Services() {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `Services`,
+    title: `Orinix`,
   }
 }

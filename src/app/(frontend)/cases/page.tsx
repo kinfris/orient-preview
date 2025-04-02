@@ -38,6 +38,6 @@ export default async function Cases() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Cases`,
+    title: `Orinix`,
   }
 }
