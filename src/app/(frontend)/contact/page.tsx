@@ -8,8 +8,9 @@ export default async function Page() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.background}></div>
-      <div className={styles.backgroundGradient}></div>
-      <ContactForm showTitle />
+      <div className={styles.formContainer}>
+        <ContactForm showTitle />
+      </div>
     </div>
   )
 }

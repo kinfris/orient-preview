@@ -156,7 +156,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
                     key={review.id}
                     className={`${styles.reviewSlide} ${i % 2 === 0 && styles.reviewSlideBg}`}
                   >
-                    <Link href={review.fullCaseLink ?? ''}>
+                    <div>
                       <p className={styles.reviewDescription}>{review.description}</p>
                       <div className={styles.dividedIcon}>
                         <svg
@@ -222,7 +222,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
                           </div>
                         </div>
                       </div>
-                    </Link>
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>

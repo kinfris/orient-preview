@@ -19,9 +19,14 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
       className={`${styles.container} ${reverse && styles.reverseFlex} ${vertical && styles.verticalFlex}`}
     >
       <div className={styles.leftContent}>
-        <h4>Case #{index + 1}</h4>
-        <p>{caseData.taskDescription}</p>
-        <ButtonLink href={`/cases/${caseData.slug}`} title="Read More" />
+        <div className={styles.contentContainer}>
+          <h4>Case #{index + 1}</h4>
+          <p>{caseData.taskDescription}</p>
+        </div>
+
+        <div className={styles.btnWrapper}>
+          <ButtonLink href={`/cases/${caseData.slug}`} title="Read More" />
+        </div>
       </div>
       <div className={`${styles.right} ${inter.variable}`}>
         <h4>{caseData.title}</h4>
