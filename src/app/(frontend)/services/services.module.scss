@@ -14,17 +14,45 @@
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: -4;
+}
+
+.bgContainer::before {
+  position: absolute;
+  content: '';
+  height: 20%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(3, 1, 15, 0) 0%, #03010f 100%);
   z-index: -2;
 }
 
 .bgContainer::after {
   position: absolute;
   content: '';
-  height: 20%;
+  height: 40%;
   width: 100%;
   bottom: 0;
   left: 0;
   background: linear-gradient(to bottom, rgba(3, 1, 15, 0) 0%, #03010f 100%);
+  z-index: -2;
+}
+
+.bgContainerGradient {
+  position: absolute;
+  top: -119px;
+  left: 0;
+  width: 100%;
+  height: calc(45% + 106px);
+  background: linear-gradient(
+    180deg,
+    rgba(3, 1, 15, 0.9) 4.36%,
+    rgba(3, 1, 15, 0) 25.49%,
+    #03010f 56.95%
+  );
+  opacity: 0.5;
+  z-index: -3;
 }
 
 .wrapper {
