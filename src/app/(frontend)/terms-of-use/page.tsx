@@ -37,6 +37,6 @@ export default async function Page() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Orinix`,
+    title: `Terms of use`,
   }
 }

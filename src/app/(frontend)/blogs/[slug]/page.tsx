@@ -111,10 +111,10 @@ export default async function Post({ params: paramsPromise }: Args) {
 }
 
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-  // const { slug = '' } = await paramsPromise
-  // const blog = await queryBlogBySlug({ slug })
+  const { slug = '' } = await paramsPromise
+  const blog = await queryBlogBySlug({ slug })
 
-  return generateMeta({ doc: { title: 'Orinix' } })
+  return generateMeta({ doc: blog })
 }
 
 const queryBlogBySlug = cache(async ({ slug }: { slug: string }) => {
