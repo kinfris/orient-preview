@@ -71,28 +71,7 @@ export default buildConfig({
   globals: [Header, Footer],
   plugins: [
     ...plugins,
-    // s3Storage({
-    //   collections: {
-    //     media: true,
-    //     blogs: {
-    //       prefix: 'blogs-prefix',
-    //     },
-    //     home: {
-    //       prefix: 'home-prefix',
-    //     },
-    //   },
-    //   bucket: process.env.S3_BUCKET!, // Your S3 bucket name
-    //   config: {
-    //     credentials: {
-    //       accessKeyId: process.env.S3_ACCESS_KEY_ID!,
-    //       secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
-    //     },
-    //     region: process.env.S3_REGION!,
-    //     // ... Other S3 configuration
-    //   },
-    // }),
-    // storage-adapter-placeholder
-    vercelBlobStorage({
+    s3Storage({
       collections: {
         media: true,
         blogs: {
@@ -102,8 +81,29 @@ export default buildConfig({
           prefix: 'home-prefix',
         },
       },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
+      bucket: process.env.S3_BUCKET!, // Your S3 bucket name
+      config: {
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID!,
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
+        },
+        region: process.env.S3_REGION!,
+        // ... Other S3 configuration
+      },
     }),
+    // storage-adapter-placeholder
+    // vercelBlobStorage({
+    //   collections: {
+    //     media: true,
+    //     blogs: {
+    //       prefix: 'blogs-prefix',
+    //     },
+    //     home: {
+    //       prefix: 'home-prefix',
+    //     },
+    //   },
+    //   token: process.env.BLOB_READ_WRITE_TOKEN,
+    // }),
   ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
