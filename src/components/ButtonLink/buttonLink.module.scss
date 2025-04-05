@@ -45,3 +45,11 @@
     background-color: #b893ff;
   }
 }
+
+@media (max-width: 768px) {
+  .link {
+    span {
+      margin-right: 0;
+    }
+  }
+}

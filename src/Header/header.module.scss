@@ -1,5 +1,5 @@
 .container {
-  background: linear-gradient(180deg, #03010f 0%, #03010f 100%);
+  z-index: 900;
   padding: 20px 109px;
 
   @media (max-width: 1500px) {
@@ -11,13 +11,13 @@
   }
 }
 
-.transparentBg{
+.transparentBg {
   background: unset;
 }
 
 .wrapper {
   max-width: 1222px;
-  margin: 0 auto; 
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,4 +43,119 @@
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
+}
+
+.burgerIconContainer {
+  display: none;
+}
+
+.fullscreenModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 950;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+
+}
+
+.modalContent {
+  padding: 16px 20px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 960;
+  width: 100vw;
+  height: 50%;
+  background: url('/menu_background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.backgroundGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 970;
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(3, 1, 15, 0) 0%, #03010f 100%);
+  opacity: 0.7;
+}
+
+.closeButton {
+  width: 24px;
+  height: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.modalContentContainer {
+  position: relative;
+  z-index: 980;
+  height: 100%;
+}
+
+.modalTopContent {
+  display: flex;
+  justify-content: space-between;
+
+  .headerLogo {
+    img {
+      width: 17px;
+      height: 17px;
+    }
+
+    p {
+      color: #fff;
+      font-family: 'Albert Sans';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 9px 25px;
+  }
+
+  .serviceDataContainer {
+    display: none;
+  }
+
+  .headerLogo {
+    img {
+      width: 17px;
+      height: 17px;
+    }
+
+    p {
+      color: #fff;
+      font-family: 'Albert Sans';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .burgerIconContainer {
+    display: block;
+    cursor: pointer;
+  }
 }

@@ -22,7 +22,7 @@ export async function Footer() {
         <div className={styles.topContent}>
           <div className={styles.leftRow}>
             <Link className={styles.footerLogo} href="/">
-              <FooterLogo />
+              <FooterLogo className={styles.footerLogo} />
               <Title>
                 <p className={styles.footerTitle}>Orinix</p>
               </Title>
@@ -40,26 +40,12 @@ export async function Footer() {
                   <SocialLink alt="instagram" path="/Instagram_Icon.svg" />
                 </Link>
               </li>
-              {/* <li className={styles.logo}>
-              <Link href={socials?.Facebook || '/'}>
-                <SocialLink alt="facebook" path="/Facebook_Icon.svg" />
-              </Link>
-            </li> */}
+
               <li className={styles.logo}>
                 <Link href={socials?.Linkedin || '/'}>
                   <SocialLink alt="linkedin" path="/LinkedIn_Icon.svg" />
                 </Link>
               </li>
-              {/* <li className={styles.logo}>
-              <Link href={socials?.X || '/'}>
-                <SocialLink alt="X" path="/X_Icon.svg" />
-              </Link>
-            </li> */}
-              {/* <li className={styles.logo}>
-              <Link href={socials?.Google || '/'}>
-                <SocialLink alt="telegram" path="/TG_Icon.svg" />
-              </Link>
-            </li> */}
             </ul>
           </div>
           <div className={styles.rightRow}>

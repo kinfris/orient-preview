@@ -194,3 +194,15 @@
     background-color: #b893ff;
   }
 }
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 30px 12px;
+  }
+
+  .title{
+    font-size: 32px;
+    line-height: 40px;
+    text-align: left;
+  }
+}

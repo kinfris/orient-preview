@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  gap: 30px;
+}
+
+.link {
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: capitalize;
+}
+
+.active{
+    span{
+        color: #AC69FD;
+    }
+   
+}

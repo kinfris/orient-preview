@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <link
-          href="/fonts/fonts/Helvetica.ttf"
+          href="/fonts/Helvetica.ttf"
           rel="preload"
           as="font"
           type="font/ttf"

@@ -101,6 +101,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: 24px;
+    opacity: 0.7;
   }
 }
 
@@ -166,4 +167,97 @@
   font-style: normal;
   font-weight: 300;
   line-height: 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .topContent {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .footerLogo {
+    width: 17px;
+    height: 17px;
+  }
+
+  .footerTitle {
+    font-size: 14px;
+  }
+
+  .slogan {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .socialLinks {
+    .logo {
+      height: 40px;
+      width: 40px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .rightRow {
+    margin-top: 20px;
+
+    h3 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .contactsBlockInnerContainer {
+    height: calc(100% - 38px);
+
+    .contactsText {
+      font-size: 14px;
+      line-height: 20px;
+      opacity: 0.7;
+    }
+
+    .aboutLinks {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .bottom {
+    margin-top: 20px;
+  }
+
+  .upwork {
+    .platformLogo {
+      width: 55px;
+      height: 17px;
+    }
+    align-items: start;
+  }
+
+  .clutch {
+    .platformLogo {
+      width: 53px;
+      height: 15px;
+    }
+    align-items: start;
+  }
+
+  .starsContainer {
+    svg {
+      height: 13px;
+      width: 13px;
+    }
+  }
 }

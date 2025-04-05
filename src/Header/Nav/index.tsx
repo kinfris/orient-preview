@@ -40,7 +40,6 @@ export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ serv
           <span>Services</span>
         </Link>
 
-        {/* Попап, который тоже реагирует на ховер */}
         {pathname !== '/services' && isPopupOpen && (
           <div
             className={styles.popup}
@@ -57,7 +56,6 @@ export const HeaderNav: React.FC<{ servicesData: Partial<Service>[] }> = ({ serv
       >
         <span>Contact Us</span>
       </Link>
-      {/* <Popup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} servicesData={servicesData} /> */}
     </nav>
   )
 }

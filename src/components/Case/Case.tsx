@@ -20,7 +20,7 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
     >
       <div className={styles.leftContent}>
         <div className={styles.contentContainer}>
-          <h4>Case #{index + 1}</h4>
+          <h4 className={styles.desktopTitle}>Case #{index + 1}</h4>
           <p>{caseData.taskDescription}</p>
         </div>
 
@@ -34,6 +34,7 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
         <div className={styles.rightBg}></div>
         <div className={styles.rightBgImage}></div>
       </div>
+      <h4 className={styles.mobileTitle}>Case #{index + 1}</h4>
     </div>
   )
 }
