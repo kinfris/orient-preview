@@ -26,3 +26,15 @@
     line-height: 22px;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    height: unset;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

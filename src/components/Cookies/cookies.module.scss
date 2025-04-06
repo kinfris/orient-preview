@@ -1,6 +1,6 @@
 .container {
   position: fixed;
-  z-index: 999;
+  z-index: 980;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
@@ -52,7 +52,6 @@
     padding: 10px 17px;
     color: #fff;
     text-align: center;
-
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -70,4 +69,54 @@
     cursor: pointer;
     color: white;
   }
+}
+
+@media (max-width: 768px) {
+.closeBtn{
+  display: none;
+}
+
+  .container{
+  min-width: unset;
+  flex-direction: column;
+  width: 90%;
+  box-sizing: border-box;
+  gap: 8px;
+  padding: 12px 16px;
+  align-items: unset;
+
+  .start{
+    align-items: baseline;
+
+    p {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    svg{
+      height: 18px;
+    }
+  }
+
+  .rejectBtn{
+    padding: 9px 0;
+  }
+
+  .btnGroup{
+    flex-direction: row-reverse;
+    justify-content: end;
+    gap: 12px;
+  }
+}
+
+.mobileBg{
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 1, 15, 0.80);
+  opacity: 0.8;
+  z-index: 970;
+}
 }
