@@ -213,10 +213,20 @@
   display: none;
 }
 
+.breadcrumbsStart {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
 @media (max-width: 768px) {
   .btnContainer,
   .fsImageDesktopContainer {
     display: none;
+  }
+
+  .breadcrumbsStart {
+    gap: 6px;
   }
 
   .container {
@@ -228,7 +238,7 @@
   }
 
   .breadcrumbs {
-    margin: 0;
+    margin: 0 0 0 12px;
   }
 
   .tagsContainer {

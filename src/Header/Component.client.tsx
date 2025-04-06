@@ -17,7 +17,7 @@ interface HeaderClientProps {
 }
 
 export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
-  const [menuOpen, setMenuOpen] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
   const hideBg =
     pathname === '/' ||

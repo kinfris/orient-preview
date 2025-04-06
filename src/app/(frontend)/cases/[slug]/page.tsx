@@ -68,16 +68,18 @@ export default async function Case({ params: paramsPromise }: Args) {
     <article className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.breadcrumbs}>
-          <Link href={'/cases'}>Cases</Link>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+          <div className={styles.breadcrumbsStart}>
+            <Link href={'/cases'}>Cases</Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
           <p>{projectName}</p>
         </div>
         <div className={styles.caseContainer}>
@@ -101,11 +103,6 @@ export default async function Case({ params: paramsPromise }: Args) {
           <Title>
             <h1 className={styles.projectName}>{projectName}</h1>
           </Title>
-          {/* <div className={styles.heroImage}>
-            {heroImage && typeof heroImage == 'object' && heroImage.url && (
-              <Media resource={heroImage} />
-            )}
-          </div> */}
           <div className={styles.mainImage}>
             {heroImage && typeof heroImage == 'object' && heroImage.url && (
               <Media resource={heroImage} />
