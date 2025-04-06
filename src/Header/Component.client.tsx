@@ -17,7 +17,7 @@ interface HeaderClientProps {
 }
 
 export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(true)
   const pathname = usePathname()
   const hideBg =
     pathname === '/' ||
@@ -39,6 +39,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
       document.body.style.overflow = ''
     }
   }, [menuOpen])
+
+  const onNavClickHandler = () => {
+    setMenuOpen(false)
+  }
 
   return (
     <>
@@ -65,7 +69,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
             <div className={styles.backgroundGradient}></div>
             <div className={styles.modalContentContainer}>
               <div className={styles.modalTopContent}>
-                <Link href="/" className={styles.headerLogo}>
+                <Link href="/" className={styles.headerLogo} onClick={onNavClickHandler}>
                   <Logo loading="eager" priority="high" className={styles.logo} />
                   <Title>
                     <p className={styles.headerTitle}>Orinix</p>
@@ -76,7 +80,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
                 </button>
               </div>
 
-              <MobileNav />
+              <MobileNav onClick={onNavClickHandler} servicesData={servicesData} />
             </div>
           </div>
         </div>

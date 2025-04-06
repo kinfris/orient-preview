@@ -15,9 +15,50 @@
   text-transform: capitalize;
 }
 
-.active{
-    span{
-        color: #AC69FD;
-    }
-   
+.active {
+  span {
+    color: #ac69fd;
+  }
+}
+.subLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.subLink {
+  display: flex;
+  gap: 6px;
+  padding: 20px 0;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  span {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}
+
+.topNav {
+  display: flex;
+  gap: 6px;
+
+  p {
+    color: #fff;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .activeTop {
+    color: #ac69fd;
+  }
 }
