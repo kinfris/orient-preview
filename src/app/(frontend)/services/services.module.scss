@@ -152,3 +152,11 @@
     flex-direction: column;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .wrapper {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

@@ -622,7 +622,7 @@
     overflow: hidden;
   }
 
-  .contactContainer{
+  .contactContainer {
     margin-bottom: 70px;
   }
 
@@ -646,5 +646,19 @@
     svg {
       transform: translate(-50%, -50%) scale(0.7);
     }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .topContentWrapper,
+  .casesReviewsContainer,
+  .contactContainer {
+    max-width: unset;
+    padding: 0 50px;
+  }
+
+  .teamList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

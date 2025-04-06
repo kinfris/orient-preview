@@ -69,15 +69,21 @@
   z-index: 123;
 }
 
-
 @media (max-width: 768px) {
-  .wrapper{
+  .wrapper {
     padding-top: 44px;
   }
 
-  .casesContainer{
+  .casesContainer {
     width: 100%;
     margin: 50px auto 0;
     padding: 0 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .casesContainer {
+    max-width: unset;
+    padding: 0 50px;
   }
 }

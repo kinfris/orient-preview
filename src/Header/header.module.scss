@@ -159,3 +159,21 @@
     cursor: pointer;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .headerLogo {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    p {
+      color: #fff;
+      font-family: 'Albert Sans';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -80,3 +80,10 @@
     margin-top: 12px;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .postsContainer {
+   
+    gap: 20px 10px;
+  }
+}

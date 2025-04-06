@@ -70,6 +70,7 @@
   border-radius: 30px;
 
   img {
+    min-width: 300px;
     width: 100%;
     height: 100%;
   }
@@ -158,5 +159,12 @@
 
   .topContentImgMobile {
     display: unset;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .container{
+    max-width: unset;
+    padding: 0 50px;
   }
 }

@@ -329,3 +329,14 @@
     }
   }
 }
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .wrapper {
+    max-width: unset;
+    padding: 0 50px;
+  }
+
+  .ssImageContainer{
+    width: 100%;
+  }
+}
