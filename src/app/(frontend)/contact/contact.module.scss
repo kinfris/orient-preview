@@ -59,3 +59,15 @@
   justify-content: center;
 }
 
+
+@media (max-width: 768px) {
+  .wrapper{
+    padding: 40px 20px 70px;
+  }
+
+  .background {
+    top: unset;
+    bottom: 0;
+    height: calc(100% + 40px);
+  }
+}

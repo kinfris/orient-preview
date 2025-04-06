@@ -3,7 +3,7 @@
 
   h3 {
     color: #fff;
-   
+
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -11,11 +11,11 @@
   }
 }
 
-.blogsContainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 21px;
-    margin-top: 40px;
+.blogsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 21px;
+  margin-top: 40px;
 }
 
 .spinner {
@@ -40,5 +40,12 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .blogsContainer {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -46,3 +46,20 @@
   padding: 4px 8px;
   width: fit-content;
 }
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    max-width: unset;
+    height: 194px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

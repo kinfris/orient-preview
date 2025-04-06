@@ -47,7 +47,6 @@ export const CollectionArchive: React.FC<Props> = ({ initBlogs }) => {
             return (
               <Card
                 key={(result.slug ?? index).toString() + index}
-                className="h-full"
                 doc={result}
                 relationTo="blogs"
                 showCategories

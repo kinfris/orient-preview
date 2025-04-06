@@ -127,3 +127,28 @@
     line-height: 22px;
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 44px 20px;
+  }
+
+  .servicesContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+}

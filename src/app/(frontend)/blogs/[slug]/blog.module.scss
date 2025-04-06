@@ -32,7 +32,6 @@
   a {
     color: #c5c4cc;
     text-align: center;
-
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -42,7 +41,7 @@
   p {
     color: #fff;
     text-align: center;
-
+    text-align: left;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -89,7 +88,6 @@
 .richTextContainer {
   margin-top: 24px;
   color: #fff;
-
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
@@ -145,5 +143,79 @@
 .richText {
   * {
     color: #fff;
+  }
+}
+
+.breadcrumbsStart {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+@media (max-width: 768px) {
+  .btnContainer,
+  .tag {
+    display: none;
+  }
+
+  .wrapper {
+    padding-bottom: 70px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .breadcrumbsStart {
+    gap: 6px;
+  }
+
+  .breadcrumbs {
+    margin-left: 0;
+    gap: 6px;
+    align-items: baseline;
+  }
+
+  .contentContainer {
+    margin-top: 20px;
+    padding: 40px 12px;
+  }
+
+  .mobileTag {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.14);
+    width: fit-content;
+    margin-bottom: 14px;
+  }
+
+  .titleContainer {
+    h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  .infoBloc {
+    margin-top: 14px;
+  }
+
+  .imageContainer {
+    img {
+      height: unset;
+    }
+  }
+
+  .richText {
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }

@@ -93,7 +93,9 @@ export default async function Case({ params: paramsPromise }: Args) {
                 })}
               </div>
             )}
-            <ButtonLink href={'/contact'} title="Get A Quote" />
+            <div className={styles.btnContainer}>
+              <ButtonLink href={'/contact'} title="Get A Quote" />
+            </div>
           </div>
 
           <Title>
@@ -116,20 +118,31 @@ export default async function Case({ params: paramsPromise }: Args) {
                 <p>{taskDescription}</p>
               </div>
             )}
+            {taskImage && (
+              <div className={`${styles.fsImageContainer} ${styles.fsImageMobileContainer}`}>
+                <Media resource={taskImage} />
+                <img src="/case_task.png" alt="" />
+              </div>
+            )}
             {resultDescription && (
               <div className={styles.fsBlockContainer}>
                 <h4>Result</h4>
                 <p>{resultDescription}</p>
               </div>
             )}
+            {resultImage && (
+              <div className={`${styles.fsImageContainer} ${styles.fsImageMobileContainer}`}>
+                <Media resource={resultImage} />
+              </div>
+            )}
             {taskImage && (
-              <div className={styles.fsImageContainer}>
+              <div className={`${styles.fsImageContainer} ${styles.fsImageDesktopContainer}`}>
                 <Media resource={taskImage} />
                 <img src="/case_task.png" alt="" />
               </div>
             )}
             {resultImage && (
-              <div className={styles.fsImageContainer}>
+              <div className={`${styles.fsImageContainer} ${styles.fsImageDesktopContainer}`}>
                 <Media resource={resultImage} />
               </div>
             )}

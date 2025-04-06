@@ -4,11 +4,6 @@
   align-items: center;
   justify-content: start;
 
-  img {
-    margin-left: -250px;
-    max-width: 50%;
-  }
-
   h1 {
     color: #fff;
     font-family: 'Albert Sans';
@@ -32,5 +27,27 @@
   p {
     margin-top: 30px;
     width: 60%;
+  }
+}
+
+.btnContainer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .textContent {
+    p {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+
+  .btnContainer{
+    display: unset;
   }
 }

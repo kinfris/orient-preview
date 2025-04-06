@@ -32,7 +32,6 @@
   a {
     color: #c5c4cc;
     text-align: center;
-
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -204,8 +203,119 @@
   z-index: -1;
 }
 
-.richText{
-  *{
+.richText {
+  * {
     color: #fff;
+  }
+}
+
+.fsImageMobileContainer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .btnContainer,
+  .fsImageDesktopContainer {
+    display: none;
+  }
+
+  .container {
+    padding: 8px;
+  }
+
+  .wrapper {
+    max-width: unset;
+  }
+
+  .breadcrumbs {
+    margin: 0;
+  }
+
+  .tagsContainer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .caseContainer {
+    margin-top: 20px;
+    padding: 40px 12px;
+  }
+
+  .projectName {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .mainImage {
+    margin-top: 20px;
+    max-height: 335px;
+  }
+
+  .fsImageMobileContainer {
+    display: unset;
+  }
+
+  .fsImageContainer {
+    height: 160px;
+  }
+
+  .firstSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ssImageContainer {
+    width: unset;
+  }
+
+  .imageGallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    .ssImageContainer:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .ssImageContainer:nth-child(2) {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+
+    .ssImageContainer:nth-child(3) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .ssBigImage {
+      grid-row: 2 !important;
+      grid-column: 1 / span 2;
+      width: 100%;
+    }
+  }
+  .lastSection {
+    margin-top: 20px;
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .fsBlockContainer {
+    h4 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .secondSection {
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }

@@ -65,24 +65,30 @@ export default async function Post({ params: paramsPromise }: Args) {
         <PayloadRedirects disableNotFound url={url} />
 
         <div className={styles.breadcrumbs}>
-          <Link href={'/blogs'}>Blog</Link>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+          <div className={styles.breadcrumbsStart}>
+            <Link href={'/blogs'}>Blog</Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+
           <p>{blog.title}</p>
         </div>
 
         <div className={styles.contentContainer}>
           <div className={styles.topContainer}>
+            <div className={styles.mobileTag}>{blog.category}</div>
             <div className={styles.titleContainer}>
               <h1>{blog.title}</h1>
-              <ButtonLink href={'/contact'} title="Get A Quote" />
+              <div className={styles.btnContainer}>
+                <ButtonLink href={'/contact'} title="Get A Quote" />
+              </div>
             </div>
 
             <div className={styles.infoBloc}>

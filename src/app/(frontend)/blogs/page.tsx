@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Media } from '@/components/Media'
 import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
 import { Metadata } from 'next/types'
+import { Card } from '@/components/Card'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -76,6 +77,9 @@ export default async function Page() {
               <Media resource={firstPost.previewImage ?? ''} />
             </div>
           </Link>
+          <div className={styles.featuredPostMobile}>
+            <Card doc={firstPost} relationTo="blogs" showCategories />
+          </div>
         </div>
 
         <CollectionArchive initBlogs={blogs.docs} />

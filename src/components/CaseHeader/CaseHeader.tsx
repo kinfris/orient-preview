@@ -1,6 +1,7 @@
 import { Title } from '@/components/Title/Title'
 
 import styles from './caseHeader.module.scss'
+import { ButtonLink } from '../ButtonLink/ButtonLink'
 
 export const CaseHeader = () => {
   return (
@@ -16,6 +17,9 @@ export const CaseHeader = () => {
           <br />
           Explore how we turn challenges into opportunities, empowering businesses worldwide.
         </p>
+        <div className={styles.btnContainer}>
+          <ButtonLink href={'/contact'} title="Get A Quote" />
+        </div>
       </div>
     </div>
   )

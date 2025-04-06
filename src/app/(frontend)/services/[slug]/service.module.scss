@@ -119,3 +119,44 @@
     }
   }
 }
+
+.topContentImgMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .btnWrapper,
+  .topContentImgDesktop {
+    display: none;
+  }
+
+  .wrapper{
+    padding-bottom: 70px;
+  }
+
+  .container {
+    max-width: unset;
+    padding: 0 10px;
+  }
+
+  .topContent {
+    margin-top: 20px;
+    padding: 40px 10px;
+    flex-direction: column;
+  }
+
+  .shortDescription{
+    margin-bottom: 20px;
+  }
+
+  .descriptionContainer {
+    h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  .topContentImgMobile {
+    display: unset;
+  }
+}

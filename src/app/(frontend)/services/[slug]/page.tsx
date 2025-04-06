@@ -70,6 +70,11 @@ export default async function Service({ params: paramsPromise }: Args) {
             <div className={styles.shortDescription}>
               <RichText data={fullDescription} enableGutter={false} />
             </div>
+            {heroImage && (
+              <div className={styles.topContentImgMobile}>
+                <Media resource={heroImage} alt="" className={styles.topContentImg} />
+              </div>
+            )}
             <div className={styles.benefits}>
               {benefits &&
                 benefits.map((el) => {
@@ -92,9 +97,15 @@ export default async function Service({ params: paramsPromise }: Args) {
                   )
                 })}
             </div>
-            <ButtonLink href={'/contact'} title="Get A Quote" />
+            <div className={styles.btnWrapper}>
+              <ButtonLink href={'/contact'} title="Get A Quote" />
+            </div>
           </div>
-          {heroImage && <Media resource={heroImage} alt="" className={styles.topContentImg} />}
+          {heroImage && (
+            <div className={styles.topContentImgDesktop}>
+              <Media resource={heroImage} alt="" className={styles.topContentImg} />
+            </div>
+          )}
         </div>
 
         <OtherServices currentServiceId={caseData.id} />

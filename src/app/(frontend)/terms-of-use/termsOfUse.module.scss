@@ -56,3 +56,25 @@
     line-height: 22px;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 44px 20px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    .richtext {
+      margin-top: 30px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
