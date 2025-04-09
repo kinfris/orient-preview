@@ -241,22 +241,30 @@
   .bottom {
     margin-top: 20px;
     gap: unset;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
   .upwork {
+    gap: 8px;
+
     .platformLogo {
-      width: 55px;
-      height: 17px;
+      svg {
+        width: 55px;
+        height: 17px;
+      }
     }
-    align-items: start;
   }
 
   .clutch {
+    gap: 8px;
+
     .platformLogo {
-      width: 53px;
-      height: 15px;
+      svg {
+        width: 53px;
+        height: 15px;
+      }
     }
-    align-items: start;
   }
 
   .starsContainer {
