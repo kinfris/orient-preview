@@ -5,6 +5,7 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import Link from 'next/link'
 import { Media } from '@/components/Media'
+import { ButtonLink } from '@/components/ButtonLink/ButtonLink'
 
 export const revalidate = 600
 
@@ -32,6 +33,9 @@ export default async function Services() {
             <br />
             Explore how we turn challenges into opportunities, empowering businesses worldwide.
           </p>
+          <div className={styles.btnContainer}>
+            <ButtonLink href={'/contact'} title={'Get A Quote'} />
+          </div>
         </header>
         <div className={styles.servicesContainer}>
           {services.map((el) => {

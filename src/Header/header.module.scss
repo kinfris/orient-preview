@@ -137,6 +137,11 @@
     display: none;
   }
 
+  .wrapper{
+    z-index: 960;
+    position: relative;
+  }
+
   .headerLogo {
     img {
       width: 17px;
