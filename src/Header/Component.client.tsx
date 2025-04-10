@@ -24,13 +24,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
     pathname === '/cases' ||
     pathname === '/services' ||
     pathname === '/blog' ||
-    pathname === '/services' ||
     pathname === '/privacy-policy' ||
     pathname === '/terms-of-use'
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev)
-  }
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     if (menuOpen) {
@@ -42,6 +39,16 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ servicesData }) => {
 
   const onNavClickHandler = () => {
     setMenuOpen(false)
+  }
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev)
   }
 
   return (
