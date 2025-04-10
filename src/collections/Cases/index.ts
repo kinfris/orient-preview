@@ -86,6 +86,7 @@ export const Cases: CollectionConfig<'cases'> = {
             {
               name: 'previewDescription',
               type: 'textarea',
+              maxLength: 50,
             },
 
             {
@@ -102,6 +103,7 @@ export const Cases: CollectionConfig<'cases'> = {
             {
               name: 'taskDescription',
               type: 'textarea',
+              maxLength: 293,
             },
             {
               name: 'taskImage',
