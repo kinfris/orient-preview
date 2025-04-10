@@ -118,6 +118,13 @@
 
   .contentContainer {
     margin-top: 12px;
+    margin-bottom: 20px;
+ 
+
+    p {
+      height: 114px;
+      overflow: hidden;
+    }
   }
 
   .container {
@@ -129,16 +136,21 @@
       flex: unset;
       height: 159px;
 
-      h4{
+      h4 {
         font-size: 22px;
         line-height: 30px;
+      }
+
+      p{
+        height: 20px;
+        overflow: hidden;
       }
     }
 
     .leftContent {
       max-width: 100%;
 
-      p{
+      p {
         margin-bottom: 20px;
       }
 
