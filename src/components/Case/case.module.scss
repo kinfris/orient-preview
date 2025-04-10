@@ -119,12 +119,6 @@
   .contentContainer {
     margin-top: 12px;
     margin-bottom: 20px;
- 
-
-    p {
-      height: 114px;
-      overflow: hidden;
-    }
   }
 
   .container {
@@ -139,9 +133,11 @@
       h4 {
         font-size: 22px;
         line-height: 30px;
+        height: 60px;
+        overflow: hidden;
       }
 
-      p{
+      p {
         height: 20px;
         overflow: hidden;
       }
@@ -151,7 +147,9 @@
       max-width: 100%;
 
       p {
-        margin-bottom: 20px;
+        height: 130px;
+        margin-bottom: 0;
+        overflow: hidden;
       }
 
       h4 {

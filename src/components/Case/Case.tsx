@@ -29,7 +29,7 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
         </div>
       </div>
       <div className={`${styles.right} ${inter.variable}`}>
-        <h4>{caseData.title}</h4>
+        <h4>Social Networking Platform for Interest-Based Connections</h4>
         <p>{caseData.previewDescription}</p>
         <div className={styles.rightBg}></div>
         <div className={styles.rightBgImage}></div>
