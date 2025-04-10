@@ -80,15 +80,11 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
             freeMode={false}
             allowTouchMove={false}
           >
-            {[...Array(10)]
-              .flatMap(() => logos)
-              .map((el, i) => {
-                return (
-                  <SwiperSlide key={`${el.id}${i}`} className={styles.slide}>
-                    {el.logoImage ? <Media resource={el.logoImage} /> : <p>{el.logoTitle}</p>}
-                  </SwiperSlide>
-                )
-              })}
+            {(isMobile ? logos : [...Array(10)].flatMap(() => logos)).map((el, i) => (
+              <SwiperSlide key={`${el.id}${i}`} className={styles.slide}>
+                {el.logoImage ? <Media resource={el.logoImage} /> : <p>{el.logoTitle}</p>}
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
