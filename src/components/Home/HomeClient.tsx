@@ -76,10 +76,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
             slidesPerView="auto"
             speed={3000}
             loop={true}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
+            autoplay={isMobile ? false : { delay: 0, disableOnInteraction: false }}
             modules={[Autoplay]}
             freeMode={false}
             allowTouchMove={false}
