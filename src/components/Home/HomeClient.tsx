@@ -9,12 +9,7 @@ import 'swiper/css/navigation'
 
 import styles from './home.module.scss'
 
-import { Autoplay, Navigation } from 'swiper/modules'
-import Link from 'next/link'
 import { Case, Home, Service } from '@/payload-types'
-import { Media } from '../Media'
-import { CaseComponent } from '../Case/Case'
-import { ServiceComponent } from '../Service/Service'
 import ContactForm from '../ContactForm/ContactForm'
 import { ButtonLink } from '../ButtonLink/ButtonLink'
 import { useEffect, useState } from 'react'
