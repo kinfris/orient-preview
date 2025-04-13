@@ -26,12 +26,14 @@ type Props = {
 }
 
 export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(true)
   const data = homeData[0]
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768)
+      if (window.innerWidth > 768) {
+        setIsMobile(false)
+      }
     }
 
     handleResize()
