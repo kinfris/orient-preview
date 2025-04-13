@@ -100,7 +100,7 @@ export default async function Post({ params: paramsPromise }: Args) {
 
             {blog.heroImage && typeof blog.heroImage == 'object' && blog.heroImage.url && (
               <div className={styles.imageContainer}>
-                {/* <Media resource={blog.heroImage} /> */}
+                <Media resource={blog.heroImage} />
               </div>
             )}
           </div>
@@ -110,7 +110,7 @@ export default async function Post({ params: paramsPromise }: Args) {
           </div>
         </div>
 
-        {/* <RecentPosts currentBlogId={blog.id} /> */}
+        <RecentPosts currentBlogId={blog.id} />
       </article>
     </div>
   )
