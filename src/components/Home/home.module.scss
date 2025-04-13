@@ -35,18 +35,6 @@
 //   z-index: -2;
 // }
 
-.topBgImage {
-  position: absolute;
-  height: 100%;
-  max-height: 960px;
-  width: 100%;
-  top: -119px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -2;
-}
-
 .topBgGradient {
   position: absolute;
   height: 100%;
@@ -441,17 +429,10 @@
   }
 }
 
-// .casesReviewsBg {
-//   position: absolute;
-//   background: url('/home_g_bg.svg') no-repeat center;
-//   background-size: cover;
-//   z-index: -2;
-//   height: 100%;
-//   width: 100%;
-// }
-
-.casesReviewsBgImage {
+.casesReviewsBg {
   position: absolute;
+  background: url('/home_g_bg.svg') no-repeat center;
+  background-size: cover;
   z-index: -2;
   height: 100%;
   width: 100%;

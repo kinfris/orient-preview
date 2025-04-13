@@ -53,16 +53,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
   return (
     <div className={styles.container}>
       <div className={styles.topBgContainer}>
-        <div className={styles.topBg}>
-          <Image
-            src="/home_bg.svg"
-            alt="Background"
-            fill
-            priority
-            className={styles.topBgImage}
-            style={{ objectFit: 'cover', objectPosition: 'center', zIndex: -1 }}
-          />
-        </div>
+        <div className={styles.topBg}></div>
         <div className={styles.topBgGradient}></div>
         <div className={styles.topContentContainer}>
           <div className={styles.topContentWrapper}>
@@ -84,16 +75,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
       </div>
       <div className={styles.overflowContainer}>
         <div className={styles.casesReviewsWrapper}>
-          <div className={styles.casesReviewsBg}>
-            <Image
-              src="/home_g_bg.svg"
-              alt="Background"
-              fill
-              priority
-              className={styles.casesReviewsBgImage}
-              style={{ objectFit: 'cover', objectPosition: 'center', zIndex: -1 }}
-            />
-          </div>
+          <div className={styles.casesReviewsBg}></div>
           <div className={styles.casesReviewsBgGradient}></div>
           <div className={styles.casesReviewsContainer}>
             <CasesSwiper casesData={casesData} />
