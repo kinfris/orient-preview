@@ -398,4 +398,17 @@
       line-height: 131%;
     }
   }
+
+  .personContent {
+    .name {
+      h4 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
 }
