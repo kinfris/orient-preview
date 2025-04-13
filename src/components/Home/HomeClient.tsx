@@ -1,7 +1,6 @@
 'use client'
 
 import { Title } from '@/components/Title/Title'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
