@@ -48,6 +48,8 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
 
   const { logos, reviews, team } = data
 
+  const displayedLogos = isMobile ? logos.slice(0, 10) : [...Array(10)].flatMap(() => logos)
+
   return (
     <div className={styles.container}>
       <div className={styles.topBgContainer}>
@@ -82,7 +84,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
             freeMode={false}
             allowTouchMove={false}
           >
-            {(isMobile ? logos : [...Array(10)].flatMap(() => logos)).map((el, i) => (
+            {displayedLogos.map((el, i) => (
               <SwiperSlide key={`${el.id}${i}`} className={styles.slide}>
                 {el.logoImage ? <Media resource={el.logoImage} /> : <p>{el.logoTitle}</p>}
               </SwiperSlide>
@@ -278,7 +280,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
                       {team.map((el) => (
                         <SwiperSlide key={el.id} className={styles.serviceSlide}>
                           <div key={el.id} className={styles.person}>
-                            <Media resource={el.image} />
+                            <Media resource={el.image} loading="lazy" />
                             <div className={styles.personContent}>
                               <div className={styles.name}>
                                 <h4>{el.name}</h4>
