@@ -53,6 +53,11 @@
   }
 }
 
+.breadcrumbsLeft{
+  display: flex;
+  align-items: center;
+}
+
 .topContent {
   margin-top: 61px;
   border-radius: 50px;
@@ -131,6 +136,14 @@
     display: none;
   }
 
+  .breadcrumbs{
+    align-items: baseline;
+
+    p{
+      text-align: left;
+    }
+  }
+
   .wrapper{
     padding-bottom: 70px;
   }
@@ -159,6 +172,10 @@
 
   .topContentImgMobile {
     display: unset;
+  }
+
+  .gradientContainer{
+    height: 4000px;
   }
 }
 

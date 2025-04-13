@@ -52,16 +52,19 @@ export default async function Service({ params: paramsPromise }: Args) {
       <div className={styles.gradientContainer}></div>
       <div className={styles.container}>
         <div className={styles.breadcrumbs}>
-          <Link href={'/services'}>Services</Link>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+          <div className={styles.breadcrumbsLeft}>
+            <Link href={'/services'}>Services</Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path d="M9 19L15 12L9 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+
           <p>{serviceName}</p>
         </div>
         <div className={styles.topContent}>

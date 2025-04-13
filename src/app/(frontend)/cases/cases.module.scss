@@ -79,6 +79,14 @@
     margin: 50px auto;
     padding: 0 20px;
   }
+
+  .backgroundContainer {
+    height: 900px;
+  }
+
+  .casesBackgroundGradientContainer {
+    height: fit-content;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {

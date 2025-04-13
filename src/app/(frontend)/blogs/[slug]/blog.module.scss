@@ -218,12 +218,15 @@
       line-height: 20px;
     }
   }
+
+  .gradientContainer {
+    height: 4000px;
+  }
 }
 
-
 @media (min-width: 769px) and (max-width: 1300px) {
- .container{
-  width: 100%;
-  padding: 0 50px;
- } 
+  .container {
+    width: 100%;
+    padding: 0 50px;
+  }
 }

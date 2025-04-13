@@ -39,10 +39,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               preview: isEnabled,
             }}
           />
-          <Header />
-          <main>{children}</main>
-          <Cookies />
-          <Footer />
+          <div className={styles.contentContainer}>
+            <Header />
+            <main>{children}</main>
+            <Cookies />
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

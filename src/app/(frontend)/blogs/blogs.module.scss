@@ -179,7 +179,7 @@
     top: -42px;
     left: 0;
     width: 100%;
-    height: 70vh;
+    height: 700px;
     background-color: #03010f;
     background-image: url('/blog_mob_bg.svg');
     background-position: top;
@@ -213,6 +213,11 @@
   .featuredPostMobile {
     display: unset;
   }
+
+  .gradientContainer{
+    height: 4000px;
+  }
+
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {
