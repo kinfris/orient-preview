@@ -110,7 +110,7 @@ export default async function Post({ params: paramsPromise }: Args) {
           </div>
         </div>
 
-        <RecentPosts currentBlogId={blog.id} />
+        {/* <RecentPosts currentBlogId={blog.id} /> */}
       </article>
     </div>
   )
