@@ -10,7 +10,7 @@ type Props = {
 export const ServiceComponent = ({ service }: Props) => {
   return (
     <Link href={`/services/${service.slug}`} className={styles.container}>
-      <Media resource={service.serviceIcon ?? ''} />
+      <Media resource={service.serviceIcon ?? ''} loading="lazy" />
       <h4>{service.title}</h4>
       <p>{service.shortDescription}</p>
     </Link>

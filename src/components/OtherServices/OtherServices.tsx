@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Service } from '@/payload-types'
-import { CaseComponent } from '@/components/Case/Case'
 import styles from './otherServices.module.scss'
 import Link from 'next/link'
 import { Media } from '../Media'
