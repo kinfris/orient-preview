@@ -559,10 +559,10 @@
       line-height: 40px;
     }
 
-    p{
+    p {
       width: 100%;
       font-size: 14px;
-      line-height: 20px; 
+      line-height: 20px;
     }
   }
 
@@ -630,17 +630,18 @@
     overflow: unset;
   }
 
-  .topBgGradient{
+  .topBgGradient {
     top: -42px;
     height: calc(100% + 42px);
   }
 
-  .topBg{
+  .topBg {
     height: 900px;
   }
 
   .casesReviewsBg {
     height: 1700px;
+    background: url('/main_mob_bg.svg') no-repeat center;
   }
 
   .casesReviewsBgGradient {
