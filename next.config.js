@@ -21,7 +21,7 @@ const nextConfig = {
       // URL прямого доступа к S3 изображениям
       {
         protocol: 'https',
-        hostname: 'your-bucket-name.s3.eu-central-1.amazonaws.com',
+        hostname: `${S3_SECRET_ACCESS_KEY}.${S3_REGION}.amazonaws.com`,
       },
     ],
   },
