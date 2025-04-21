@@ -640,8 +640,9 @@
   }
 
   .casesReviewsBg {
-    height: 800px;
-    background: url('/main_mob_bg.svg') no-repeat center;
+    display: none;
+    // height: 800px;
+    // background: url('/main_mob_bg.svg') no-repeat center;
   }
 
   .casesReviewsBg::before {
