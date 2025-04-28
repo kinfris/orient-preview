@@ -1,9 +1,8 @@
-'use client'
 import type { Metadata } from 'next'
 
 import React from 'react'
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
@@ -17,7 +16,7 @@ import styles from './mainLayout.module.scss'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { Cookies } from '@/components/Cookies/Cookies'
-const PixelTracker = dynamic(() => import("@/components/PixelTracker"), { ssr: false });
+import PixelTracker from '@/components/PixelTracker'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -46,9 +45,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <img
             height="1"
             width="1"
-            style={{ display: "none" }}
+            style={{ display: 'none' }}
             src="https://www.facebook.com/tr?id=678351195155356&ev=
-            PageView&noscript=1"/>
+            PageView&noscript=1"
+          />
         </noscript>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
