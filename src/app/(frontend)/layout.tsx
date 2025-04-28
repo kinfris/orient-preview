@@ -16,7 +16,7 @@ import styles from './mainLayout.module.scss'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { Cookies } from '@/components/Cookies/Cookies'
-const PixelTracker = dynamic(() => import("@/components/PixelTracker"), { ssr: true });
+const PixelTracker = dynamic(() => import("@/components/PixelTracker"), { ssr: false });
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
