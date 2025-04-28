@@ -9,6 +9,7 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import styles from './mainLayout.module.scss'
 
 import './globals.css'
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
       </head>
       <body className={`${styles.bodyContainer}`}>
+        <GoogleAnalytics gaId="G-GHB5RB8QYD" />
         <Providers>
           <AdminBar
             adminBarProps={{
