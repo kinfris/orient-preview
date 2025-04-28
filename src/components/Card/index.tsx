@@ -1,5 +1,3 @@
-'use client'
-import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
 import React from 'react'
 import styles from './card.module.scss'
@@ -16,7 +14,6 @@ export const Card: React.FC<{
   showCategories?: boolean
   title?: string
 }> = (props) => {
-  const { card, link } = useClickableCard({})
   const { doc, relationTo } = props
 
   const { slug, title, previewImage } = doc || {}
@@ -24,8 +21,8 @@ export const Card: React.FC<{
   const href = `/${relationTo}/${slug}`
 
   return (
-    <Link href={href} ref={link.ref} className={styles.container}>
-      <article ref={card.ref}>
+    <Link href={href} className={styles.container}>
+      <article>
         <div className={styles.imageContainer}>
           {previewImage && typeof previewImage == 'object' && previewImage.url && (
             <Media resource={previewImage} />
