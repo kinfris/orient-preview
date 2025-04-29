@@ -23,6 +23,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: `idrQpOuyUi/McbygkN+JhgPggAjo683enLTrWeAp.eu-north-1.amazonaws.com`,
       },
+      {
+        protocol: 'https',
+        hostname: 'orinix-wesbstie.s3.eu-north-1.amazonaws.com',
+      },
     ],
   },
   reactStrictMode: true,
