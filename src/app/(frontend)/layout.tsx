@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import React from 'react'
 
-import dynamic from 'next/dynamic'
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
@@ -17,6 +16,7 @@ import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { Cookies } from '@/components/Cookies/Cookies'
 import PixelTracker from '@/components/PixelTracker'
+import ClientOnly from '@/components/ClientOnly/ClientOnly'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -63,7 +63,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className={`${styles.bodyContainer}`}>
         <GoogleAnalytics gaId="G-GHB5RB8QYD" />
-        <PixelTracker />
+        <ClientOnly>
+          <PixelTracker />
+        </ClientOnly>
         <Providers>
           <AdminBar
             adminBarProps={{

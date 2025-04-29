@@ -270,6 +270,7 @@ export interface Post {
  * via the `definition` "media".
  */
 export interface Media {
+  sizes?: any;
   id: string;
   alt?: string | null;
   caption?: {
@@ -298,7 +299,6 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
-  sizes?: any;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
