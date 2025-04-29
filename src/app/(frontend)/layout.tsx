@@ -24,6 +24,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="…" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
