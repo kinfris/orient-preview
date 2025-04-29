@@ -17,6 +17,7 @@ import { CasesSwiper } from '../Sliders/CasesSwiper'
 import { ReviewsSwiper } from '../Sliders/ReivewsSwiper'
 import { TeamSwiper } from '../Sliders/TeamSwiper'
 import { ServicesSwiper } from '../Sliders/ServicesSwiper'
+import { v4 as uuidv4 } from 'uuid'
 
 type Props = {
   homeData: Home[]
@@ -48,8 +49,8 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
   const { logos, reviews, team } = data
 
   const displayedLogos = isMobile
-    ? logos
-    : [...Array(10)].flatMap(() => logos.map((logo) => ({ ...logo })))
+    ? logos.map((logo) => ({ ...logo, id: uuidv4() }))
+    : [...Array(10)].flatMap(() => logos.map((logo) => ({ ...logo, id: uuidv4() })))
 
   return (
     <div className={styles.container}>
