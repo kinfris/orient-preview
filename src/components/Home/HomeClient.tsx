@@ -47,6 +47,10 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
 
   const { logos, reviews, team } = data
 
+  const displayedLogos = isMobile
+    ? logos.map((logo) => ({ ...logo }))
+    : [...Array(10)].flatMap(() => logos.map((logo) => ({ ...logo })))
+
   return (
     <div className={styles.container}>
       <div className={styles.topBgContainer}>
@@ -68,7 +72,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
             </div>
           </div>
         </div>
-        <CarouselSwiper logos={logos} isMobile={isMobile} />
+        <CarouselSwiper displayedLogos={displayedLogos} />
       </div>
       <div className={styles.overflowContainer}>
         <div className={styles.casesReviewsWrapper}>
