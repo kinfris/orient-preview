@@ -27,7 +27,7 @@ export default function CasesList({ initialCases }: { initialCases: Case[] }) {
         setHasMore(false)
       }
     } catch (error) {
-      console.error('Ошибка при загрузке данных', error)
+      console.error('Error', error)
     } finally {
       setLoading(false)
     }
