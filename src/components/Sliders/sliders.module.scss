@@ -11,8 +11,8 @@
   align-items: center;
   justify-content: center;
   user-select: none;
-  max-width: 362px;
-  max-height: 221px;
+  width: 362px;
+  height: 221px;
   position: relative;
   margin-top: 9px;
   margin-bottom: 18px;
@@ -23,6 +23,12 @@
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
+
+  img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
 
   p {
     text-align: center;
@@ -324,7 +330,8 @@
 @media (max-width: 768px) {
   .slide {
     padding: 25px;
-    max-height: 81px;
+    height: 81px;
+    width: unset;
 
     img {
       max-height: 100%;
