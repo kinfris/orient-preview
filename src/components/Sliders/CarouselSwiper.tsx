@@ -5,16 +5,27 @@ import styles from './sliders.module.scss'
 import { Autoplay } from 'swiper/modules'
 import { Media as MediaBlock } from '../Media'
 import { Media } from '@/payload-types'
+import { v4 as uuidv4 } from 'uuid'
+import { useMemo } from 'react'
 
 type Props = {
-  displayedLogos: {
+  logos: {
     logoImage?: (string | null) | Media
     logoTitle?: string | null
     id?: string | null
   }[]
+  isMobile: boolean
 }
 
-export const CarouselSwiper = ({ displayedLogos }: Props) => {
+export const CarouselSwiper = ({ logos, isMobile }: Props) => {
+  const displayedLogos = useMemo(() => {
+    const baseLogos = isMobile ? logos : [...Array(10)].flatMap(() => logos)
+
+    return baseLogos.map((logo) => ({
+      ...logo,
+      uuid: uuidv4(),
+    }))
+  }, [logos, isMobile])
   return (
     <div className={styles.carouselContainer}>
       <Swiper
@@ -30,7 +41,7 @@ export const CarouselSwiper = ({ displayedLogos }: Props) => {
         allowTouchMove={false}
       >
         {displayedLogos.map((el, i) => (
-          <SwiperSlide key={`${el.id ?? 'no-id'}-${i}`} className={styles.slide}>
+          <SwiperSlide key={el.uuid} className={styles.slide}>
             {el.logoImage ? (
               <MediaBlock resource={el.logoImage} loading="lazy" />
             ) : (
