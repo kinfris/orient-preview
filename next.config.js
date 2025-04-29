@@ -21,11 +21,9 @@ const nextConfig = {
       // URL прямого доступа к S3 изображениям
       {
         protocol: 'https',
-        hostname: `idrQpOuyUi/McbygkN+JhgPggAjo683enLTrWeAp.eu-north-1.amazonaws.com`,
-      },
-      {
-        protocol: 'https',
-        hostname: 'orinix-wesbstie.s3.eu-north-1.amazonaws.com',
+        hostname: '**',
+        port: '',
+        pathname: '**',
       },
     ],
   },
