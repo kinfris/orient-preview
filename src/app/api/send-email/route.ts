@@ -40,9 +40,9 @@ export async function POST(req: Request) {
 
     await transporter.sendMail(mailOptions)
 
-    return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 })
+    return NextResponse.json({ message: 'Form submitted successfully!' }, { status: 200 })
   } catch (error) {
     console.error('Email error:', error)
-    return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 })
+    return NextResponse.json({ error: 'Failed to submit form.' }, { status: 500 })
   }
 }
