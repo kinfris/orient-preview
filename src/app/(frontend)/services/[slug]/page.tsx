@@ -70,6 +70,11 @@ export default async function Service({ params: paramsPromise }: Args) {
         <div className={styles.topContent}>
           <div className={styles.descriptionContainer}>
             <h1>{serviceName}</h1>
+            {heroImage && (
+              <div className={styles.topContentImgDesktop}>
+                <Media resource={heroImage} alt="" className={styles.topContentImg} />
+              </div>
+            )}
             <div className={styles.shortDescription}>
               <RichText data={fullDescription} enableGutter={false} />
             </div>
@@ -104,11 +109,6 @@ export default async function Service({ params: paramsPromise }: Args) {
               <ButtonLink href={'/contact'} title="Get A Quote" />
             </div>
           </div>
-          {heroImage && (
-            <div className={styles.topContentImgDesktop}>
-              <Media resource={heroImage} alt="" className={styles.topContentImg} />
-            </div>
-          )}
         </div>
 
         <OtherServices currentServiceId={caseData.id} />
