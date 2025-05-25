@@ -3,6 +3,7 @@ import styles from './case.module.scss'
 import Link from 'next/link'
 import { ButtonLink } from '../ButtonLink/ButtonLink'
 import { Inter } from 'next/font/google'
+import RichText from '@/components/RichText'
 
 type Props = {
   caseData: Case
@@ -21,7 +22,9 @@ export const CaseComponent = ({ caseData, reverse, vertical, index }: Props) => 
       <div className={styles.leftContent}>
         <div className={styles.contentContainer}>
           <h4 className={styles.desktopTitle}>Case #{index + 1}</h4>
-          <p>{caseData.taskDescription}</p>
+          {caseData.taskDescription && (
+            <RichText data={caseData.taskDescription} enableGutter={false} />
+          )}
         </div>
 
         <div className={styles.btnWrapper}>

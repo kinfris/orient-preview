@@ -270,7 +270,6 @@ export interface Post {
  * via the `definition` "media".
  */
 export interface Media {
-  sizes?: any;
   id: string;
   alt?: string | null;
   caption?: {
@@ -758,11 +757,53 @@ export interface Case {
         id?: string | null;
       }[]
     | null;
-  taskDescription?: string | null;
+  taskDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   taskImage?: (string | null) | Media;
-  resultDescription?: string | null;
+  resultDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   resultImage?: (string | null) | Media;
-  afterTaskResultDescription?: string | null;
+  afterTaskResultDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   carouselImage1?: (string | null) | Media;
   carouselImage2Vertical?: (string | null) | Media;
   carouselImage3?: (string | null) | Media;

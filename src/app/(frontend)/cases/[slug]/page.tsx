@@ -112,7 +112,7 @@ export default async function Case({ params: paramsPromise }: Args) {
             {taskDescription && (
               <div className={styles.fsBlockContainer}>
                 <h4>Task</h4>
-                <p>{taskDescription}</p>
+                <RichText className={styles.richText} data={taskDescription} enableGutter={false} />
               </div>
             )}
             {taskImage && (
@@ -124,7 +124,11 @@ export default async function Case({ params: paramsPromise }: Args) {
             {resultDescription && (
               <div className={styles.fsBlockContainer}>
                 <h4>Result</h4>
-                <p>{resultDescription}</p>
+                <RichText
+                  className={styles.richText}
+                  data={resultDescription}
+                  enableGutter={false}
+                />
               </div>
             )}
             {resultImage && (
@@ -145,7 +149,13 @@ export default async function Case({ params: paramsPromise }: Args) {
             )}
           </div>
           <div className={styles.secondSection}>
-            <p>{afterTaskResultDescription}</p>
+            {afterTaskResultDescription && (
+              <RichText
+                className={styles.richText}
+                data={afterTaskResultDescription}
+                enableGutter={false}
+              />
+            )}
             {carouselImage1 && carouselImage2Vertical && carouselImage3 && (
               <div className={styles.imageGallery}>
                 <div className={styles.ssImageContainer}>
