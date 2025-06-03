@@ -91,10 +91,16 @@
   width: 100%;
 }
 
-.mainImage {
+.imageContainer {
+  border-radius: 30px;
   margin-top: 40px;
-  width: 100%;
-  max-height: 1080px;
+
+  img {
+    width: 100%;
+    height: 462px;
+    border-radius: 70px;
+    object-fit: cover;
+  }
 }
 
 .firstSection {
@@ -257,9 +263,12 @@
     line-height: 36px;
   }
 
-  .mainImage {
+  .imageContainer {
     margin-top: 20px;
-    max-height: 335px;
+    
+    img {
+      height: unset;
+    }
   }
 
   .fsImageMobileContainer {
@@ -297,51 +306,34 @@
       grid-column: 2;
       grid-row: 1;
     }
-
-    .ssBigImage {
-      grid-row: 2 !important;
-      grid-column: 1 / span 2;
-      width: 100%;
-    }
-  }
-  .lastSection {
-    margin-top: 20px;
-
-    p {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-
-  .fsBlockContainer {
-    h4 {
-      font-size: 20px;
-      line-height: 28px;
-    }
-    p {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-  .secondSection {
-    p {
-      font-size: 14px;
-      line-height: 20px;
-    }
   }
 
   .backgroundContainer {
-    height: 2200px;
+    height: 1000px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {
   .wrapper {
-    max-width: unset;
     padding: 0 50px;
   }
+}
 
-  .ssImageContainer {
-    width: 100%;
+.fsImageDesktopContainer {
+  display: none;
+
+  @media (min-width: 769px) {
+    display: unset;
   }
 }
+
+.richTextContainer {
+  p {
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+} 

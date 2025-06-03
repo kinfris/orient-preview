@@ -103,7 +103,7 @@ export default async function Case({ params: paramsPromise }: Args) {
           <Title>
             <h1 className={styles.projectName}>{projectName}</h1>
           </Title>
-          <div className={styles.mainImage}>
+          <div className={styles.imageContainer}>
             {heroImage && typeof heroImage == 'object' && heroImage.url && (
               <Media resource={heroImage} />
             )}
