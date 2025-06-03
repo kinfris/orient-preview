@@ -43,7 +43,7 @@
   margin-top: 61px;
   border-radius: 50px;
   background: rgba(3, 1, 15, 0.4);
-  padding: 48px 49px 60px 49px;
+  padding: 48px 49px 48px 49px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -135,9 +135,13 @@
   height: 600px;
   border-radius: 40px;
   overflow: hidden;
+  position: relative;
 
   img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -276,7 +280,14 @@
   }
 
   .fsImageContainer {
-    height: 160px;
+    height: 200px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   .firstSection {
