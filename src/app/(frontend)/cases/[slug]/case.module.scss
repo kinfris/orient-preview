@@ -214,6 +214,7 @@
   border-radius: 30px;
   overflow: hidden;
   position: relative;
+  min-height: 0;
 
   img {
     width: 100%;
@@ -221,6 +222,7 @@
     border-radius: 70px;
     object-fit: cover;
     object-position: center;
+    display: block;
   }
 }
 
