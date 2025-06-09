@@ -41,10 +41,11 @@ export default function ContactForm({ showTitle = false }: Props) {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<FormData>({
     resolver: yupResolver(schema),
+    mode: 'onChange', // Enable real-time validation
   })
 
   const onSubmit = async (data: FormData) => {
@@ -127,7 +128,11 @@ export default function ContactForm({ showTitle = false }: Props) {
           {errors.message && <p className={styles.errorMessage}>{errors.message.message}</p>}
         </div>
 
-        <button type="submit" className={styles.submitButton} disabled={loading}>
+        <button 
+          type="submit" 
+          className={styles.submitButton} 
+          disabled={loading || !isValid}
+        >
           <span>Submit</span>
           <div className={styles.imageContainer}>
             <img src="/arrow-icon.svg" alt="" />

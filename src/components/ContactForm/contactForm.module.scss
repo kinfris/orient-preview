@@ -190,8 +190,26 @@
     height: 15px;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: #b893ff;
+  }
+
+  &:disabled {
+    background-color: #605d64;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    span {
+      color: #9c9c9c;
+    }
+
+    .imageContainer {
+      background-color: #605d64;
+    }
+
+    .imageContainer img {
+      opacity: 0.5;
+    }
   }
 }
 
