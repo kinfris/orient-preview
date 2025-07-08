@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="…" />
+        <meta name="description" content="Professional web development and digital solutions. We create modern websites, applications, and digital experiences that drive business growth." />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -91,6 +91,5 @@ export const metadata: Metadata = {
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
   },
 }

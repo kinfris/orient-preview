@@ -49,7 +49,7 @@ export const HomeClient = ({ homeData, casesData, servicesData }: Props) => {
 
   const displayedLogos = isMobile
     ? logos.map((logo) => ({ ...logo }))
-    : [...Array(10)].flatMap(() => logos.map((logo) => ({ ...logo })))
+    : [...Array(3)].flatMap(() => logos.map((logo) => ({ ...logo })))
 
   return (
     <div className={styles.container}>
